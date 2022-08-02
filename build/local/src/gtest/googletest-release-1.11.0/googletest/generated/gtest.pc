@@ -1,0 +1,9 @@
+libdir=/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib
+includedir=/Users/miharek/Desktop/Magisterska/nicew-core/build/local/include
+
+Name: gtest
+Description: GoogleTest (without main() function)
+Version: 1.11.0
+URL: https://github.com/google/googletest
+Libs: -L${libdir} -lgtest 
+Cflags: -I${includedir} -DGTEST_HAS_PTHREAD=1

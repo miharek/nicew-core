@@ -1,0 +1,2 @@
+ccache /Library/Developer/CommandLineTools/usr/bin/ar qc libNiceWCore.a CMakeFiles/NiceWCore.dir/src/interface/NWString.cpp.o
+ccache /Library/Developer/CommandLineTools/usr/bin/ranlib libNiceWCore.a

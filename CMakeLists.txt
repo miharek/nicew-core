@@ -14,7 +14,7 @@ endif ()
 
 include(GNUInstallDirs)
 include(cmake/StandardSettings.cmake)
-include(cmake/CompilerWarnings.cmake)
+include(cmake/CompilerWarning.cmake)
 include(cmake/StaticAnalyzers.cmake)
 include(cmake/FindHostPackage.cmake)
 
@@ -81,7 +81,7 @@ if (NW_BUILD_EXAMPLES)
 endif()
 
 if (NW_ENABLE_PVS_STUDIO)
-    tw_add_pvs_studio_target(NiceWCore)
+    nw_add_pvs_studio_target(NiceWCore)
 endif()
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/swift/cpp.xcconfig.in ${CMAKE_CURRENT_SOURCE_DIR}/swift/cpp.xcconfig @ONLY)

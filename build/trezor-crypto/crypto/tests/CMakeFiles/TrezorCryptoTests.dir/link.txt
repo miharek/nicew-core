@@ -1,0 +1,1 @@
+ccache /Library/Developer/CommandLineTools/usr/bin/cc -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/TrezorCryptoTests.dir/test_check.c.o -o TrezorCryptoTests   -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  -Wl,-rpath,/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib ../../libTrezorCrypto.a -lcheck 

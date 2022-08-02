@@ -1,0 +1,1096 @@
+The system is: Darwin - 21.5.0 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /Library/Developer/CommandLineTools/usr/bin/cc 
+Build flags: 
+Id flags: -c 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.o"
+
+The C compiler identification is AppleClang, found in "/Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/3.23.3/CompilerIdC/CMakeCCompilerId.o"
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_cb714/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_cb714.dir/build.make CMakeFiles/cmTC_cb714.dir/build
+Building C object CMakeFiles/cmTC_cb714.dir/CMakeCCompilerABI.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk   -v -Wl,-v -MD -MT CMakeFiles/cmTC_cb714.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_cb714.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_cb714.dir/CMakeCCompilerABI.c.o -c /usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CMakeCCompilerABI.c
+Apple clang version 13.1.6 (clang-1316.0.21.2.5)
+Target: x86_64-apple-darwin21.5.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
+ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx12.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all --mrelax-relocations -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=all -fno-strict-return -fno-rounding-math -munwind-tables -target-sdk-version=12.3 -fvisibility-inlines-hidden-static-local-var -target-cpu penryn -tune-cpu generic -debugger-tuning=lldb -target-linker-version 763 -v -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6 -dependency-file CMakeFiles/cmTC_cb714.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_cb714.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -Wno-objc-load-method -fdebug-compilation-dir=/Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fmax-type-align=16 -fcommon -clang-vendor-feature=+messageToSelfInClassMethodIdReturnType -clang-vendor-feature=+disableInferNewAvailabilityFromInit -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -mllvm -disable-aligned-alloc-awareness=1 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_cb714.dir/CMakeCCompilerABI.c.o -x c /usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CMakeCCompilerABI.c
+clang -cc1 version 13.1.6 (clang-1316.0.21.2.5) default target x86_64-apple-darwin21.5.0
+ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/local/include"
+ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/Library/Frameworks"
+#include "..." search starts here:
+#include <...> search starts here:
+ /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/include
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include
+ /Library/Developer/CommandLineTools/usr/include
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/System/Library/Frameworks (framework directory)
+End of search list.
+Linking C executable cmTC_cb714
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cb714.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib -v -Wl,-v CMakeFiles/cmTC_cb714.dir/CMakeCCompilerABI.c.o -o cmTC_cb714 
+Apple clang version 13.1.6 (clang-1316.0.21.2.5)
+Target: x86_64-apple-darwin21.5.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -platform_version macos 12.0.0 12.3 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -o cmTC_cb714 -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_cb714.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-764
+BUILD 11:22:50 Apr 28 2022
+configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
+Library search paths:
+	/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib
+	/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/lib
+Framework search paths:
+	/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/include]
+    add: [/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include]
+    add: [/Library/Developer/CommandLineTools/usr/include]
+  end of search list found
+  collapse include dir [/Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/include] ==> [/Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/include]
+  collapse include dir [/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include]
+  collapse include dir [/Library/Developer/CommandLineTools/usr/include] ==> [/Library/Developer/CommandLineTools/usr/include]
+  implicit include dirs: [/Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/include;/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include;/Library/Developer/CommandLineTools/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make -f Makefile cmTC_cb714/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_cb714.dir/build.make CMakeFiles/cmTC_cb714.dir/build]
+  ignore line: [Building C object CMakeFiles/cmTC_cb714.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk   -v -Wl -v -MD -MT CMakeFiles/cmTC_cb714.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_cb714.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_cb714.dir/CMakeCCompilerABI.c.o -c /usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [Apple clang version 13.1.6 (clang-1316.0.21.2.5)]
+  ignore line: [Target: x86_64-apple-darwin21.5.0]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
+  ignore line: [clang: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
+  ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx12.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all --mrelax-relocations -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=all -fno-strict-return -fno-rounding-math -munwind-tables -target-sdk-version=12.3 -fvisibility-inlines-hidden-static-local-var -target-cpu penryn -tune-cpu generic -debugger-tuning=lldb -target-linker-version 763 -v -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6 -dependency-file CMakeFiles/cmTC_cb714.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_cb714.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -Wno-objc-load-method -fdebug-compilation-dir=/Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fmax-type-align=16 -fcommon -clang-vendor-feature=+messageToSelfInClassMethodIdReturnType -clang-vendor-feature=+disableInferNewAvailabilityFromInit -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -mllvm -disable-aligned-alloc-awareness=1 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_cb714.dir/CMakeCCompilerABI.c.o -x c /usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [clang -cc1 version 13.1.6 (clang-1316.0.21.2.5) default target x86_64-apple-darwin21.5.0]
+  ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/local/include"]
+  ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/Library/Frameworks"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/include]
+  ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include]
+  ignore line: [ /Library/Developer/CommandLineTools/usr/include]
+  ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/System/Library/Frameworks (framework directory)]
+  ignore line: [End of search list.]
+  ignore line: [Linking C executable cmTC_cb714]
+  ignore line: [/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cb714.dir/link.txt --verbose=1]
+  ignore line: [/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl -search_paths_first -Wl -headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib -v -Wl -v CMakeFiles/cmTC_cb714.dir/CMakeCCompilerABI.c.o -o cmTC_cb714 ]
+  ignore line: [Apple clang version 13.1.6 (clang-1316.0.21.2.5)]
+  ignore line: [Target: x86_64-apple-darwin21.5.0]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
+  link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -platform_version macos 12.0.0 12.3 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -o cmTC_cb714 -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_cb714.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/lib/darwin/libclang_rt.osx.a]
+    arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
+    arg [-demangle] ==> ignore
+    arg [-lto_library] ==> ignore, skip following value
+    arg [/Library/Developer/CommandLineTools/usr/lib/libLTO.dylib] ==> skip value of -lto_library
+    arg [-dynamic] ==> ignore
+    arg [-arch] ==> ignore
+    arg [x86_64] ==> ignore
+    arg [-platform_version] ==> ignore
+    arg [macos] ==> ignore
+    arg [12.0.0] ==> ignore
+    arg [12.3] ==> ignore
+    arg [-syslibroot] ==> ignore
+    arg [/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_cb714] ==> ignore
+    arg [-L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib] ==> dir [/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib]
+    arg [-search_paths_first] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-v] ==> ignore
+    arg [CMakeFiles/cmTC_cb714.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lSystem] ==> lib [System]
+    arg [/Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/lib/darwin/libclang_rt.osx.a]
+  Library search paths: [;/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/lib]
+  Framework search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/]
+  remove lib [System]
+  remove lib [/Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/lib/darwin/libclang_rt.osx.a]
+  collapse library dir [/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib] ==> [/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib]
+  collapse library dir [/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib] ==> [/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib]
+  collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/lib] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/lib]
+  collapse framework dir [/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/System/Library/Frameworks]
+  implicit libs: []
+  implicit objs: []
+  implicit dirs: [/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/lib]
+  implicit fwks: [/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/System/Library/Frameworks]
+
+
+Determining if files ;sys/types.h exist passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_24611/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_24611.dir/build.make CMakeFiles/cmTC_24611.dir/build
+Building C object CMakeFiles/cmTC_24611.dir/HAVE_SYS_TYPES_H.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_24611.dir/HAVE_SYS_TYPES_H.c.o -MF CMakeFiles/cmTC_24611.dir/HAVE_SYS_TYPES_H.c.o.d -o CMakeFiles/cmTC_24611.dir/HAVE_SYS_TYPES_H.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckIncludeFiles/HAVE_SYS_TYPES_H.c
+Linking C executable cmTC_24611
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_24611.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_24611.dir/HAVE_SYS_TYPES_H.c.o -o cmTC_24611 
+
+
+
+Determining if files sys/types.h;errno.h exist passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_200e2/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_200e2.dir/build.make CMakeFiles/cmTC_200e2.dir/build
+Building C object CMakeFiles/cmTC_200e2.dir/HAVE_ERRNO_H.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_200e2.dir/HAVE_ERRNO_H.c.o -MF CMakeFiles/cmTC_200e2.dir/HAVE_ERRNO_H.c.o.d -o CMakeFiles/cmTC_200e2.dir/HAVE_ERRNO_H.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckIncludeFiles/HAVE_ERRNO_H.c
+Linking C executable cmTC_200e2
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_200e2.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_200e2.dir/HAVE_ERRNO_H.c.o -o cmTC_200e2 
+
+
+
+Determining if files sys/types.h;errno.h;inttypes.h exist passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_d2a86/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_d2a86.dir/build.make CMakeFiles/cmTC_d2a86.dir/build
+Building C object CMakeFiles/cmTC_d2a86.dir/HAVE_INTTYPES_H.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_d2a86.dir/HAVE_INTTYPES_H.c.o -MF CMakeFiles/cmTC_d2a86.dir/HAVE_INTTYPES_H.c.o.d -o CMakeFiles/cmTC_d2a86.dir/HAVE_INTTYPES_H.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckIncludeFiles/HAVE_INTTYPES_H.c
+Linking C executable cmTC_d2a86
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d2a86.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_d2a86.dir/HAVE_INTTYPES_H.c.o -o cmTC_d2a86 
+
+
+
+Determining if files sys/types.h;errno.h;inttypes.h;limits.h exist passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_1f281/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_1f281.dir/build.make CMakeFiles/cmTC_1f281.dir/build
+Building C object CMakeFiles/cmTC_1f281.dir/HAVE_LIMITS_H.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_1f281.dir/HAVE_LIMITS_H.c.o -MF CMakeFiles/cmTC_1f281.dir/HAVE_LIMITS_H.c.o.d -o CMakeFiles/cmTC_1f281.dir/HAVE_LIMITS_H.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckIncludeFiles/HAVE_LIMITS_H.c
+Linking C executable cmTC_1f281
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1f281.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_1f281.dir/HAVE_LIMITS_H.c.o -o cmTC_1f281 
+
+
+
+Determining if files sys/types.h;errno.h;inttypes.h;limits.h;regex.h exist passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_3e08a/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_3e08a.dir/build.make CMakeFiles/cmTC_3e08a.dir/build
+Building C object CMakeFiles/cmTC_3e08a.dir/HAVE_REGEX_H.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_3e08a.dir/HAVE_REGEX_H.c.o -MF CMakeFiles/cmTC_3e08a.dir/HAVE_REGEX_H.c.o.d -o CMakeFiles/cmTC_3e08a.dir/HAVE_REGEX_H.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckIncludeFiles/HAVE_REGEX_H.c
+Linking C executable cmTC_3e08a
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3e08a.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_3e08a.dir/HAVE_REGEX_H.c.o -o cmTC_3e08a 
+
+
+
+Determining if files sys/types.h;errno.h;inttypes.h;limits.h;regex.h;signal.h exist passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_61a4b/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_61a4b.dir/build.make CMakeFiles/cmTC_61a4b.dir/build
+Building C object CMakeFiles/cmTC_61a4b.dir/HAVE_SIGNAL_H.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_61a4b.dir/HAVE_SIGNAL_H.c.o -MF CMakeFiles/cmTC_61a4b.dir/HAVE_SIGNAL_H.c.o.d -o CMakeFiles/cmTC_61a4b.dir/HAVE_SIGNAL_H.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckIncludeFiles/HAVE_SIGNAL_H.c
+Linking C executable cmTC_61a4b
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_61a4b.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_61a4b.dir/HAVE_SIGNAL_H.c.o -o cmTC_61a4b 
+
+
+
+Determining if files sys/types.h;errno.h;inttypes.h;limits.h;regex.h;signal.h;stdarg.h exist passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_af83f/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_af83f.dir/build.make CMakeFiles/cmTC_af83f.dir/build
+Building C object CMakeFiles/cmTC_af83f.dir/HAVE_STDARG_H.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_af83f.dir/HAVE_STDARG_H.c.o -MF CMakeFiles/cmTC_af83f.dir/HAVE_STDARG_H.c.o.d -o CMakeFiles/cmTC_af83f.dir/HAVE_STDARG_H.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckIncludeFiles/HAVE_STDARG_H.c
+Linking C executable cmTC_af83f
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_af83f.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_af83f.dir/HAVE_STDARG_H.c.o -o cmTC_af83f 
+
+
+
+Determining if files sys/types.h;errno.h;inttypes.h;limits.h;regex.h;signal.h;stdarg.h;stdint.h exist passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_6593c/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_6593c.dir/build.make CMakeFiles/cmTC_6593c.dir/build
+Building C object CMakeFiles/cmTC_6593c.dir/HAVE_STDINT_H.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_6593c.dir/HAVE_STDINT_H.c.o -MF CMakeFiles/cmTC_6593c.dir/HAVE_STDINT_H.c.o.d -o CMakeFiles/cmTC_6593c.dir/HAVE_STDINT_H.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckIncludeFiles/HAVE_STDINT_H.c
+Linking C executable cmTC_6593c
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6593c.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_6593c.dir/HAVE_STDINT_H.c.o -o cmTC_6593c 
+
+
+
+Determining if files sys/types.h;errno.h;inttypes.h;limits.h;regex.h;signal.h;stdarg.h;stdint.h;stdlib.h exist passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_c1604/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_c1604.dir/build.make CMakeFiles/cmTC_c1604.dir/build
+Building C object CMakeFiles/cmTC_c1604.dir/HAVE_STDLIB_H.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_c1604.dir/HAVE_STDLIB_H.c.o -MF CMakeFiles/cmTC_c1604.dir/HAVE_STDLIB_H.c.o.d -o CMakeFiles/cmTC_c1604.dir/HAVE_STDLIB_H.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckIncludeFiles/HAVE_STDLIB_H.c
+Linking C executable cmTC_c1604
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c1604.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_c1604.dir/HAVE_STDLIB_H.c.o -o cmTC_c1604 
+
+
+
+Determining if files sys/types.h;errno.h;inttypes.h;limits.h;regex.h;signal.h;stdarg.h;stdint.h;stdlib.h;string.h exist passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_d9192/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_d9192.dir/build.make CMakeFiles/cmTC_d9192.dir/build
+Building C object CMakeFiles/cmTC_d9192.dir/HAVE_STRING_H.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_d9192.dir/HAVE_STRING_H.c.o -MF CMakeFiles/cmTC_d9192.dir/HAVE_STRING_H.c.o.d -o CMakeFiles/cmTC_d9192.dir/HAVE_STRING_H.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckIncludeFiles/HAVE_STRING_H.c
+Linking C executable cmTC_d9192
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d9192.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_d9192.dir/HAVE_STRING_H.c.o -o cmTC_d9192 
+
+
+
+Determining if files sys/types.h;errno.h;inttypes.h;limits.h;regex.h;signal.h;stdarg.h;stdint.h;stdlib.h;string.h;strings.h exist passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_b9f65/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_b9f65.dir/build.make CMakeFiles/cmTC_b9f65.dir/build
+Building C object CMakeFiles/cmTC_b9f65.dir/HAVE_STRINGS_H.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_b9f65.dir/HAVE_STRINGS_H.c.o -MF CMakeFiles/cmTC_b9f65.dir/HAVE_STRINGS_H.c.o.d -o CMakeFiles/cmTC_b9f65.dir/HAVE_STRINGS_H.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckIncludeFiles/HAVE_STRINGS_H.c
+Linking C executable cmTC_b9f65
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b9f65.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_b9f65.dir/HAVE_STRINGS_H.c.o -o cmTC_b9f65 
+
+
+
+Determining if files sys/types.h;errno.h;inttypes.h;limits.h;regex.h;signal.h;stdarg.h;stdint.h;stdlib.h;string.h;strings.h;sys/time.h exist passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_fa5bc/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_fa5bc.dir/build.make CMakeFiles/cmTC_fa5bc.dir/build
+Building C object CMakeFiles/cmTC_fa5bc.dir/HAVE_SYS_TIME_H.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_fa5bc.dir/HAVE_SYS_TIME_H.c.o -MF CMakeFiles/cmTC_fa5bc.dir/HAVE_SYS_TIME_H.c.o.d -o CMakeFiles/cmTC_fa5bc.dir/HAVE_SYS_TIME_H.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckIncludeFiles/HAVE_SYS_TIME_H.c
+Linking C executable cmTC_fa5bc
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fa5bc.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_fa5bc.dir/HAVE_SYS_TIME_H.c.o -o cmTC_fa5bc 
+
+
+
+Determining if files sys/types.h;errno.h;inttypes.h;limits.h;regex.h;signal.h;stdarg.h;stdint.h;stdlib.h;string.h;strings.h;sys/time.h;time.h exist passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_1e19e/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_1e19e.dir/build.make CMakeFiles/cmTC_1e19e.dir/build
+Building C object CMakeFiles/cmTC_1e19e.dir/HAVE_TIME_H.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_1e19e.dir/HAVE_TIME_H.c.o -MF CMakeFiles/cmTC_1e19e.dir/HAVE_TIME_H.c.o.d -o CMakeFiles/cmTC_1e19e.dir/HAVE_TIME_H.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckIncludeFiles/HAVE_TIME_H.c
+Linking C executable cmTC_1e19e
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1e19e.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_1e19e.dir/HAVE_TIME_H.c.o -o cmTC_1e19e 
+
+
+
+Determining if files sys/types.h;errno.h;inttypes.h;limits.h;regex.h;signal.h;stdarg.h;stdint.h;stdlib.h;string.h;strings.h;sys/time.h;time.h;unistd.h exist passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_52903/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_52903.dir/build.make CMakeFiles/cmTC_52903.dir/build
+Building C object CMakeFiles/cmTC_52903.dir/HAVE_UNISTD_H.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_52903.dir/HAVE_UNISTD_H.c.o -MF CMakeFiles/cmTC_52903.dir/HAVE_UNISTD_H.c.o.d -o CMakeFiles/cmTC_52903.dir/HAVE_UNISTD_H.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckIncludeFiles/HAVE_UNISTD_H.c
+Linking C executable cmTC_52903
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_52903.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_52903.dir/HAVE_UNISTD_H.c.o -o cmTC_52903 
+
+
+
+Determining if files sys/types.h;errno.h;inttypes.h;limits.h;regex.h;signal.h;stdarg.h;stdint.h;stdlib.h;string.h;strings.h;sys/time.h;time.h;unistd.h;pthread.h exist passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_4b735/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_4b735.dir/build.make CMakeFiles/cmTC_4b735.dir/build
+Building C object CMakeFiles/cmTC_4b735.dir/HAVE_PTHREAD.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_4b735.dir/HAVE_PTHREAD.c.o -MF CMakeFiles/cmTC_4b735.dir/HAVE_PTHREAD.c.o.d -o CMakeFiles/cmTC_4b735.dir/HAVE_PTHREAD.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckIncludeFiles/HAVE_PTHREAD.c
+Linking C executable cmTC_4b735
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4b735.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_4b735.dir/HAVE_PTHREAD.c.o -o cmTC_4b735 
+
+
+
+Determining if the function fork exists passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_e5aff/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_e5aff.dir/build.make CMakeFiles/cmTC_e5aff.dir/build
+Building C object CMakeFiles/cmTC_e5aff.dir/CheckFunctionExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=fork -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_e5aff.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_e5aff.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_e5aff.dir/CheckFunctionExists.c.o -c /usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e5aff
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e5aff.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=fork -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_e5aff.dir/CheckFunctionExists.c.o -o cmTC_e5aff 
+
+
+
+Determining if the function getline exists passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_91950/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_91950.dir/build.make CMakeFiles/cmTC_91950.dir/build
+Building C object CMakeFiles/cmTC_91950.dir/CheckFunctionExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=getline -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_91950.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_91950.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_91950.dir/CheckFunctionExists.c.o -c /usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_91950
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_91950.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=getline -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_91950.dir/CheckFunctionExists.c.o -o cmTC_91950 
+
+
+
+Determining if the function getpid exists passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_63bd5/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_63bd5.dir/build.make CMakeFiles/cmTC_63bd5.dir/build
+Building C object CMakeFiles/cmTC_63bd5.dir/CheckFunctionExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=getpid -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_63bd5.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_63bd5.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_63bd5.dir/CheckFunctionExists.c.o -c /usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_63bd5
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_63bd5.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=getpid -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_63bd5.dir/CheckFunctionExists.c.o -o cmTC_63bd5 
+
+
+
+Determining if the function gettimeofday exists passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_907f8/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_907f8.dir/build.make CMakeFiles/cmTC_907f8.dir/build
+Building C object CMakeFiles/cmTC_907f8.dir/CheckFunctionExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gettimeofday -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_907f8.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_907f8.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_907f8.dir/CheckFunctionExists.c.o -c /usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_907f8
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_907f8.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gettimeofday -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_907f8.dir/CheckFunctionExists.c.o -o cmTC_907f8 
+
+
+
+Determining if the function localtime_r exists passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_a4588/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_a4588.dir/build.make CMakeFiles/cmTC_a4588.dir/build
+Building C object CMakeFiles/cmTC_a4588.dir/CheckFunctionExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=localtime_r -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_a4588.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_a4588.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_a4588.dir/CheckFunctionExists.c.o -c /usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_a4588
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a4588.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=localtime_r -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_a4588.dir/CheckFunctionExists.c.o -o cmTC_a4588 
+
+
+
+Determining if the function malloc exists passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_49edf/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_49edf.dir/build.make CMakeFiles/cmTC_49edf.dir/build
+Building C object CMakeFiles/cmTC_49edf.dir/CheckFunctionExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=malloc -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_49edf.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_49edf.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_49edf.dir/CheckFunctionExists.c.o -c /usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c
+/usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'malloc' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS malloc
+                              ^
+/usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'malloc' is a builtin with type 'void *(unsigned long)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS malloc
+                              ^
+1 warning generated.
+Linking C executable cmTC_49edf
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_49edf.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=malloc -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_49edf.dir/CheckFunctionExists.c.o -o cmTC_49edf 
+
+
+
+Determining if the function mkstemp exists passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_7b741/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_7b741.dir/build.make CMakeFiles/cmTC_7b741.dir/build
+Building C object CMakeFiles/cmTC_7b741.dir/CheckFunctionExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=mkstemp -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_7b741.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_7b741.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_7b741.dir/CheckFunctionExists.c.o -c /usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_7b741
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7b741.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=mkstemp -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_7b741.dir/CheckFunctionExists.c.o -o cmTC_7b741 
+
+
+
+Determining if the function realloc exists passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_30378/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_30378.dir/build.make CMakeFiles/cmTC_30378.dir/build
+Building C object CMakeFiles/cmTC_30378.dir/CheckFunctionExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=realloc -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_30378.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_30378.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_30378.dir/CheckFunctionExists.c.o -c /usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c
+/usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'realloc' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS realloc
+                              ^
+/usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'realloc' is a builtin with type 'void *(void *, unsigned long)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS realloc
+                              ^
+1 warning generated.
+Linking C executable cmTC_30378
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_30378.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=realloc -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_30378.dir/CheckFunctionExists.c.o -o cmTC_30378 
+
+
+
+Determining if the function setenv exists passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_e5413/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_e5413.dir/build.make CMakeFiles/cmTC_e5413.dir/build
+Building C object CMakeFiles/cmTC_e5413.dir/CheckFunctionExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=setenv -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_e5413.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_e5413.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_e5413.dir/CheckFunctionExists.c.o -c /usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e5413
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e5413.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=setenv -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_e5413.dir/CheckFunctionExists.c.o -o cmTC_e5413 
+
+
+
+Determining if the function sigaction exists passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_f1bb6/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_f1bb6.dir/build.make CMakeFiles/cmTC_f1bb6.dir/build
+Building C object CMakeFiles/cmTC_f1bb6.dir/CheckFunctionExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=sigaction -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_f1bb6.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_f1bb6.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_f1bb6.dir/CheckFunctionExists.c.o -c /usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_f1bb6
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f1bb6.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=sigaction -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_f1bb6.dir/CheckFunctionExists.c.o -o cmTC_f1bb6 
+
+
+
+Determining if the function strdup exists passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_12c64/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_12c64.dir/build.make CMakeFiles/cmTC_12c64.dir/build
+Building C object CMakeFiles/cmTC_12c64.dir/CheckFunctionExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=strdup -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_12c64.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_12c64.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_12c64.dir/CheckFunctionExists.c.o -c /usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c
+/usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'strdup' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strdup
+                              ^
+/usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'strdup' is a builtin with type 'char *(const char *)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strdup
+                              ^
+1 warning generated.
+Linking C executable cmTC_12c64
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_12c64.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=strdup -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_12c64.dir/CheckFunctionExists.c.o -o cmTC_12c64 
+
+
+
+Determining if the function strsignal exists passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_a1884/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_a1884.dir/build.make CMakeFiles/cmTC_a1884.dir/build
+Building C object CMakeFiles/cmTC_a1884.dir/CheckFunctionExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=strsignal -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_a1884.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_a1884.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_a1884.dir/CheckFunctionExists.c.o -c /usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_a1884
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a1884.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=strsignal -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_a1884.dir/CheckFunctionExists.c.o -o cmTC_a1884 
+
+
+
+Determining if the function alarm exists passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_a9fb4/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_a9fb4.dir/build.make CMakeFiles/cmTC_a9fb4.dir/build
+Building C object CMakeFiles/cmTC_a9fb4.dir/CheckFunctionExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=alarm -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_a9fb4.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_a9fb4.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_a9fb4.dir/CheckFunctionExists.c.o -c /usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_a9fb4
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a9fb4.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=alarm -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_a9fb4.dir/CheckFunctionExists.c.o -o cmTC_a9fb4 
+
+
+
+Determining if the function regcomp exists passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_217f4/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_217f4.dir/build.make CMakeFiles/cmTC_217f4.dir/build
+Building C object CMakeFiles/cmTC_217f4.dir/CheckFunctionExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=regcomp -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_217f4.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_217f4.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_217f4.dir/CheckFunctionExists.c.o -c /usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_217f4
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_217f4.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=regcomp -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_217f4.dir/CheckFunctionExists.c.o -o cmTC_217f4 
+
+
+
+Determining if the function regexec exists passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_d9a6c/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_d9a6c.dir/build.make CMakeFiles/cmTC_d9a6c.dir/build
+Building C object CMakeFiles/cmTC_d9a6c.dir/CheckFunctionExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=regexec -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_d9a6c.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_d9a6c.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_d9a6c.dir/CheckFunctionExists.c.o -c /usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d9a6c
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d9a6c.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=regexec -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_d9a6c.dir/CheckFunctionExists.c.o -o cmTC_d9a6c 
+
+
+
+Determining if the function snprintf exists passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_5279a/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_5279a.dir/build.make CMakeFiles/cmTC_5279a.dir/build
+Building C object CMakeFiles/cmTC_5279a.dir/CheckFunctionExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=snprintf -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_5279a.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_5279a.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_5279a.dir/CheckFunctionExists.c.o -c /usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c
+/usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'snprintf' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS snprintf
+                              ^
+/usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'snprintf' is a builtin with type 'int (char *, unsigned long, const char *, ...)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS snprintf
+                              ^
+1 warning generated.
+Linking C executable cmTC_5279a
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5279a.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=snprintf -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_5279a.dir/CheckFunctionExists.c.o -o cmTC_5279a 
+
+
+
+Determining if the function vsnprintf exists passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_09ee1/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_09ee1.dir/build.make CMakeFiles/cmTC_09ee1.dir/build
+Building C object CMakeFiles/cmTC_09ee1.dir/CheckFunctionExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=vsnprintf -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_09ee1.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_09ee1.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_09ee1.dir/CheckFunctionExists.c.o -c /usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c
+/usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'vsnprintf' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS vsnprintf
+                              ^
+/usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'vsnprintf' is a builtin with type 'int (char *, unsigned long, const char *, struct __va_list_tag *)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS vsnprintf
+                              ^
+1 warning generated.
+Linking C executable cmTC_09ee1
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_09ee1.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=vsnprintf -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_09ee1.dir/CheckFunctionExists.c.o -o cmTC_09ee1 
+
+
+
+Determining if the snprintf exist passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_14dcc/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_14dcc.dir/build.make CMakeFiles/cmTC_14dcc.dir/build
+Building C object CMakeFiles/cmTC_14dcc.dir/CheckSymbolExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_14dcc.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_14dcc.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_14dcc.dir/CheckSymbolExists.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_14dcc
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_14dcc.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_14dcc.dir/CheckSymbolExists.c.o -o cmTC_14dcc 
+
+
+File /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef snprintf
+  return ((int*)(&snprintf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the vsnprintf exist passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_587d8/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_587d8.dir/build.make CMakeFiles/cmTC_587d8.dir/build
+Building C object CMakeFiles/cmTC_587d8.dir/CheckSymbolExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_587d8.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_587d8.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_587d8.dir/CheckSymbolExists.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_587d8
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_587d8.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_587d8.dir/CheckSymbolExists.c.o -o cmTC_587d8 
+
+
+File /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef vsnprintf
+  return ((int*)(&vsnprintf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Performing C SOURCE FILE Test HAVE_PTHREADS_FLAG succeeded with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_44e92/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_44e92.dir/build.make CMakeFiles/cmTC_44e92.dir/build
+Building C object CMakeFiles/cmTC_44e92.dir/src.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc -DHAVE_PTHREADS_FLAG  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk   -pthread -std=gnu99 -MD -MT CMakeFiles/cmTC_44e92.dir/src.c.o -MF CMakeFiles/cmTC_44e92.dir/src.c.o.d -o CMakeFiles/cmTC_44e92.dir/src.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_44e92
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_44e92.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_44e92.dir/src.c.o -o cmTC_44e92 
+
+
+Source file was:
+int main(void) { return 0; }
+Determining if the INT64_MAX exist passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_5a961/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_5a961.dir/build.make CMakeFiles/cmTC_5a961.dir/build
+Building C object CMakeFiles/cmTC_5a961.dir/CheckSymbolExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_5a961.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_5a961.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_5a961.dir/CheckSymbolExists.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_5a961
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5a961.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_5a961.dir/CheckSymbolExists.c.o -o cmTC_5a961 
+
+
+File /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <limits.h>
+#include <stdint.h>
+#include <inttypes.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef INT64_MAX
+  return ((int*)(&INT64_MAX))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the INT64_MIN exist passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_870e6/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_870e6.dir/build.make CMakeFiles/cmTC_870e6.dir/build
+Building C object CMakeFiles/cmTC_870e6.dir/CheckSymbolExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_870e6.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_870e6.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_870e6.dir/CheckSymbolExists.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_870e6
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_870e6.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_870e6.dir/CheckSymbolExists.c.o -o cmTC_870e6 
+
+
+File /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <limits.h>
+#include <stdint.h>
+#include <inttypes.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef INT64_MIN
+  return ((int*)(&INT64_MIN))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the UINT32_MAX exist passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_27629/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_27629.dir/build.make CMakeFiles/cmTC_27629.dir/build
+Building C object CMakeFiles/cmTC_27629.dir/CheckSymbolExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_27629.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_27629.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_27629.dir/CheckSymbolExists.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_27629
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_27629.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_27629.dir/CheckSymbolExists.c.o -o cmTC_27629 
+
+
+File /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <limits.h>
+#include <stdint.h>
+#include <inttypes.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef UINT32_MAX
+  return ((int*)(&UINT32_MAX))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the UINT64_MAX exist passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_0cf85/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_0cf85.dir/build.make CMakeFiles/cmTC_0cf85.dir/build
+Building C object CMakeFiles/cmTC_0cf85.dir/CheckSymbolExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_0cf85.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_0cf85.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_0cf85.dir/CheckSymbolExists.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_0cf85
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0cf85.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_0cf85.dir/CheckSymbolExists.c.o -o cmTC_0cf85 
+
+
+File /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <limits.h>
+#include <stdint.h>
+#include <inttypes.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef UINT64_MAX
+  return ((int*)(&UINT64_MAX))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the SIZE_MAX exist passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_5ad06/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_5ad06.dir/build.make CMakeFiles/cmTC_5ad06.dir/build
+Building C object CMakeFiles/cmTC_5ad06.dir/CheckSymbolExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_5ad06.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_5ad06.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_5ad06.dir/CheckSymbolExists.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_5ad06
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5ad06.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_5ad06.dir/CheckSymbolExists.c.o -o cmTC_5ad06 
+
+
+File /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <limits.h>
+#include <stdint.h>
+#include <inttypes.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef SIZE_MAX
+  return ((int*)(&SIZE_MAX))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the SSIZE_MAX exist passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_f44a3/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_f44a3.dir/build.make CMakeFiles/cmTC_f44a3.dir/build
+Building C object CMakeFiles/cmTC_f44a3.dir/CheckSymbolExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_f44a3.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_f44a3.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_f44a3.dir/CheckSymbolExists.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_f44a3
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f44a3.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_f44a3.dir/CheckSymbolExists.c.o -o cmTC_f44a3 
+
+
+File /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <limits.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef SSIZE_MAX
+  return ((int*)(&SSIZE_MAX))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_98aba/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_98aba.dir/build.make CMakeFiles/cmTC_98aba.dir/build
+Building C object CMakeFiles/cmTC_98aba.dir/CheckIncludeFile.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_98aba.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_98aba.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_98aba.dir/CheckIncludeFile.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_98aba
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_98aba.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_98aba.dir/CheckIncludeFile.c.o -o cmTC_98aba 
+
+
+
+Determining size of short passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_2e2bc/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_2e2bc.dir/build.make CMakeFiles/cmTC_2e2bc.dir/build
+Building C object CMakeFiles/cmTC_2e2bc.dir/SIZE_OF_SHORT.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_2e2bc.dir/SIZE_OF_SHORT.c.o -MF CMakeFiles/cmTC_2e2bc.dir/SIZE_OF_SHORT.c.o.d -o CMakeFiles/cmTC_2e2bc.dir/SIZE_OF_SHORT.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckTypeSize/SIZE_OF_SHORT.c
+Linking C executable cmTC_2e2bc
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2e2bc.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_2e2bc.dir/SIZE_OF_SHORT.c.o -o cmTC_2e2bc 
+
+
+
+Determining size of int passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_95f90/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_95f90.dir/build.make CMakeFiles/cmTC_95f90.dir/build
+Building C object CMakeFiles/cmTC_95f90.dir/SIZE_OF_INT.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_95f90.dir/SIZE_OF_INT.c.o -MF CMakeFiles/cmTC_95f90.dir/SIZE_OF_INT.c.o.d -o CMakeFiles/cmTC_95f90.dir/SIZE_OF_INT.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckTypeSize/SIZE_OF_INT.c
+Linking C executable cmTC_95f90
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_95f90.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_95f90.dir/SIZE_OF_INT.c.o -o cmTC_95f90 
+
+
+
+Determining size of long passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_5300a/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_5300a.dir/build.make CMakeFiles/cmTC_5300a.dir/build
+Building C object CMakeFiles/cmTC_5300a.dir/SIZE_OF_LONG.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_5300a.dir/SIZE_OF_LONG.c.o -MF CMakeFiles/cmTC_5300a.dir/SIZE_OF_LONG.c.o.d -o CMakeFiles/cmTC_5300a.dir/SIZE_OF_LONG.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckTypeSize/SIZE_OF_LONG.c
+Linking C executable cmTC_5300a
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5300a.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_5300a.dir/SIZE_OF_LONG.c.o -o cmTC_5300a 
+
+
+
+Determining size of long long passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_dc48b/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_dc48b.dir/build.make CMakeFiles/cmTC_dc48b.dir/build
+Building C object CMakeFiles/cmTC_dc48b.dir/SIZE_OF_LONG_LONG.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_dc48b.dir/SIZE_OF_LONG_LONG.c.o -MF CMakeFiles/cmTC_dc48b.dir/SIZE_OF_LONG_LONG.c.o.d -o CMakeFiles/cmTC_dc48b.dir/SIZE_OF_LONG_LONG.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckTypeSize/SIZE_OF_LONG_LONG.c
+Linking C executable cmTC_dc48b
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dc48b.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_dc48b.dir/SIZE_OF_LONG_LONG.c.o -o cmTC_dc48b 
+
+
+
+Determining size of unsigned short passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_2e5fa/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_2e5fa.dir/build.make CMakeFiles/cmTC_2e5fa.dir/build
+Building C object CMakeFiles/cmTC_2e5fa.dir/SIZE_OF_UNSIGNED_SHORT.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_2e5fa.dir/SIZE_OF_UNSIGNED_SHORT.c.o -MF CMakeFiles/cmTC_2e5fa.dir/SIZE_OF_UNSIGNED_SHORT.c.o.d -o CMakeFiles/cmTC_2e5fa.dir/SIZE_OF_UNSIGNED_SHORT.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckTypeSize/SIZE_OF_UNSIGNED_SHORT.c
+Linking C executable cmTC_2e5fa
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2e5fa.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_2e5fa.dir/SIZE_OF_UNSIGNED_SHORT.c.o -o cmTC_2e5fa 
+
+
+
+Determining size of unsigned passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_e9d84/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_e9d84.dir/build.make CMakeFiles/cmTC_e9d84.dir/build
+Building C object CMakeFiles/cmTC_e9d84.dir/SIZE_OF_UNSIGNED.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_e9d84.dir/SIZE_OF_UNSIGNED.c.o -MF CMakeFiles/cmTC_e9d84.dir/SIZE_OF_UNSIGNED.c.o.d -o CMakeFiles/cmTC_e9d84.dir/SIZE_OF_UNSIGNED.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckTypeSize/SIZE_OF_UNSIGNED.c
+Linking C executable cmTC_e9d84
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e9d84.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_e9d84.dir/SIZE_OF_UNSIGNED.c.o -o cmTC_e9d84 
+
+
+
+Determining size of unsigned long passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_069fc/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_069fc.dir/build.make CMakeFiles/cmTC_069fc.dir/build
+Building C object CMakeFiles/cmTC_069fc.dir/SIZE_OF_UNSIGNED_LONG.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_069fc.dir/SIZE_OF_UNSIGNED_LONG.c.o -MF CMakeFiles/cmTC_069fc.dir/SIZE_OF_UNSIGNED_LONG.c.o.d -o CMakeFiles/cmTC_069fc.dir/SIZE_OF_UNSIGNED_LONG.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckTypeSize/SIZE_OF_UNSIGNED_LONG.c
+Linking C executable cmTC_069fc
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_069fc.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_069fc.dir/SIZE_OF_UNSIGNED_LONG.c.o -o cmTC_069fc 
+
+
+
+Determining size of unsigned long long passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_7b54c/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_7b54c.dir/build.make CMakeFiles/cmTC_7b54c.dir/build
+Building C object CMakeFiles/cmTC_7b54c.dir/SIZE_OF_UNSIGNED_LONG_LONG.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_7b54c.dir/SIZE_OF_UNSIGNED_LONG_LONG.c.o -MF CMakeFiles/cmTC_7b54c.dir/SIZE_OF_UNSIGNED_LONG_LONG.c.o.d -o CMakeFiles/cmTC_7b54c.dir/SIZE_OF_UNSIGNED_LONG_LONG.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckTypeSize/SIZE_OF_UNSIGNED_LONG_LONG.c
+Linking C executable cmTC_7b54c
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7b54c.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_7b54c.dir/SIZE_OF_UNSIGNED_LONG_LONG.c.o -o cmTC_7b54c 
+
+
+
+Determining size of int16_t passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_5a29c/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_5a29c.dir/build.make CMakeFiles/cmTC_5a29c.dir/build
+Building C object CMakeFiles/cmTC_5a29c.dir/INT16_T.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_5a29c.dir/INT16_T.c.o -MF CMakeFiles/cmTC_5a29c.dir/INT16_T.c.o.d -o CMakeFiles/cmTC_5a29c.dir/INT16_T.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckTypeSize/INT16_T.c
+Linking C executable cmTC_5a29c
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5a29c.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_5a29c.dir/INT16_T.c.o -o cmTC_5a29c 
+
+
+
+Determining size of int32_t passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_6ca7d/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_6ca7d.dir/build.make CMakeFiles/cmTC_6ca7d.dir/build
+Building C object CMakeFiles/cmTC_6ca7d.dir/INT32_T.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_6ca7d.dir/INT32_T.c.o -MF CMakeFiles/cmTC_6ca7d.dir/INT32_T.c.o.d -o CMakeFiles/cmTC_6ca7d.dir/INT32_T.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckTypeSize/INT32_T.c
+Linking C executable cmTC_6ca7d
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6ca7d.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_6ca7d.dir/INT32_T.c.o -o cmTC_6ca7d 
+
+
+
+Determining size of int64_t passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_c11dd/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_c11dd.dir/build.make CMakeFiles/cmTC_c11dd.dir/build
+Building C object CMakeFiles/cmTC_c11dd.dir/INT64_T.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_c11dd.dir/INT64_T.c.o -MF CMakeFiles/cmTC_c11dd.dir/INT64_T.c.o.d -o CMakeFiles/cmTC_c11dd.dir/INT64_T.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckTypeSize/INT64_T.c
+Linking C executable cmTC_c11dd
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c11dd.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_c11dd.dir/INT64_T.c.o -o cmTC_c11dd 
+
+
+
+Determining size of intmax_t passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_6fc19/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_6fc19.dir/build.make CMakeFiles/cmTC_6fc19.dir/build
+Building C object CMakeFiles/cmTC_6fc19.dir/INTMAX_T.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_6fc19.dir/INTMAX_T.c.o -MF CMakeFiles/cmTC_6fc19.dir/INTMAX_T.c.o.d -o CMakeFiles/cmTC_6fc19.dir/INTMAX_T.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckTypeSize/INTMAX_T.c
+Linking C executable cmTC_6fc19
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6fc19.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_6fc19.dir/INTMAX_T.c.o -o cmTC_6fc19 
+
+
+
+Determining size of uint8_t passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_66b12/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_66b12.dir/build.make CMakeFiles/cmTC_66b12.dir/build
+Building C object CMakeFiles/cmTC_66b12.dir/UINT8_T.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_66b12.dir/UINT8_T.c.o -MF CMakeFiles/cmTC_66b12.dir/UINT8_T.c.o.d -o CMakeFiles/cmTC_66b12.dir/UINT8_T.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckTypeSize/UINT8_T.c
+Linking C executable cmTC_66b12
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_66b12.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_66b12.dir/UINT8_T.c.o -o cmTC_66b12 
+
+
+
+Determining size of uint16_t passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_041ad/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_041ad.dir/build.make CMakeFiles/cmTC_041ad.dir/build
+Building C object CMakeFiles/cmTC_041ad.dir/UINT16_T.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_041ad.dir/UINT16_T.c.o -MF CMakeFiles/cmTC_041ad.dir/UINT16_T.c.o.d -o CMakeFiles/cmTC_041ad.dir/UINT16_T.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckTypeSize/UINT16_T.c
+Linking C executable cmTC_041ad
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_041ad.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_041ad.dir/UINT16_T.c.o -o cmTC_041ad 
+
+
+
+Determining size of uint32_t passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_7a03a/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_7a03a.dir/build.make CMakeFiles/cmTC_7a03a.dir/build
+Building C object CMakeFiles/cmTC_7a03a.dir/UINT32_T.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_7a03a.dir/UINT32_T.c.o -MF CMakeFiles/cmTC_7a03a.dir/UINT32_T.c.o.d -o CMakeFiles/cmTC_7a03a.dir/UINT32_T.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckTypeSize/UINT32_T.c
+Linking C executable cmTC_7a03a
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7a03a.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_7a03a.dir/UINT32_T.c.o -o cmTC_7a03a 
+
+
+
+Determining size of uint64_t passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_a3c60/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_a3c60.dir/build.make CMakeFiles/cmTC_a3c60.dir/build
+Building C object CMakeFiles/cmTC_a3c60.dir/UINT64_T.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_a3c60.dir/UINT64_T.c.o -MF CMakeFiles/cmTC_a3c60.dir/UINT64_T.c.o.d -o CMakeFiles/cmTC_a3c60.dir/UINT64_T.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckTypeSize/UINT64_T.c
+Linking C executable cmTC_a3c60
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a3c60.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_a3c60.dir/UINT64_T.c.o -o cmTC_a3c60 
+
+
+
+Determining size of uintmax_t passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_20cad/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_20cad.dir/build.make CMakeFiles/cmTC_20cad.dir/build
+Building C object CMakeFiles/cmTC_20cad.dir/UINTMAX_T.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_20cad.dir/UINTMAX_T.c.o -MF CMakeFiles/cmTC_20cad.dir/UINTMAX_T.c.o.d -o CMakeFiles/cmTC_20cad.dir/UINTMAX_T.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckTypeSize/UINTMAX_T.c
+Linking C executable cmTC_20cad
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_20cad.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_20cad.dir/UINTMAX_T.c.o -o cmTC_20cad 
+
+
+
+Determining size of clock_t passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_93af9/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_93af9.dir/build.make CMakeFiles/cmTC_93af9.dir/build
+Building C object CMakeFiles/cmTC_93af9.dir/CLOCK_T.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_93af9.dir/CLOCK_T.c.o -MF CMakeFiles/cmTC_93af9.dir/CLOCK_T.c.o.d -o CMakeFiles/cmTC_93af9.dir/CLOCK_T.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckTypeSize/CLOCK_T.c
+Linking C executable cmTC_93af9
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_93af9.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_93af9.dir/CLOCK_T.c.o -o cmTC_93af9 
+
+
+
+Determining size of clockid_t passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_9cca6/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_9cca6.dir/build.make CMakeFiles/cmTC_9cca6.dir/build
+Building C object CMakeFiles/cmTC_9cca6.dir/CLOCKID_T.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_9cca6.dir/CLOCKID_T.c.o -MF CMakeFiles/cmTC_9cca6.dir/CLOCKID_T.c.o.d -o CMakeFiles/cmTC_9cca6.dir/CLOCKID_T.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckTypeSize/CLOCKID_T.c
+Linking C executable cmTC_9cca6
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9cca6.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_9cca6.dir/CLOCKID_T.c.o -o cmTC_9cca6 
+
+
+
+Determining size of size_t passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_dd9cd/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_dd9cd.dir/build.make CMakeFiles/cmTC_dd9cd.dir/build
+Building C object CMakeFiles/cmTC_dd9cd.dir/SIZE_T.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_dd9cd.dir/SIZE_T.c.o -MF CMakeFiles/cmTC_dd9cd.dir/SIZE_T.c.o.d -o CMakeFiles/cmTC_dd9cd.dir/SIZE_T.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckTypeSize/SIZE_T.c
+Linking C executable cmTC_dd9cd
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dd9cd.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_dd9cd.dir/SIZE_T.c.o -o cmTC_dd9cd 
+
+
+
+Determining size of ssize_t passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_18cb9/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_18cb9.dir/build.make CMakeFiles/cmTC_18cb9.dir/build
+Building C object CMakeFiles/cmTC_18cb9.dir/SSIZE_T.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_18cb9.dir/SSIZE_T.c.o -MF CMakeFiles/cmTC_18cb9.dir/SSIZE_T.c.o.d -o CMakeFiles/cmTC_18cb9.dir/SSIZE_T.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckTypeSize/SSIZE_T.c
+Linking C executable cmTC_18cb9
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_18cb9.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_18cb9.dir/SSIZE_T.c.o -o cmTC_18cb9 
+
+
+
+Determining size of pid_t passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_b31f0/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_b31f0.dir/build.make CMakeFiles/cmTC_b31f0.dir/build
+Building C object CMakeFiles/cmTC_b31f0.dir/PID_T.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_b31f0.dir/PID_T.c.o -MF CMakeFiles/cmTC_b31f0.dir/PID_T.c.o.d -o CMakeFiles/cmTC_b31f0.dir/PID_T.c.o -c /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CheckTypeSize/PID_T.c
+Linking C executable cmTC_b31f0
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b31f0.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_b31f0.dir/PID_T.c.o -o cmTC_b31f0 
+
+
+
+Determining if the function floor exists in the m passed with the following output:
+Change Dir: /Users/miharek/Desktop/Magisterska/nicew-core/build/local/src/check/check-0.15.2/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_5356f/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_5356f.dir/build.make CMakeFiles/cmTC_5356f.dir/build
+Building C object CMakeFiles/cmTC_5356f.dir/CheckFunctionExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=floor -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -MD -MT CMakeFiles/cmTC_5356f.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_5356f.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_5356f.dir/CheckFunctionExists.c.o -c /usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c
+/usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'floor' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS floor
+                              ^
+/usr/local/Cellar/cmake/3.23.3/share/cmake/Modules/CheckFunctionExists.c:7:3: note: 'floor' is a builtin with type 'double (double)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS floor
+                              ^
+1 warning generated.
+Linking C executable cmTC_5356f
+/usr/local/Cellar/cmake/3.23.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5356f.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=floor -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib  CMakeFiles/cmTC_5356f.dir/CheckFunctionExists.c.o -o cmTC_5356f  -lm 
+
+
+

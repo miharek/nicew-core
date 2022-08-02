@@ -1,12 +1,9 @@
 /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /Users/miharek/Desktop/Magisterska/nicew-core
-CMake Error at CMakeLists.txt:17 (include):
-  include could not find requested file:
-
-    cmake/CompilerWarnings.cmake
-
-
-CMake Error at CMakeLists.txt:24 (set_project_warnings):
-  Unknown CMake command "set_project_warnings".
+-- ccache activated
+Configuring standalone
+CMake Error: File /Users/miharek/Desktop/Magisterska/nicew-core/swift/cpp.xcconfig.in does not exist.
+CMake Error at CMakeLists.txt:87 (configure_file):
+  configure_file Problem configuring file
 
 
 -- Configuring incomplete, errors occurred!
