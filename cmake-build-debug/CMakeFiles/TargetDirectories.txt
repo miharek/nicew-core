@@ -1,0 +1,2 @@
+/Users/miharek/Desktop/Magisterska/nicew-core/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/miharek/Desktop/Magisterska/nicew-core/cmake-build-debug/CMakeFiles/edit_cache.dir

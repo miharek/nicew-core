@@ -1,0 +1,14 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /Users/miharek/Desktop/Magisterska/nicew-core
+CMake Error at CMakeLists.txt:17 (include):
+  include could not find requested file:
+
+    cmake/CompilerWarnings.cmake
+
+
+CMake Error at CMakeLists.txt:24 (set_project_warnings):
+  Unknown CMake command "set_project_warnings".
+
+
+-- Configuring incomplete, errors occurred!
+See also "/Users/miharek/Desktop/Magisterska/nicew-core/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+See also "/Users/miharek/Desktop/Magisterska/nicew-core/cmake-build-debug/CMakeFiles/CMakeError.log".
