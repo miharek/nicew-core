@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package TW.Bitcoin.Proto;
+package NW.Bitcoin.Proto;
 option java_package = "wallet.core.jni.proto";
 
 import "Common.proto";
