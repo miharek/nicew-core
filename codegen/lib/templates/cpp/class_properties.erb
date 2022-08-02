@@ -2,7 +2,7 @@
 <%    next unless method.name.start_with?('Create') -%>
 auto <%= WasmCppHelper.class_name(entity: entity) %>::<%= WasmCppHelper.function_name(entity: entity, function: method) %>(<%= WasmCppHelper.parameters(method.parameters) %>) -> <%= WasmCppHelper.class_name(entity: entity) %>* {
 <%=     render('cpp/parameter_access.erb', { parameters: method.parameters }) -%>
-    TW<%= entity.name %> *instance = TW<%= entity.name %><%= method.name %>(<%= WasmCppHelper.arguments(method.parameters).join(', ') %>);
+    NW<%= entity.name %> *instance = NW<%= entity.name %><%= method.name %>(<%= WasmCppHelper.arguments(method.parameters).join(', ') %>);
 <%      if method.return_type.is_nullable -%>
     if (instance == nullptr) {
         return nullptr;

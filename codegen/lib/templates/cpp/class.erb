@@ -1,6 +1,6 @@
 #include "<%= entity.name %>.h"
 
-namespace TW::Wasm {
+namespace NW::Wasm {
 <%# Constructors -%>
 <%  entity.static_methods.each do |method| -%>
 <%    next if method.name.start_with?('Create') || method.name.start_with?('Init') -%>
@@ -16,7 +16,7 @@ namespace TW::Wasm {
 <% end -%>
 
 <%# EMSCRIPTEN_BINDINGS -%>
-EMSCRIPTEN_BINDINGS(Wasm_TW<%= entity.name %>) {
+EMSCRIPTEN_BINDINGS(Wasm_NW<%= entity.name %>) {
     class_<<%= WasmCppHelper.class_name(entity: entity) %>>("<%= entity.name %>")
 <%  entity.static_methods.each do |method| -%>
 <%  function_name = WasmCppHelper.function_name(entity: entity, function: method) -%>
@@ -34,4 +34,4 @@ EMSCRIPTEN_BINDINGS(Wasm_TW<%= entity.name %>) {
     ;
 }
 
-} // namespace TW::Wasm
+} // namespace NW::Wasm

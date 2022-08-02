@@ -12,8 +12,8 @@
 
 #include <gtest/gtest.h>
 
-using namespace TW;
-using namespace TW::<%= format_name(coin) %>;
+using namespace NW;
+using namespace NW::<%= format_name(coin) %>;
 
 // TODO: Add tests
 
@@ -21,7 +21,7 @@ TEST(<%= format_name(coin) %>Signer, Sign) {
     // TODO: Finalize test implementation
 
     //auto key = PrivateKey(parse_hex("__PRIVKEY_DATA__"));
-    //auto publicKey = key.getPublicKey(TWPublicKeyTypeED25519);
+    //auto publicKey = key.getPublicKey(NWPublicKeyTypeED25519);
     //auto from = Address(publicKey);
     //auto to = Address("__TO_ADDRESS__");
     //...

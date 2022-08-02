@@ -95,7 +95,7 @@ module WasmCppHelper
           'const std::string&'
       else
         if t.is_enum
-          "TW#{t.name}"
+          "NW#{t.name}"
         elsif t.is_struct || t.is_class
           "Wasm#{t.name}*"
         else

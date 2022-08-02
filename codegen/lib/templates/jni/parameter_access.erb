@@ -8,9 +8,9 @@
 
   parameters.each do |param|
     if param.type.name == :data -%>
-    TWData *<%= param.name %>Data = TWDataCreateWithJByteArray(env, <%= param.name %>);
+    NWData *<%= param.name %>Data = NWDataCreateWithJByteArray(env, <%= param.name %>);
 <%  elsif param.type.name == :string -%>
-    TWString *<%= param.name %>String = TWStringCreateWithJString(env, <%= param.name %>);
+    NWString *<%= param.name %>String = NWStringCreateWithJString(env, <%= param.name %>);
 <%  elsif param.type.is_struct -%>
 <%=     render('jni/struct_access.erb', { param: param }) -%>
 <%  elsif param.type.is_class -%>

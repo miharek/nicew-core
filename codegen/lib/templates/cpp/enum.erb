@@ -3,24 +3,24 @@
 #include <string>
 
 <% end -%>
-namespace TW::Wasm {
+namespace NW::Wasm {
 
 <%  if has_string -%>
-auto describe<%= entity.name %>(TW<%= entity.name %> value) -> std::string {
+auto describe<%= entity.name %>(NW<%= entity.name %> value) -> std::string {
     switch (value) {
 <%      entity.cases.each do |c| -%>
-        case TW<%= entity.name %><%= c.name %>: return <%= c.string %>;
+        case NW<%= entity.name %><%= c.name %>: return <%= c.string %>;
 <%      end -%>
         default: return "";
     }
 }
 
 <% end -%>
-EMSCRIPTEN_BINDINGS(Wasm_TW<%= entity.name %>) {
-    enum_<TW<%= entity.name %>>("<%= entity.name %>")
+EMSCRIPTEN_BINDINGS(Wasm_NW<%= entity.name %>) {
+    enum_<NW<%= entity.name %>>("<%= entity.name %>")
 <%# Cases -%>
 <%  entity.cases.each do |c| -%>
-        .value("<%= WasmCppHelper.format_name(c.name) %>", TW<%= entity.name %>::TW<%= entity.name %><%= c.name %>)
+        .value("<%= WasmCppHelper.format_name(c.name) %>", NW<%= entity.name %>::NW<%= entity.name %><%= c.name %>)
 <%  end -%>
     ;
 <%# Description -%>
@@ -29,4 +29,4 @@ EMSCRIPTEN_BINDINGS(Wasm_TW<%= entity.name %>) {
 <%  end -%>
 }
 
-} // namespace TW::Wasm
+} // namespace NW::Wasm

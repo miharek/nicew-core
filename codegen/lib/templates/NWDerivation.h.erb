@@ -9,15 +9,15 @@
 
 #pragma once
 
-#include "TWBase.h"
+#include "NWBase.h"
 
-TW_EXTERN_C_BEGIN
+NW_EXTERN_C_BEGIN
 
 /// Non-default coin address derivation names (default, unnamed derivations are not included).
-TW_EXPORT_ENUM()
-enum TWDerivation {
-    TWDerivationDefault = 0, // default, for any coin
-    TWDerivationCustom = 1, // custom, for any coin
+NW_EXPORT_ENUM()
+enum NWDerivation {
+    NWDerivationDefault = 0, // default, for any coin
+    NWDerivationCustom = 1, // custom, for any coin
 <% enum_count += 1 -%>
 <% coins.each do |coin| -%>
 <% if coin['derivation'].count > 1 -%>
@@ -30,4 +30,4 @@ enum TWDerivation {
 <% end -%>
 };
 
-TW_EXTERN_C_END
+NW_EXTERN_C_END

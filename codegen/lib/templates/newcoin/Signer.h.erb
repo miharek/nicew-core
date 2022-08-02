@@ -10,7 +10,7 @@
 #include "../PrivateKey.h"
 #include "../proto/<%= name %>.pb.h"
 
-namespace TW::<%= name %> {
+namespace NW::<%= name %> {
 
 /// Helper class that performs <%= name %> transaction signing.
 class Signer {
@@ -22,4 +22,4 @@ public:
     static Proto::SigningOutput sign(const Proto::SigningInput& input) noexcept;
 };
 
-} // namespace TW::<%= name %>
+} // namespace NW::<%= name %>

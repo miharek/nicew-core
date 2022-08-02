@@ -24,7 +24,7 @@ module JNIHelper
   # Transforms a proto name name to a JNI class name
   def self.proto_to_class(name)
     parts = name.split('_')
-    return nil if parts.count < 3 || parts[0] != 'TW'
+    return nil if parts.count < 3 || parts[0] != 'NW'
 
     if parts.count == 3
       "wallet/core/jni/proto/Common$#{parts.last}"

@@ -8,7 +8,7 @@ class CoinTestGen
   attr_accessor :templateFile
 
   def initialize()
-    @templateFile = 'TWCoinTypeTests.cpp.erb'
+    @templateFile = 'NWCoinTypeTests.cpp.erb'
   end
 
   # Transforms a coin name to a C++ name
@@ -62,7 +62,7 @@ class CoinTestGen
     result = template.result(binding)
 
     folder = 'tests/' + format_name(coin['name'])
-    file = 'TWCoinTypeTests.cpp'
+    file = 'NWCoinTypeTests.cpp'
     FileUtils.mkdir_p folder
     path = File.join(folder, file)
     File.write(path, result)

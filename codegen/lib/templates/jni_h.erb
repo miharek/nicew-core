@@ -1,10 +1,10 @@
-#ifndef JNI_TW_<%= entity.name.upcase %>_H
-#define JNI_TW_<%= entity.name.upcase %>_H
+#ifndef JNI_NW_<%= entity.name.upcase %>_H
+#define JNI_NW_<%= entity.name.upcase %>_H
 
 #include <jni.h>
-#include <TrustWalletCore/TWBase.h>
+#include <NiceWCore/NWBase.h>
 
-TW_EXTERN_C_BEGIN
+NW_EXTERN_C_BEGIN
 
 <%# Constructor declarations -%>
 <% entity.static_methods.each do |method| -%>
@@ -61,6 +61,6 @@ JNIEXPORT
 
 <%  end -%>
 
-TW_EXTERN_C_END
+NW_EXTERN_C_END
 
-#endif // JNI_TW_<%= entity.name.upcase %>_H
+#endif // JNI_NW_<%= entity.name.upcase %>_H

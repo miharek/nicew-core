@@ -1,31 +1,31 @@
 <%  parameters = locals[:parameters] -%>
 <%  parameters.each do |param| -%>
 <%    if param.type.name == :data -%>
-        let <%= param.name %>Data = TWDataCreateWithNSData(<%= param.name %>)
+        let <%= param.name %>Data = NWDataCreateWithNSData(<%= param.name %>)
         defer {
-            TWDataDelete(<%= param.name %>Data)
+            NWDataDelete(<%= param.name %>Data)
         }
 <%    elsif param.type.name == :string -%>
 <%      if param.type.is_nullable -%>
         let <%= param.name %>String: UnsafeRawPointer?
         if let s = <%= param.name %> {
-            <%= param.name %>String = TWStringCreateWithNSString(s)
+            <%= param.name %>String = NWStringCreateWithNSString(s)
             defer {
-                TWStringDelete(s)
+                NWStringDelete(s)
             }
         } else {
             <%= param.name %>String = nil
         }
 <%      else -%>
-        let <%= param.name %>String = TWStringCreateWithNSString(<%= param.name %>)
+        let <%= param.name %>String = NWStringCreateWithNSString(<%= param.name %>)
         defer {
-            TWStringDelete(<%= param.name %>String)
+            NWStringDelete(<%= param.name %>String)
         }
 <%      end -%>
 <%    elsif param.type.is_proto -%>
-        let <%= param.name %>Data = TWDataCreateWithNSData(try! <%= param.name %>.serializedData())
+        let <%= param.name %>Data = NWDataCreateWithNSData(try! <%= param.name %>.serializedData())
         defer {
-            TWDataDelete(<%= param.name %>Data)
+            NWDataDelete(<%= param.name %>Data)
         }
 <%    end -%>
 <%  end -%>

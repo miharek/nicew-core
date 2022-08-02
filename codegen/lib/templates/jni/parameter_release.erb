@@ -8,9 +8,9 @@
 
   parameters.each do |param|
     if param.type.name == :data -%>
-    TWDataDelete(<%= param.name %>Data);
+    NWDataDelete(<%= param.name %>Data);
 <%  elsif param.type.name == :string -%>
-    TWStringDelete(<%= param.name %>String);
+    NWStringDelete(<%= param.name %>String);
 <%  elsif param.type.is_struct -%>
     (*env)->ReleaseByteArrayElements(env, <%= param.name %>BytesArray, <%= param.name %>BytesBuffer, JNI_ABORT);
     (*env)->DeleteLocalRef(env, <%= param.name %>BytesArray);

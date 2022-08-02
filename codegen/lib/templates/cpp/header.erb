@@ -3,17 +3,17 @@
 #include "../WasmString.h"
 #include "../WasmData.h"
 
-namespace TW::Wasm {
+namespace NW::Wasm {
 
 class <%= WasmCppHelper.class_name(entity: entity) %> {
 <% if not entity.is_struct -%>
   public:
-    TW<%= entity.name %> *instance;
+    NW<%= entity.name %> *instance;
   public:
-    <%= WasmCppHelper.class_name(entity: entity) %>(TW<%= entity.name %> *instance) : instance(instance) {}
+    <%= WasmCppHelper.class_name(entity: entity) %>(NW<%= entity.name %> *instance) : instance(instance) {}
 <%  unless entity.methods.select{ |x| x.name == "Delete" }.empty? -%>
     ~<%= WasmCppHelper.class_name(entity: entity) %>() {
-        TW<%= entity.name %>Delete(instance);
+        NW<%= entity.name %>Delete(instance);
     }
 <%  end -%>
 <% end -%>
@@ -38,4 +38,4 @@ class <%= WasmCppHelper.class_name(entity: entity) %> {
 <% end -%>
 }; // class <%= entity.name %>
 
-} // namespace TW::Wasm
+} // namespace NW::Wasm

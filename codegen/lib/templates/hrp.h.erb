@@ -1,26 +1,22 @@
-// Copyright © 2017-2021 Trust Wallet.
-//
-// This file is part of Trust. The full Trust copyright notice, including
-// terms governing use, modification, and redistribution, is contained in the
-// file LICENSE at the root of the source code distribution tree.
+// Copyright © 2022 Mihael Rek
 //
 // This is a GENERATED FILE from \registry.json, changes made here WILL BE LOST.
 //
 
 #pragma once
 
-#include "TWBase.h"
+#include "NWBase.h"
 
-TW_EXTERN_C_BEGIN
+NW_EXTERN_C_BEGIN
 
 ///  Registered human-readable parts for BIP-0173
 ///
 /// - SeeAlso: https://github.com/satoshilabs/slips/blob/master/slip-0173.md
-TW_EXPORT_ENUM()
-enum TWHRP {
-    TWHRPUnknown     /* "" */,
+NW_EXPORT_ENUM()
+enum NWHRP {
+    NWHRPUnknown     /* "" */,
 <% coins.select{ |coin| coin.has_key?('hrp') }.each do |coin| -%>
-    TWHRP<%= format_name(coin['name']) %>     /* "<%= coin['hrp'] %>" */,
+    NWHRP<%= format_name(coin['name']) %>     /* "<%= coin['hrp'] %>" */,
 <% end -%>
 };
 
@@ -28,7 +24,7 @@ enum TWHRP {
 static const char *_Nonnull HRP_<%= coin['id'].upcase %> = "<%= coin['hrp'] %>";
 <% end -%>
 
-const char *_Nullable stringForHRP(enum TWHRP hrp);
-enum TWHRP hrpForString(const char *_Nonnull string);
+const char *_Nullable stringForHRP(enum NWHRP hrp);
+enum NWHRP hrpForString(const char *_Nonnull string);
 
-TW_EXTERN_C_END
+NW_EXTERN_C_END

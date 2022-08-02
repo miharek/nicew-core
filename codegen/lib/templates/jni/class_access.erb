@@ -3,4 +3,4 @@
 <% type = param.type -%>
     jclass <%= name %>Class = (*env)->GetObjectClass(env, <%= name %>);
     jfieldID <%= name %>HandleFieldID = (*env)->GetFieldID(env, <%= name %>Class, "nativeHandle", "J");
-    struct TW<%= type.name %> *<%= name %>Instance = (struct TW<%= type.name %> *) (*env)->GetLongField(env, <%= name %>, <%= name %>HandleFieldID);
+    struct NW<%= type.name %> *<%= name %>Instance = (struct NW<%= type.name %> *) (*env)->GetLongField(env, <%= name %>, <%= name %>HandleFieldID);

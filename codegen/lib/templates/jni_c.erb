@@ -11,10 +11,10 @@
 <%    end -%>
 <%  end -%>
 <%  includes.each do |include| -%>
-#include <TrustWalletCore/TW<%= include %>.h>
+#include <NiceWCore/NW<%= include %>.h>
 <%  end -%>
 
-#include "TWJNI.h"
+#include "NWJNI.h"
 #include "<%= entity.name %>.h"
 
 <%# Constructors -%>
@@ -22,7 +22,7 @@
 <%    next unless method.name.start_with?('Create') -%>
 jlong JNICALL <%= JNIHelper.function_name(entity: entity, function: method, native_prefix: true) %>(JNIEnv *env, jclass thisClass<%= JNIHelper.parameters(method.parameters) %>) {
 <%=   render('jni/parameter_access.erb', { method: method }) -%>
-    struct TW<%= entity.name %> *instance = TW<%= entity.name %><%= method.name %>(<%= JNIHelper.arguments(method.parameters).join(', ') %>);
+    struct NW<%= entity.name %> *instance = NW<%= entity.name %><%= method.name %>(<%= JNIHelper.arguments(method.parameters).join(', ') %>);
 <%=   render('jni/parameter_release.erb', { method: method }) -%>
     return (jlong) instance;
 }
@@ -32,7 +32,7 @@ jlong JNICALL <%= JNIHelper.function_name(entity: entity, function: method, nati
 <%  entity.methods.each do |method| -%>
 <%    next unless method.name.start_with?('Delete') -%>
 void JNICALL <%= JNIHelper.function_name(entity: entity, function: method, native_prefix: true) %>(JNIEnv *env, jclass thisClass, jlong handle) {
-    TW<%= entity.name %>Delete((struct TW<%= entity.name %> *) handle);
+    NW<%= entity.name %>Delete((struct NW<%= entity.name %> *) handle);
 }
 
 <%  end -%>
@@ -40,14 +40,14 @@ void JNICALL <%= JNIHelper.function_name(entity: entity, function: method, nativ
 <%  entity.static_methods.each do |method| -%>
 <%    next unless method.name.start_with?('Init') -%>
 jbyteArray JNICALL <%= JNIHelper.function_name(entity: entity, function: method) %>(JNIEnv *env, jclass thisClass<%= JNIHelper.parameters(method.parameters.drop(1)) %>) {
-    jbyteArray array = (*env)->NewByteArray(env, sizeof(struct TW<%= entity.name %>));
+    jbyteArray array = (*env)->NewByteArray(env, sizeof(struct NW<%= entity.name %>));
     jbyte* bytesBuffer = (*env)->GetByteArrayElements(env, array, NULL);
-    struct TW<%= entity.name %> *instance = (struct TW<%= entity.name %> *) bytesBuffer;
+    struct NW<%= entity.name %> *instance = (struct NW<%= entity.name %> *) bytesBuffer;
 <%=   render('jni/parameter_access.erb', { method: method }) -%>
 <%  if method.return_type.name != :void -%>
-    <%= JNIHelper.type(method.return_type) %> result = (<%= JNIHelper.type(method.return_type) %>) TW<%= entity.name %><%= method.name %>(instance, <%= JNIHelper.arguments(method.parameters.drop(1)).join(', ') %>);
+    <%= JNIHelper.type(method.return_type) %> result = (<%= JNIHelper.type(method.return_type) %>) NW<%= entity.name %><%= method.name %>(instance, <%= JNIHelper.arguments(method.parameters.drop(1)).join(', ') %>);
 <%  else -%>
-    TW<%= entity.name %><%= method.name %>(instance, <%= JNIHelper.arguments(method.parameters.drop(1)).join(', ') %>);
+    NW<%= entity.name %><%= method.name %>(instance, <%= JNIHelper.arguments(method.parameters.drop(1)).join(', ') %>);
 <%  end -%>
 <%=   render('jni/parameter_release.erb', { method: method }) -%>
     (*env)->ReleaseByteArrayElements(env, array, bytesBuffer, 0);

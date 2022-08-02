@@ -9,18 +9,15 @@
 
 #pragma once
 
-#include "TWBase.h"
+#include "NWBase.h"
 
-TW_EXTERN_C_BEGIN
+NW_EXTERN_C_BEGIN
 
 /// Chain identifiers for Ethereum-based blockchains, for convenience. Recommended to use the dynamic CoinType.ChainId() instead.
-/// See also TWChainId.
-TW_EXPORT_ENUM(uint32_t)
-enum TWEthereumChainID {
-<% chains = ['Ethereum', 'Ronin', 'Vechain'] -%>
-<% coins.select{ |coin| chains.include?(coin['blockchain']) && coin['deprecated'] != true }.each do |coin| -%>
-    TWEthereumChainID<%= camel_case(coin['id']) %> = <%= coin['chainId'] %>,
-<% end -%>
+/// See also NWChainId.
+NW_EXPORT_ENUM(uint32_t)
+enum NWEthereumChainID {
+    NWEthereumChainIDEthereum = 1,
 };
 
-TW_EXTERN_C_END
+NW_EXTERN_C_END

@@ -6,18 +6,18 @@
 
 #import <Foundation/Foundation.h>
 
-//! Project version number for TrustWalletCore.
+//! Project version number for NiceWCore.
 FOUNDATION_EXPORT double WalletCoreVersionNumber;
 
-//! Project version string for TrustWalletCore.
+//! Project version string for NiceWCore.
 FOUNDATION_EXPORT const unsigned char WalletCoreVersionString[];
 
-#include "TWBase.h"
-#include "TWData.h"
-#include "TWString.h"
+#include "NWBase.h"
+#include "NWData.h"
+#include "NWString.h"
 
-#include "TWAnySigner.h"
+#include "NWAnySigner.h"
 
 <% entities.sort { |x,y| x.name <=> y.name }.select { |entity| !entity.name.end_with?("Proto") }.each do |entity| -%>
-#include "TW<%= entity.name %>.h"
+#include "NW<%= entity.name %>.h"
 <% end -%>

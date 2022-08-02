@@ -1,0 +1,41 @@
+// Copyright © 2017-2022 Trust Wallet.
+//
+// This file is part of Trust. The full Trust copyright notice, including
+// terms governing use, modification, and redistribution, is contained in the
+// file LICENSE at the root of the source code distribution tree.
+//
+// This is a GENERATED FILE, changes made here MAY BE LOST.
+// Generated one-time (codegen/bin/cointests)
+//
+
+#include "../interface/NWTestUtilities.h"
+#include <NiceWCotr/NWCoinTypeConfiguration.h>
+#include <gtest/gtest.h>
+
+
+TEST(NW<%= format_name(coin['name']) %>CoinType, NWCoinType) {
+    const auto coin = NWCoinType<%= format_name(coin['name']) %>;
+    const auto symbol = WRAPS(NWCoinTypeConfigurationGetSymbol(coin));
+    const auto id = WRAPS(NWCoinTypeConfigurationGetID(coin));
+    const auto name = WRAPS(NWCoinTypeConfigurationGetName(coin));
+<% if !coin['chainId'].nil? -%>
+    const auto chainId = WRAPS(NWCoinTypeChainId(coin));
+<% end -%>
+    const auto txId = WRAPS(NWStringCreateWithUTF8Bytes("<%= explorer_sample_tx(coin) %>"));
+    const auto txUrl = WRAPS(NWCoinTypeConfigurationGetTransactionURL(coin, txId.get()));
+    const auto accId = WRAPS(NWStringCreateWithUTF8Bytes("<%= explorer_sample_account(coin) %>"));
+    const auto accUrl = WRAPS(NWCoinTypeConfigurationGetAccountURL(coin, accId.get()));
+
+    assertStringsEqual(id, "<%= coin['id'] %>");
+    assertStringsEqual(name, "<%= display_name(coin) %>");
+    assertStringsEqual(symbol, "<%= coin['symbol'] %>");
+    ASSERT_EQ(NWCoinTypeConfigurationGetDecimals(coin), <%= coin['decimals'] %>);
+    ASSERT_EQ(NWCoinTypeBlockchain(coin), NWBlockchain<%= coin['blockchain'] %>);
+    ASSERT_EQ(NWCoinTypeP2shPrefix(coin), 0x<%= to_hex(coin['p2shPrefix']) %>);
+    ASSERT_EQ(NWCoinTypeStaticPrefix(coin), 0x<%= to_hex(coin['staticPrefix']) %>);
+<% if !coin['chainId'].nil? -%>
+    assertStringsEqual(chainId, "<%= format_name(coin['chainId']) %>");
+<% end -%>
+    assertStringsEqual(txUrl, "<%= explorer_tx_url(coin) %><%= explorer_sample_tx(coin) %>");
+    assertStringsEqual(accUrl, "<%= explorer_account_url(coin) %><%= explorer_sample_account(coin) %>");
+}

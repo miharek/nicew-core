@@ -9,9 +9,9 @@
         guard let result = <%= call %> else {
             return nil
         }
-        return TWDataNSData(result)
+        return NWDataNSData(result)
 <%  else -%>
-        return TWDataNSData(<%= call %>)
+        return NWDataNSData(<%= call %>)
 <%  end
 
   # Method returns a string
@@ -20,9 +20,9 @@
         guard let result = <%= call %> else {
             return nil
         }
-        return TWStringNSString(result)
+        return NWStringNSString(result)
 <%  else -%>
-        return TWStringNSString(<%= call %>)
+        return NWStringNSString(<%= call %>)
 <%  end
 
   # Method returns an enum
@@ -31,7 +31,7 @@
 <%
   # Method returns proto
   elsif method.return_type.is_proto -%>
-        let resultData = TWDataNSData(<%= call %>)
+        let resultData = NWDataNSData(<%= call %>)
         return try! <%= method.return_type.name %>(serializedData: resultData)
 <%
   # Method returns a class or struct

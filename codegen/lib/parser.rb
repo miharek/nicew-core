@@ -22,27 +22,27 @@ class Parser
     until @buffer.eos?
       break if @buffer.skip_until(/\n/).nil?
 
-      # Look for TW_EXPORT statements
+      # Look for NW_EXPORT statements
       @buffer.skip(/\s*/)
-      next if @buffer.scan(/TW_EXPORT_[A-Z_]+/).nil?
+      next if @buffer.scan(/NW_EXPORT_[A-Z_]+/).nil?
 
       # Handle statements
       case @buffer[0]
-      when 'TW_EXPORT_CLASS'
+      when 'NW_EXPORT_CLASS'
         handle_class
-      when 'TW_EXPORT_STRUCT'
+      when 'NW_EXPORT_STRUCT'
         handle_struct
-      when 'TW_EXPORT_ENUM'
+      when 'NW_EXPORT_ENUM'
         handle_enum
-      when 'TW_EXPORT_FUNC'
+      when 'NW_EXPORT_FUNC'
         handle_func
-      when 'TW_EXPORT_METHOD'
+      when 'NW_EXPORT_METHOD'
         handle_method
-      when 'TW_EXPORT_PROPERTY'
+      when 'NW_EXPORT_PROPERTY'
         handle_property
-      when 'TW_EXPORT_STATIC_METHOD'
+      when 'NW_EXPORT_STATIC_METHOD'
         handle_static_method
-      when 'TW_EXPORT_STATIC_PROPERTY'
+      when 'NW_EXPORT_STATIC_PROPERTY'
         handle_static_property
       end
     end
@@ -53,17 +53,17 @@ class Parser
   # Parses a type.
   def parse_type
     @buffer.skip(/\s*/)
-    if @buffer.scan(/(const )?struct TW(\w+)\s?\*\s?(_Nullable|_Nonnull)/)
+    if @buffer.scan(/(const )?struct NW(\w+)\s?\*\s?(_Nullable|_Nonnull)/)
       return TypeDecl.new(name: @buffer[2], is_class: true, is_nullable: @buffer[3] == '_Nullable', is_inout: @buffer[1].nil?)
-    elsif @buffer.scan(/(const )?struct TW(\w+)/)
+    elsif @buffer.scan(/(const )?struct NW(\w+)/)
       return TypeDecl.new(name: @buffer[2], is_struct: true)
-    elsif @buffer.scan(/TWData\s?\*\s?(_Nullable|_Nonnull)/)
+    elsif @buffer.scan(/NWData\s?\*\s?(_Nullable|_Nonnull)/)
       return TypeDecl.new(name: :data, is_nullable: @buffer[1] == '_Nullable', is_inout: false)
-    elsif @buffer.scan(/TWString\s?\*\s?(_Nullable|_Nonnull)/)
+    elsif @buffer.scan(/NWString\s?\*\s?(_Nullable|_Nonnull)/)
       return TypeDecl.new(name: :string, is_nullable: @buffer[1] == '_Nullable', is_inout: false)
-    elsif @buffer.scan(/enum TW(\w+)/)
+    elsif @buffer.scan(/enum NW(\w+)/)
       return TypeDecl.new(name: @buffer[1], is_enum: true)
-    elsif @buffer.scan(/TW_(\w+)/)
+    elsif @buffer.scan(/NW_(\w+)/)
       return TypeDecl.new(name: @buffer[0], is_proto: true)
     elsif @buffer.scan(/(\w+)/)
       type = TypeDecl.fromPrimitive(@buffer[1])
@@ -110,12 +110,12 @@ class Parser
 
   def parse_discardable_result
     @buffer.skip(/\s*/)
-    @buffer.scan(/TW_METHOD_DISCARDABLE_RESULT(\s*)/) != nil
+    @buffer.scan(/NW_METHOD_DISCARDABLE_RESULT(\s*)/) != nil
   end
 
   def handle_class
     @buffer.skip(/\s*/)
-    report_error 'Invalid type name' if @buffer.scan(/struct TW(\w+)\s*;/).nil?
+    report_error 'Invalid type name' if @buffer.scan(/struct NW(\w+)\s*;/).nil?
     report_error 'Found more than one class/struct in the same file' unless @entity.nil?
     @entity = EntityDecl.new(name: @buffer[1], is_struct: false)
     puts "Found a class #{@entity.name}"
@@ -123,7 +123,7 @@ class Parser
 
   def handle_struct
     @buffer.skip(/\s*/)
-    report_error 'Invalid type name at' if @buffer.scan(/struct TW(\w+)\s*\{?/).nil?
+    report_error 'Invalid type name at' if @buffer.scan(/struct NW(\w+)\s*\{?/).nil?
     report_error 'Found more than one class/struct in the same file' unless @entity.nil?
     @entity = EntityDecl.new(name: @buffer[1], is_struct: true)
     puts "Found a struct #{@buffer[1]}"
@@ -135,7 +135,7 @@ class Parser
     type = @buffer[1]
 
     @buffer.skip(/\s*/)
-    report_error 'Invalid enum' if @buffer.scan(/enum TW(\w+)\s*\{/).nil?
+    report_error 'Invalid enum' if @buffer.scan(/enum NW(\w+)\s*\{/).nil?
     @entity = EnumDecl.new(name: @buffer[1], raw_type: TypeDecl.fromPrimitive(type))
     incremental_value = 0
 
@@ -147,11 +147,11 @@ class Parser
       break if @buffer.scan(/\}/)
 
       # Look for case statements
-      if @buffer.scan(%r{TW#{@entity.name}(\w+)\s*\/\*\s*(".*")\s*\*\/,})
+      if @buffer.scan(%r{NW#{@entity.name}(\w+)\s*\/\*\s*(".*")\s*\*\/,})
         case_decl = EnumCaseDecl.new(name: @buffer[1], enum: @entity, value: incremental_value, string: @buffer[2])
         incremental_value += 1
         @entity.cases << case_decl
-      elsif @buffer.scan(/TW#{@entity.name}(\w+)\s*(=\s*(\w+))?\s*,/)
+      elsif @buffer.scan(/NW#{@entity.name}(\w+)\s*(=\s*(\w+))?\s*,/)
         case_decl = EnumCaseDecl.new(name: @buffer[1], enum: @entity, value: @buffer[3])
         v = Integer(@buffer[3])
         incremental_value = v.to_i + 1 unless v.nil?
@@ -175,10 +175,10 @@ class Parser
     method.discardable_result = discardable
 
     # Remove prefix
-    unless method.name.start_with? "TW#{@entity.name}"
+    unless method.name.start_with? "NW#{@entity.name}"
       report_error 'Method name needs to start with class/struct name'
     end
-    method.name.slice! "TW#{@entity.name}"
+    method.name.slice! "NW#{@entity.name}"
 
     # Check first parameter
     if method.parameters.count.zero? || @entity.name != method.parameters.first.type.name
@@ -202,10 +202,10 @@ class Parser
     method = parse_func
 
     # Remove prefix
-    unless method.name.start_with? "TW#{@entity.name}"
+    unless method.name.start_with? "NW#{@entity.name}"
       report_error 'Method name needs to start with class/struct name'
     end
-    method.name.slice! "TW#{@entity.name}"
+    method.name.slice! "NW#{@entity.name}"
 
     # Check first parameter
     if method.parameters.count < 1 || @entity.name != method.parameters.first.type.name
@@ -238,10 +238,10 @@ class Parser
     method.discardable_result = discardable
 
     # Remove prefix
-    unless method.name.start_with? "TW#{@entity.name}"
-      report_error "Static method name needs to start with class/struct name. Method name #{method.name} does not start with TW#{@entity.name}."
+    unless method.name.start_with? "NW#{@entity.name}"
+      report_error "Static method name needs to start with class/struct name. Method name #{method.name} does not start with NW#{@entity.name}."
     end
-    method.name.slice! "TW#{@entity.name}"
+    method.name.slice! "NW#{@entity.name}"
 
     @entity.static_methods << method
   end
@@ -252,10 +252,10 @@ class Parser
     method.static = true
 
     # Remove prefix
-    unless method.name.start_with? "TW#{@entity.name}"
+    unless method.name.start_with? "NW#{@entity.name}"
       report_error 'Method name needs to start with class/struct name'
     end
-    method.name.slice! "TW#{@entity.name}"
+    method.name.slice! "NW#{@entity.name}"
 
     unless method.parameters.count.zero?
       report_error 'Static properties can have no parameters'

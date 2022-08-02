@@ -12,13 +12,13 @@
   # Method returns data
   if should_return_data(method) -%>
     <%= JNIHelper.type(method.return_type) %> result = NULL;
-    TWData *resultData = <%= call %>;
+    NWData *resultData = <%= call %>;
 <%  if method.return_type.is_nullable %>
     if (resultData == NULL) {
         goto cleanup;
     }
 <%  end -%>
-    result = TWDataJByteArray(resultData, env);
+    result = NWDataJByteArray(resultData, env);
 <%  if method.return_type.is_nullable %>
 cleanup:
 <%  end -%>
@@ -31,13 +31,13 @@ cleanup:
   # Method returns a string
   elsif should_return_string(method) -%>
     jstring result = NULL;
-    TWString *resultString = <%= call %>;
+    NWString *resultString = <%= call %>;
 <%  if method.return_type.is_nullable %>
     if (resultString == NULL) {
         goto cleanup;
     }
 <%  end -%>
-    result = TWStringJString(resultString, env);
+    result = NWStringJString(resultString, env);
 <%  if method.return_type.is_nullable %>
 cleanup:
 <%  end -%>
@@ -49,7 +49,7 @@ cleanup:
 <%
   # Method returns proto
   elsif method.return_type.is_proto -%>
-    jbyteArray resultData = TWDataJByteArray(<%= call %>, env);
+    jbyteArray resultData = NWDataJByteArray(<%= call %>, env);
     jclass resultClass = (*env)->FindClass(env, "<%= JNIHelper.proto_to_class(method.return_type.name) %>");
     jmethodID parseFromMethodID = (*env)->GetStaticMethodID(env, resultClass, "parseFrom", "([B)L<%= JNIHelper.proto_to_class(method.return_type.name) %>;");
     jobject result = (*env)->CallStaticObjectMethod(env, resultClass, parseFromMethodID, resultData);
@@ -65,13 +65,13 @@ cleanup:
   # Method returns an object
   elsif method.return_type.is_struct || method.return_type.is_class || method.return_type.is_enum
     if method.return_type.is_struct -%>
-    struct TW<%= method.return_type.name %> result = <%= call %>;
+    struct NW<%= method.return_type.name %> result = <%= call %>;
 <%  elsif method.return_type.is_class -%>
-    struct TW<%= method.return_type.name %> *result = <%= call %>;
+    struct NW<%= method.return_type.name %> *result = <%= call %>;
 <%  elsif method.return_type.is_enum -%>
-    enum TW<%= method.return_type.name %> result = <%= call %>;
+    enum NW<%= method.return_type.name %> result = <%= call %>;
 <%  else -%>
-    TW<%= method.return_type.name %> *result = <%= call %>;
+    NW<%= method.return_type.name %> *result = <%= call %>;
 <%  end -%>
 
 <%= render('jni/parameter_release.erb', { method: method }) -%>
@@ -81,8 +81,8 @@ cleanup:
 
     jclass class = (*env)->FindClass(env, "wallet/core/jni/<%= method.return_type.name %>");
 <%  if method.return_type.is_struct -%>
-    jbyteArray resultArray = (*env)->NewByteArray(env, sizeof(struct TW<%= method.return_type.name %>));
-    (*env)->SetByteArrayRegion(env, resultArray, 0, sizeof(struct TW<%= method.return_type.name %>), (jbyte *) &result);
+    jbyteArray resultArray = (*env)->NewByteArray(env, sizeof(struct NW<%= method.return_type.name %>));
+    (*env)->SetByteArrayRegion(env, resultArray, 0, sizeof(struct NW<%= method.return_type.name %>), (jbyte *) &result);
     jmethodID method = (*env)->GetStaticMethodID(env, class, "createFromNative", "([B)Lwallet/core/jni/<%= method.return_type.name %>;");
     return (*env)->CallStaticObjectMethod(env, class, method, resultArray);
 <%  elsif method.return_type.is_enum -%>

@@ -8,25 +8,25 @@
 //
 
 #include "Coin.h"
-#include <TrustWalletCore/TWCoinTypeConfiguration.h>
+#include <NiceWCore/NWCoinTypeConfiguration.h>
 
 #include <vector>
 #include <cassert>
 
-using namespace TW;
+using namespace NW;
 
 static const CoinInfo defaultsForMissing = {
     "?",
     "?",
-    TWBlockchainBitcoin,
-    TWPurposeBIP44,
-    TWCurveNone,
+    NWBlockchainBitcoin,
+    NWPurposeBIP44,
+    NWCurveNone,
     {Derivation()},
-    TWPublicKeyTypeSECP256k1,
+    NWPublicKeyTypeSECP256k1,
     0,
     0,
     0,
-    TWHRPUnknown,
+    NWHRPUnknown,
     "",
     Hash::HasherSha256ripemd,
     Hash::HasherSha256d,
@@ -39,31 +39,31 @@ static const CoinInfo defaultsForMissing = {
 };
 
 /// Get coin from map, if missing returns defaults (not to have contains-check in each accessor method)
-const CoinInfo getCoinInfo(TWCoinType coin) {
+const CoinInfo getCoinInfo(NWCoinType coin) {
     // switch is preferred instead of a data structure, due to initialization issues
     switch (coin) {
 <% coins.each do |coin| -%>
-        case TWCoinType<%= format_name(coin['name']) %>:
+        case NWCoinType<%= format_name(coin['name']) %>:
             return CoinInfo {
                 "<%= coin['id'] %>",
                 "<%= coin_name(coin) %>",
-                TWBlockchain<%= format_name(coin['blockchain']) %>,
-                TWPurposeBIP<%= /^m\/(\d+)'?(\/\d+'?)+$/.match(derivation_path(coin))[1] %>,
-                TWCurve<%= format_name(coin['curve']) %>,
+                NWBlockchain<%= format_name(coin['blockchain']) %>,
+                NWPurposeBIP<%= /^m\/(\d+)'?(\/\d+'?)+$/.match(derivation_path(coin))[1] %>,
+                NWCurve<%= format_name(coin['curve']) %>,
                 {
                     <% coin['derivation'].each do |deriv| -%>{
                         <%= derivation_enum_name(deriv, coin) %>,
                         "<%= deriv['path'] %>",
                         "<%= derivation_name(deriv) %>",
-                        TWHDVersion<% if deriv['xpub'].nil? -%>None<% else -%><%= format_name(deriv['xpub']) %><% end -%>,
-                        TWHDVersion<% if deriv['xprv'].nil? -%>None<% else -%><%= format_name(deriv['xprv']) %><% end -%>,
+                        NWHDVersion<% if deriv['xpub'].nil? -%>None<% else -%><%= format_name(deriv['xpub']) %><% end -%>,
+                        NWHDVersion<% if deriv['xprv'].nil? -%>None<% else -%><%= format_name(deriv['xprv']) %><% end -%>,
                     },
                 <% end -%>},
-                TWPublicKeyType<%= format_name(coin['publicKeyType']) %>,
+                NWPublicKeyType<%= format_name(coin['publicKeyType']) %>,
                 <% if coin['staticPrefix'].nil? -%>0<% else -%><%= coin['staticPrefix'] %><% end -%>,
                 <% if coin['p2pkhPrefix'].nil? -%>0<% else -%><%= coin['p2pkhPrefix'] %><% end -%>,
                 <% if coin['p2shPrefix'].nil? -%>0<% else -%><%= coin['p2shPrefix'] %><% end -%>,
-                TWHRP<% if coin['hrp'].nil? -%>Unknown<% else -%><%= format_name(coin['name']) %><% end -%>,
+                NWHRP<% if coin['hrp'].nil? -%>Unknown<% else -%><%= format_name(coin['name']) %><% end -%>,
                 "<%= coin['chainId'] %>",
                 Hash::Hasher<% if coin['publicKeyHasher'].nil? -%>Sha256ripemd<% else -%><%= camel_case(coin['publicKeyHasher']) %><% end -%>,
                 Hash::Hasher<% if coin['base58Hasher'].nil? -%>Sha256d<% else -%><%= camel_case(coin['base58Hasher']) %><% end -%>,
@@ -80,10 +80,10 @@ const CoinInfo getCoinInfo(TWCoinType coin) {
     }
 }
 
-std::vector<TWCoinType> TW::getCoinTypes() {
-    return std::vector<TWCoinType>({
+std::vector<NWCoinType> NW::getCoinTypes() {
+    return std::vector<NWCoinType>({
     <% coins.each do |coin| -%>
-        TWCoinType<%= format_name(coin['name']) %>,
+        NWCoinType<%= format_name(coin['name']) %>,
     <% end -%>
     });
 }

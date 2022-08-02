@@ -5,4 +5,4 @@
     jfieldID <%= name %>BytesFieldID = (*env)->GetFieldID(env, <%= name %>Class, "bytes", "[B");
     jbyteArray <%= name %>BytesArray = (*env)->GetObjectField(env, <%= name %>, <%= name %>BytesFieldID);
     jbyte* <%= name %>BytesBuffer = (*env)->GetByteArrayElements(env, <%= name %>BytesArray, NULL);
-    struct TW<%= type.name %> *<%= name %>Instance = (struct TW<%= type.name %> *) <%= name %>BytesBuffer;
+    struct NW<%= type.name %> *<%= name %>Instance = (struct NW<%= type.name %> *) <%= name %>BytesBuffer;

@@ -4,11 +4,11 @@
     jfieldID bytesFieldID = (*env)->GetFieldID(env, thisClass, "bytes", "[B");
     jbyteArray bytesArray = (*env)->GetObjectField(env, thisObject, bytesFieldID);
     jbyte* bytesBuffer = (*env)->GetByteArrayElements(env, bytesArray, NULL);
-    struct TW<%= entity.name %> *instance = (struct TW<%= entity.name %> *) bytesBuffer;
+    struct NW<%= entity.name %> *instance = (struct NW<%= entity.name %> *) bytesBuffer;
 <%  elsif entity.enum? -%>
     jfieldID handleFieldID = (*env)->GetFieldID(env, thisClass, "value", "I");
-    enum TW<%= entity.name %> instance = (enum TW<%= entity.name %>) (*env)->GetIntField(env, thisObject, handleFieldID);
+    enum NW<%= entity.name %> instance = (enum NW<%= entity.name %>) (*env)->GetIntField(env, thisObject, handleFieldID);
 <%  else -%>
     jfieldID handleFieldID = (*env)->GetFieldID(env, thisClass, "nativeHandle", "J");
-    struct TW<%= entity.name %> *instance = (struct TW<%= entity.name %> *) (*env)->GetLongField(env, thisObject, handleFieldID);
+    struct NW<%= entity.name %> *instance = (struct NW<%= entity.name %> *) (*env)->GetLongField(env, thisObject, handleFieldID);
 <%  end -%>
