@@ -14,7 +14,7 @@ endif ()
 
 include(GNUInstallDirs)
 include(cmake/StandardSettings.cmake)
-include(cmake/CompilerWarning.cmake)
+include(cmake/CompilerWarnings.cmake)
 include(cmake/StaticAnalyzers.cmake)
 include(cmake/FindHostPackage.cmake)
 

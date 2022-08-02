@@ -1,9 +1,23 @@
 /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /Users/miharek/Desktop/Magisterska/nicew-core
--- ccache activated
-Configuring standalone
-CMake Error: File /Users/miharek/Desktop/Magisterska/nicew-core/swift/cpp.xcconfig.in does not exist.
-CMake Error at CMakeLists.txt:87 (configure_file):
-  configure_file Problem configuring file
+CMake Error: Parse error in cache file /Users/miharek/Desktop/Magisterska/nicew-core/cmake-build-debug/CMakeCache.txt on line 17. Offending entry: <<<<<<< HEAD
+CMake Error: Parse error in cache file /Users/miharek/Desktop/Magisterska/nicew-core/cmake-build-debug/CMakeCache.txt on line 28. Offending entry: >>>>>>> 11831a7d5080c050c0bce465f432168703563c27
+CMake Error: Parse error in cache file /Users/miharek/Desktop/Magisterska/nicew-core/cmake-build-debug/CMakeCache.txt on line 205. Offending entry: <<<<<<< HEAD
+CMake Error: Parse error in cache file /Users/miharek/Desktop/Magisterska/nicew-core/cmake-build-debug/CMakeCache.txt on line 212. Offending entry: >>>>>>> 11831a7d5080c050c0bce465f432168703563c27
+CMake Error: Parse error in cache file /Users/miharek/Desktop/Magisterska/nicew-core/cmake-build-debug/CMakeCache.txt on line 289. Offending entry: <<<<<<< HEAD
+CMake Error: Parse error in cache file /Users/miharek/Desktop/Magisterska/nicew-core/cmake-build-debug/CMakeCache.txt on line 318. Offending entry: >>>>>>> 11831a7d5080c050c0bce465f432168703563c27
+CMake Error: Parse error in cache file /Users/miharek/Desktop/Magisterska/nicew-core/cmake-build-debug/CMakeCache.txt on line 334. Offending entry: <<<<<<< HEAD
+CMake Error: Parse error in cache file /Users/miharek/Desktop/Magisterska/nicew-core/cmake-build-debug/CMakeCache.txt on line 342. Offending entry: >>>>>>> 11831a7d5080c050c0bce465f432168703563c27
+CMake Error: Parse error in cache file /Users/miharek/Desktop/Magisterska/nicew-core/cmake-build-debug/CMakeCache.txt on line 348. Offending entry: <<<<<<< HEAD
+CMake Error: Parse error in cache file /Users/miharek/Desktop/Magisterska/nicew-core/cmake-build-debug/CMakeCache.txt on line 352. Offending entry: >>>>>>> 11831a7d5080c050c0bce465f432168703563c27
+CMake Error: Parse error in cache file /Users/miharek/Desktop/Magisterska/nicew-core/cmake-build-debug/CMakeCache.txt on line 485. Offending entry: <<<<<<< HEAD
+CMake Error: Parse error in cache file /Users/miharek/Desktop/Magisterska/nicew-core/cmake-build-debug/CMakeCache.txt on line 489. Offending entry: >>>>>>> 11831a7d5080c050c0bce465f432168703563c27
+CMake Error: Parse error in cache file /Users/miharek/Desktop/Magisterska/nicew-core/cmake-build-debug/CMakeCache.txt on line 532. Offending entry: <<<<<<< HEAD
+CMake Error: Parse error in cache file /Users/miharek/Desktop/Magisterska/nicew-core/cmake-build-debug/CMakeCache.txt on line 536. Offending entry: >>>>>>> 11831a7d5080c050c0bce465f432168703563c27
+CMake Error: Parse error in cache file /Users/miharek/Desktop/Magisterska/nicew-core/cmake-build-debug/CMakeCache.txt on line 541. Offending entry: <<<<<<< HEAD
+CMake Error: Parse error in cache file /Users/miharek/Desktop/Magisterska/nicew-core/cmake-build-debug/CMakeCache.txt on line 545. Offending entry: >>>>>>> 11831a7d5080c050c0bce465f432168703563c27
+CMake Error at CMakeLists.txt:17:
+  Parse error.  Expected a command name, got unquoted argument with text
+  "<<<<<<<".
 
 
 -- Configuring incomplete, errors occurred!

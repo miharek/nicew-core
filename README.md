@@ -1,1 +1,1 @@
-# nicex-core
+# nicew-core
