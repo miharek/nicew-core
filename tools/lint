@@ -2,7 +2,7 @@
 #
 # This script lints the files modified in the current branch with clang-tidy.
 
-merge_base = `git merge-base HEAD origin/master`.strip
+merge_base = `git merge-base HEAD origin/main`.strip
 changed_files = `git diff --name-only HEAD #{merge_base}`.strip.split(/\s/)
 files = changed_files.select { |f| File.extname(f) == '.cpp' || File.extname(f) == '.h' }
 if files.empty?
