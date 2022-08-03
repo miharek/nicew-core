@@ -10,13 +10,12 @@ wc_read_version() {
 
 wc_release_url() {
     tag="$1"
-
-    id=$(curl "https://api.github.com/repos/mihaelrek/nicew-core/releases/tags/${tag}" | jq ".id")
+    id=$(curl -H "Accept: application/vnd.github+json" -H "Authorization: token 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" "https://api.github.com/repos/miharek/nicew-core/releases/tags/${tag}" | jq ".id")
     if [[ $id == "null" ]]; then
         echo "Failed to get release id for tag ${tag}"
         exit -1
     fi
-    release_url="https://uploads.github.com/repos/mihaelrek/nicew-core/releases/${id}"
+    release_url="https://uploads.github.com/repos/miharek/nicew-core/releases/${id}"
     echo ${release_url}
 }
 

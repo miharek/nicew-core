@@ -5,17 +5,17 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: opt_out_usage" time="0.006092">
+      <testcase classname="fastlane.lanes" name="0: opt_out_usage" time="0.004671">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.000982">
+      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.000787">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: Switch to ios swift_protobuf_xcframework lane" time="0.000958">
+      <testcase classname="fastlane.lanes" name="2: Switch to ios swift_protobuf_xcframework lane" time="0.000885">
         
       </testcase>
     
