@@ -71,9 +71,6 @@ target_include_directories(NiceWCore
         ${CMAKE_CURRENT_SOURCE_DIR}/build/local/include
         )
 
-if (NW_UNIT_TESTS)
-    add_subdirectory(tests)
-endif ()
 
 if (NW_BUILD_EXAMPLES)
     add_subdirectory(walletconsole/lib)

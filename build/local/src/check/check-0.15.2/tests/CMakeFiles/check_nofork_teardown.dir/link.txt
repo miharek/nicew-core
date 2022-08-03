@@ -1,1 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/cc -O3 -DNDEBUG -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/Users/miharek/Desktop/Magisterska/nicew-core/build/local/lib -pthread CMakeFiles/check_nofork_teardown.dir/check_nofork_teardown.c.o -o check_nofork_teardown  ../src/libcheck.a -lm 

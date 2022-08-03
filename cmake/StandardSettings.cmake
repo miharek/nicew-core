@@ -55,5 +55,10 @@ if (NW_ENABLE_CCACHE)
     endif ()
 endif ()
 
+#
+# Tests/Examples options
+#
+option(NW_BUILD_EXAMPLES "Enable the examples builds of the project" ON)
+
 
 

@@ -27,7 +27,7 @@ using namespace NW;
 
 void WalletConsole::init() {
     _outst << endl;
-    _outst << "Wallet-core Console                          (c) TrusNWallet" << endl;
+    _outst << "Wallet-core Console                          (c) Mihael Rek" << endl;
     _outst << "Type 'help' for list of commands." << endl;
     _outst << endl;
 

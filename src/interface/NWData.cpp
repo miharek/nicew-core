@@ -12,7 +12,7 @@
 using namespace NW;
 
 NWData *_Nonnull NWDataCreateWithBytes(const uint8_t *_Nonnull bytes, size_t size) {
-    auto *data = new Data();
+    auto* data = new Data();
     data->reserve(size);
     std::copy(bytes, bytes + size, std::back_inserter(*data));
     return data;
@@ -29,8 +29,10 @@ NWData *_Nonnull NWDataCreateWithData(NWData *_Nonnull data) {
     return copy;
 }
 
-NWData * NWDataCreateWithHexString(const NWString* hex) {
-    if (hex == nullptr) { return nullptr; }
+NWData* NWDataCreateWithHexString(const NWString* hex) {
+    if (hex == nullptr) {
+        return nullptr;
+    }
     Data data = parse_hex(std::string(NWStringUTF8Bytes(hex)));
     return NWDataCreateWithBytes(data.data(), data.size());
 }

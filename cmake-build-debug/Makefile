@@ -65,6 +65,18 @@ CMAKE_BINARY_DIR = /Users/miharek/Desktop/Magisterska/nicew-core/cmake-build-deb
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -84,6 +96,39 @@ edit_cache:
 # Special rule for the target edit_cache
 edit_cache/fast: edit_cache
 .PHONY : edit_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -116,6 +161,4284 @@ depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+#=============================================================================
+# Target rules for targets named NiceWCore
+
+# Build rule for target.
+NiceWCore: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NiceWCore
+.PHONY : NiceWCore
+
+# fast build rule for target.
+NiceWCore/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/build
+.PHONY : NiceWCore/fast
+
+#=============================================================================
+# Target rules for targets named protobuf
+
+# Build rule for target.
+protobuf: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 protobuf
+.PHONY : protobuf
+
+# fast build rule for target.
+protobuf/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build
+.PHONY : protobuf/fast
+
+#=============================================================================
+# Target rules for targets named TrezorCrypto
+
+# Build rule for target.
+TrezorCrypto: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TrezorCrypto
+.PHONY : TrezorCrypto
+
+# fast build rule for target.
+TrezorCrypto/fast:
+	$(MAKE) $(MAKESILENT) -f trezor-crypto/CMakeFiles/TrezorCrypto.dir/build.make trezor-crypto/CMakeFiles/TrezorCrypto.dir/build
+.PHONY : TrezorCrypto/fast
+
+#=============================================================================
+# Target rules for targets named TrezorCryptoTests
+
+# Build rule for target.
+TrezorCryptoTests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TrezorCryptoTests
+.PHONY : TrezorCryptoTests
+
+# fast build rule for target.
+TrezorCryptoTests/fast:
+	$(MAKE) $(MAKESILENT) -f trezor-crypto/crypto/tests/CMakeFiles/TrezorCryptoTests.dir/build.make trezor-crypto/crypto/tests/CMakeFiles/TrezorCryptoTests.dir/build
+.PHONY : TrezorCryptoTests/fast
+
+#=============================================================================
+# Target rules for targets named walletconsolelib
+
+# Build rule for target.
+walletconsolelib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 walletconsolelib
+.PHONY : walletconsolelib
+
+# fast build rule for target.
+walletconsolelib/fast:
+	$(MAKE) $(MAKESILENT) -f walletconsole/lib/CMakeFiles/walletconsolelib.dir/build.make walletconsole/lib/CMakeFiles/walletconsolelib.dir/build
+.PHONY : walletconsolelib/fast
+
+#=============================================================================
+# Target rules for targets named walletconsole
+
+# Build rule for target.
+walletconsole: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 walletconsole
+.PHONY : walletconsole
+
+# fast build rule for target.
+walletconsole/fast:
+	$(MAKE) $(MAKESILENT) -f walletconsole/CMakeFiles/walletconsole.dir/build.make walletconsole/CMakeFiles/walletconsole.dir/build
+.PHONY : walletconsole/fast
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.pb.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.pb.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.pb.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.pb.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.pb.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.pb.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.pb.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.pb.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.pb.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.pb.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.pb.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.pb.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.pb.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.pb.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.pb.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any_lite.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any_lite.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any_lite.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any_lite.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any_lite.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any_lite.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any_lite.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any_lite.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any_lite.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any_lite.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any_lite.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any_lite.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any_lite.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any_lite.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any_lite.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any_lite.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any_lite.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any_lite.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/api.pb.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/api.pb.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/api.pb.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/api.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/api.pb.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/api.pb.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/api.pb.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/api.pb.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/api.pb.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/api.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/api.pb.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/api.pb.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/api.pb.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/api.pb.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/api.pb.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/api.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/api.pb.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/api.pb.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arena.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arena.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arena.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arena.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arena.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arena.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arena.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arena.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arena.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arena.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arena.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arena.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arena.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arena.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arena.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arena.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arena.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arena.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arenastring.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arenastring.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arenastring.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arenastring.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arenastring.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arenastring.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arenastring.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arenastring.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arenastring.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arenastring.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arenastring.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arenastring.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arenastring.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arenastring.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arenastring.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arenastring.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arenastring.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arenastring.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/importer.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/importer.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/importer.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/importer.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/importer.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/importer.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/importer.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/importer.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/importer.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/importer.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/importer.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/importer.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/importer.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/importer.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/importer.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/importer.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/importer.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/importer.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/parser.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/parser.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/parser.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/parser.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/parser.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/parser.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/parser.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/parser.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/parser.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/parser.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/parser.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/parser.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/parser.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/parser.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/parser.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/parser.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/parser.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/parser.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.pb.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.pb.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.pb.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.pb.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.pb.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.pb.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.pb.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.pb.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.pb.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.pb.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.pb.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.pb.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.pb.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.pb.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.pb.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor_database.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor_database.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor_database.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor_database.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor_database.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor_database.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor_database.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor_database.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor_database.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor_database.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor_database.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor_database.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor_database.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor_database.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor_database.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor_database.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor_database.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor_database.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/duration.pb.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/duration.pb.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/duration.pb.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/duration.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/duration.pb.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/duration.pb.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/duration.pb.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/duration.pb.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/duration.pb.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/duration.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/duration.pb.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/duration.pb.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/duration.pb.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/duration.pb.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/duration.pb.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/duration.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/duration.pb.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/duration.pb.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/dynamic_message.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/dynamic_message.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/dynamic_message.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/dynamic_message.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/dynamic_message.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/dynamic_message.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/dynamic_message.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/dynamic_message.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/dynamic_message.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/dynamic_message.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/dynamic_message.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/dynamic_message.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/dynamic_message.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/dynamic_message.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/dynamic_message.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/dynamic_message.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/dynamic_message.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/dynamic_message.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/empty.pb.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/empty.pb.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/empty.pb.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/empty.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/empty.pb.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/empty.pb.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/empty.pb.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/empty.pb.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/empty.pb.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/empty.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/empty.pb.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/empty.pb.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/empty.pb.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/empty.pb.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/empty.pb.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/empty.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/empty.pb.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/empty.pb.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set_heavy.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set_heavy.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set_heavy.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set_heavy.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set_heavy.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set_heavy.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set_heavy.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set_heavy.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set_heavy.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set_heavy.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set_heavy.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set_heavy.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set_heavy.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set_heavy.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set_heavy.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set_heavy.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set_heavy.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set_heavy.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/field_mask.pb.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/field_mask.pb.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/field_mask.pb.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/field_mask.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/field_mask.pb.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/field_mask.pb.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/field_mask.pb.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/field_mask.pb.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/field_mask.pb.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/field_mask.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/field_mask.pb.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/field_mask.pb.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/field_mask.pb.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/field_mask.pb.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/field_mask.pb.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/field_mask.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/field_mask.pb.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/field_mask.pb.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_enum_util.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_enum_util.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_enum_util.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_enum_util.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_enum_util.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_enum_util.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_enum_util.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_enum_util.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_enum_util.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_enum_util.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_enum_util.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_enum_util.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_enum_util.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_enum_util.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_enum_util.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_enum_util.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_enum_util.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_enum_util.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_bases.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_bases.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_bases.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_bases.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_bases.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_bases.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_bases.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_bases.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_bases.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_bases.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_bases.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_bases.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_bases.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_bases.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_bases.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_bases.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_bases.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_bases.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_reflection.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_reflection.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_reflection.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_reflection.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_reflection.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_reflection.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_reflection.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_reflection.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_reflection.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_reflection.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_reflection.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_reflection.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_reflection.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_reflection.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_reflection.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_reflection.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_reflection.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_reflection.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven_lite.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven_lite.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven_lite.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven_lite.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven_lite.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven_lite.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven_lite.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven_lite.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven_lite.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven_lite.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven_lite.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven_lite.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven_lite.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven_lite.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven_lite.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven_lite.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven_lite.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven_lite.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_full.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_full.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_full.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_full.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_full.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_full.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_full.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_full.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_full.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_full.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_full.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_full.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_full.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_full.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_full.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_full.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_full.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_full.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_lite.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_lite.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_lite.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_lite.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_lite.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_lite.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_lite.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_lite.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_lite.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_lite.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_lite.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_lite.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_lite.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_lite.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_lite.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_lite.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_lite.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_lite.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_util.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_util.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_util.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_util.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_util.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_util.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_util.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_util.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_util.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_util.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_util.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_util.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_util.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_util.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_util.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_util.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_util.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_util.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/implicit_weak_message.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/implicit_weak_message.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/implicit_weak_message.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/implicit_weak_message.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/implicit_weak_message.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/implicit_weak_message.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/implicit_weak_message.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/implicit_weak_message.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/implicit_weak_message.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/implicit_weak_message.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/implicit_weak_message.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/implicit_weak_message.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/implicit_weak_message.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/implicit_weak_message.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/implicit_weak_message.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/implicit_weak_message.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/implicit_weak_message.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/implicit_weak_message.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/inlined_string_field.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/inlined_string_field.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/inlined_string_field.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/inlined_string_field.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/inlined_string_field.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/inlined_string_field.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/inlined_string_field.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/inlined_string_field.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/inlined_string_field.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/inlined_string_field.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/inlined_string_field.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/inlined_string_field.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/inlined_string_field.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/inlined_string_field.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/inlined_string_field.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/inlined_string_field.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/inlined_string_field.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/inlined_string_field.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/coded_stream.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/coded_stream.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/coded_stream.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/coded_stream.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/coded_stream.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/coded_stream.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/coded_stream.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/coded_stream.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/coded_stream.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/coded_stream.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/coded_stream.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/coded_stream.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/coded_stream.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/coded_stream.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/coded_stream.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/coded_stream.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/coded_stream.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/coded_stream.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/gzip_stream.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/gzip_stream.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/gzip_stream.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/gzip_stream.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/gzip_stream.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/gzip_stream.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/gzip_stream.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/gzip_stream.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/gzip_stream.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/gzip_stream.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/gzip_stream.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/gzip_stream.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/gzip_stream.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/gzip_stream.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/gzip_stream.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/gzip_stream.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/gzip_stream.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/gzip_stream.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/io_win32.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/io_win32.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/io_win32.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/io_win32.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/io_win32.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/io_win32.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/io_win32.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/io_win32.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/io_win32.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/io_win32.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/io_win32.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/io_win32.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/io_win32.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/io_win32.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/io_win32.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/io_win32.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/io_win32.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/io_win32.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/printer.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/printer.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/printer.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/printer.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/printer.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/printer.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/printer.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/printer.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/printer.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/printer.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/printer.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/printer.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/printer.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/printer.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/printer.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/printer.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/printer.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/printer.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/strtod.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/strtod.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/strtod.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/strtod.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/strtod.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/strtod.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/strtod.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/strtod.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/strtod.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/strtod.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/strtod.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/strtod.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/strtod.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/strtod.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/strtod.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/strtod.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/strtod.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/strtod.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/tokenizer.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/tokenizer.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/tokenizer.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/tokenizer.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/tokenizer.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/tokenizer.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/tokenizer.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/tokenizer.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/tokenizer.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/tokenizer.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/tokenizer.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/tokenizer.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/tokenizer.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/tokenizer.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/tokenizer.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/tokenizer.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/tokenizer.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/tokenizer.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl_lite.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl_lite.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl_lite.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl_lite.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl_lite.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl_lite.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl_lite.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl_lite.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl_lite.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl_lite.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl_lite.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl_lite.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl_lite.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl_lite.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl_lite.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl_lite.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl_lite.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl_lite.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map_field.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map_field.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map_field.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map_field.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map_field.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map_field.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map_field.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map_field.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map_field.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map_field.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map_field.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map_field.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map_field.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map_field.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map_field.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map_field.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map_field.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map_field.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message_lite.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message_lite.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message_lite.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message_lite.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message_lite.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message_lite.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message_lite.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message_lite.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message_lite.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message_lite.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message_lite.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message_lite.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message_lite.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message_lite.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message_lite.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message_lite.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message_lite.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message_lite.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/parse_context.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/parse_context.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/parse_context.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/parse_context.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/parse_context.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/parse_context.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/parse_context.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/parse_context.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/parse_context.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/parse_context.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/parse_context.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/parse_context.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/parse_context.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/parse_context.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/parse_context.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/parse_context.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/parse_context.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/parse_context.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/reflection_ops.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/reflection_ops.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/reflection_ops.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/reflection_ops.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/reflection_ops.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/reflection_ops.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/reflection_ops.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/reflection_ops.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/reflection_ops.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/reflection_ops.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/reflection_ops.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/reflection_ops.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/reflection_ops.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/reflection_ops.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/reflection_ops.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/reflection_ops.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/reflection_ops.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/reflection_ops.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_field.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_field.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_field.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_field.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_field.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_field.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_field.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_field.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_field.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_field.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_field.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_field.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_field.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_field.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_field.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_field.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_field.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_field.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_ptr_field.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_ptr_field.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_ptr_field.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_ptr_field.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_ptr_field.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_ptr_field.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_ptr_field.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_ptr_field.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_ptr_field.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_ptr_field.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_ptr_field.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_ptr_field.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_ptr_field.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_ptr_field.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_ptr_field.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_ptr_field.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_ptr_field.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_ptr_field.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/service.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/service.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/service.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/service.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/service.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/service.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/service.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/service.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/service.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/service.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/service.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/service.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/service.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/service.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/service.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/service.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/service.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/service.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/source_context.pb.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/source_context.pb.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/source_context.pb.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/source_context.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/source_context.pb.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/source_context.pb.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/source_context.pb.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/source_context.pb.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/source_context.pb.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/source_context.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/source_context.pb.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/source_context.pb.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/source_context.pb.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/source_context.pb.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/source_context.pb.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/source_context.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/source_context.pb.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/source_context.pb.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/struct.pb.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/struct.pb.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/struct.pb.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/struct.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/struct.pb.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/struct.pb.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/struct.pb.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/struct.pb.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/struct.pb.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/struct.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/struct.pb.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/struct.pb.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/struct.pb.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/struct.pb.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/struct.pb.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/struct.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/struct.pb.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/struct.pb.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/bytestream.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/bytestream.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/bytestream.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/bytestream.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/bytestream.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/bytestream.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/bytestream.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/bytestream.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/bytestream.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/bytestream.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/bytestream.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/bytestream.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/bytestream.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/bytestream.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/bytestream.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/bytestream.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/bytestream.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/bytestream.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/common.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/common.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/common.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/common.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/common.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/common.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/common.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/common.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/common.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/common.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/common.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/common.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/common.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/common.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/common.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/common.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/common.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/common.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/int128.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/int128.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/int128.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/int128.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/int128.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/int128.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/int128.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/int128.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/int128.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/int128.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/int128.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/int128.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/int128.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/int128.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/int128.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/int128.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/int128.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/int128.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/status.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/status.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/status.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/status.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/status.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/status.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/status.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/status.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/status.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/status.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/status.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/status.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/status.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/status.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/status.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/status.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/status.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/status.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/statusor.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/statusor.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/statusor.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/statusor.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/statusor.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/statusor.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/statusor.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/statusor.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/statusor.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/statusor.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/statusor.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/statusor.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/statusor.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/statusor.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/statusor.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/statusor.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/statusor.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/statusor.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringpiece.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringpiece.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringpiece.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringpiece.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringpiece.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringpiece.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringpiece.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringpiece.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringpiece.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringpiece.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringpiece.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringpiece.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringpiece.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringpiece.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringpiece.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringpiece.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringpiece.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringpiece.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringprintf.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringprintf.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringprintf.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringprintf.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringprintf.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringprintf.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringprintf.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringprintf.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringprintf.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringprintf.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringprintf.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringprintf.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringprintf.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringprintf.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringprintf.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringprintf.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringprintf.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringprintf.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/structurally_valid.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/structurally_valid.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/structurally_valid.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/structurally_valid.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/structurally_valid.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/structurally_valid.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/structurally_valid.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/structurally_valid.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/structurally_valid.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/structurally_valid.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/structurally_valid.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/structurally_valid.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/structurally_valid.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/structurally_valid.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/structurally_valid.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/structurally_valid.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/structurally_valid.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/structurally_valid.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/strutil.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/strutil.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/strutil.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/strutil.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/strutil.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/strutil.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/strutil.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/strutil.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/strutil.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/strutil.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/strutil.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/strutil.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/strutil.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/strutil.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/strutil.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/strutil.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/strutil.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/strutil.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/substitute.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/substitute.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/substitute.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/substitute.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/substitute.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/substitute.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/substitute.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/substitute.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/substitute.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/substitute.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/substitute.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/substitute.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/substitute.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/substitute.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/substitute.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/substitute.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/substitute.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/substitute.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/time.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/time.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/time.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/time.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/time.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/time.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/time.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/time.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/time.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/time.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/time.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/time.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/time.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/time.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/time.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/time.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/time.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/time.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/text_format.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/text_format.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/text_format.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/text_format.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/text_format.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/text_format.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/text_format.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/text_format.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/text_format.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/text_format.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/text_format.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/text_format.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/text_format.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/text_format.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/text_format.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/text_format.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/text_format.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/text_format.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/timestamp.pb.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/timestamp.pb.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/timestamp.pb.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/timestamp.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/timestamp.pb.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/timestamp.pb.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/timestamp.pb.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/timestamp.pb.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/timestamp.pb.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/timestamp.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/timestamp.pb.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/timestamp.pb.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/timestamp.pb.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/timestamp.pb.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/timestamp.pb.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/timestamp.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/timestamp.pb.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/timestamp.pb.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/type.pb.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/type.pb.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/type.pb.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/type.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/type.pb.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/type.pb.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/type.pb.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/type.pb.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/type.pb.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/type.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/type.pb.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/type.pb.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/type.pb.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/type.pb.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/type.pb.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/type.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/type.pb.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/type.pb.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/unknown_field_set.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/unknown_field_set.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/unknown_field_set.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/unknown_field_set.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/unknown_field_set.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/unknown_field_set.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/unknown_field_set.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/unknown_field_set.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/unknown_field_set.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/unknown_field_set.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/unknown_field_set.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/unknown_field_set.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/unknown_field_set.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/unknown_field_set.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/unknown_field_set.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/unknown_field_set.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/unknown_field_set.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/unknown_field_set.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/delimited_message_util.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/delimited_message_util.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/delimited_message_util.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/delimited_message_util.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/delimited_message_util.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/delimited_message_util.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/delimited_message_util.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/delimited_message_util.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/delimited_message_util.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/delimited_message_util.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/delimited_message_util.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/delimited_message_util.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/delimited_message_util.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/delimited_message_util.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/delimited_message_util.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/delimited_message_util.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/delimited_message_util.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/delimited_message_util.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_comparator.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_comparator.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_comparator.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_comparator.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_comparator.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_comparator.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_comparator.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_comparator.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_comparator.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_comparator.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_comparator.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_comparator.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_comparator.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_comparator.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_comparator.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_comparator.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_comparator.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_comparator.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_mask_util.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_mask_util.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_mask_util.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_mask_util.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_mask_util.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_mask_util.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_mask_util.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_mask_util.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_mask_util.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_mask_util.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_mask_util.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_mask_util.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_mask_util.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_mask_util.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_mask_util.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_mask_util.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_mask_util.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_mask_util.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/datapiece.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/datapiece.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/datapiece.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/datapiece.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/datapiece.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/datapiece.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/datapiece.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/datapiece.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/datapiece.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/datapiece.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/datapiece.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/datapiece.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/datapiece.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/datapiece.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/datapiece.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/datapiece.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/datapiece.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/datapiece.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/default_value_objectwriter.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/default_value_objectwriter.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/default_value_objectwriter.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/default_value_objectwriter.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/default_value_objectwriter.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/default_value_objectwriter.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/default_value_objectwriter.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/default_value_objectwriter.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/default_value_objectwriter.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/default_value_objectwriter.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/default_value_objectwriter.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/default_value_objectwriter.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/default_value_objectwriter.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/default_value_objectwriter.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/default_value_objectwriter.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/default_value_objectwriter.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/default_value_objectwriter.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/default_value_objectwriter.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/error_listener.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/error_listener.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/error_listener.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/error_listener.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/error_listener.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/error_listener.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/error_listener.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/error_listener.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/error_listener.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/error_listener.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/error_listener.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/error_listener.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/error_listener.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/error_listener.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/error_listener.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/error_listener.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/error_listener.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/error_listener.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/field_mask_utility.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/field_mask_utility.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/field_mask_utility.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/field_mask_utility.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/field_mask_utility.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/field_mask_utility.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/field_mask_utility.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/field_mask_utility.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/field_mask_utility.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/field_mask_utility.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/field_mask_utility.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/field_mask_utility.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/field_mask_utility.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/field_mask_utility.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/field_mask_utility.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/field_mask_utility.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/field_mask_utility.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/field_mask_utility.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_escaping.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_escaping.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_escaping.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_escaping.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_escaping.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_escaping.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_escaping.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_escaping.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_escaping.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_escaping.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_escaping.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_escaping.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_escaping.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_escaping.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_escaping.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_escaping.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_escaping.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_escaping.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_objectwriter.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_objectwriter.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_objectwriter.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_objectwriter.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_objectwriter.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_objectwriter.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_objectwriter.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_objectwriter.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_objectwriter.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_objectwriter.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_objectwriter.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_objectwriter.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_objectwriter.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_objectwriter.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_objectwriter.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_objectwriter.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_objectwriter.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_objectwriter.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_stream_parser.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_stream_parser.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_stream_parser.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_stream_parser.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_stream_parser.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_stream_parser.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_stream_parser.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_stream_parser.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_stream_parser.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_stream_parser.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_stream_parser.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_stream_parser.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_stream_parser.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_stream_parser.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_stream_parser.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_stream_parser.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_stream_parser.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_stream_parser.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/object_writer.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/object_writer.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/object_writer.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/object_writer.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/object_writer.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/object_writer.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/object_writer.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/object_writer.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/object_writer.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/object_writer.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/object_writer.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/object_writer.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/object_writer.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/object_writer.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/object_writer.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/object_writer.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/object_writer.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/object_writer.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/proto_writer.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/proto_writer.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/proto_writer.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/proto_writer.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/proto_writer.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/proto_writer.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/proto_writer.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/proto_writer.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/proto_writer.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/proto_writer.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/proto_writer.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/proto_writer.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/proto_writer.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/proto_writer.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/proto_writer.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/proto_writer.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/proto_writer.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/proto_writer.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectsource.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectsource.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectsource.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectsource.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectsource.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectsource.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectsource.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectsource.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectsource.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectsource.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectsource.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectsource.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectsource.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectsource.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectsource.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectsource.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectsource.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectsource.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectwriter.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectwriter.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectwriter.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectwriter.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectwriter.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectwriter.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectwriter.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectwriter.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectwriter.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectwriter.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectwriter.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectwriter.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectwriter.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectwriter.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectwriter.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectwriter.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectwriter.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectwriter.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/type_info.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/type_info.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/type_info.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/type_info.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/type_info.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/type_info.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/type_info.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/type_info.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/type_info.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/type_info.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/type_info.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/type_info.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/type_info.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/type_info.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/type_info.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/type_info.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/type_info.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/type_info.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/utility.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/utility.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/utility.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/utility.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/utility.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/utility.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/utility.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/utility.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/utility.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/utility.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/utility.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/utility.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/utility.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/utility.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/utility.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/utility.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/utility.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/utility.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/json_util.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/json_util.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/json_util.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/json_util.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/json_util.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/json_util.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/json_util.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/json_util.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/json_util.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/json_util.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/json_util.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/json_util.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/json_util.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/json_util.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/json_util.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/json_util.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/json_util.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/json_util.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/message_differencer.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/message_differencer.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/message_differencer.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/message_differencer.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/message_differencer.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/message_differencer.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/message_differencer.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/message_differencer.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/message_differencer.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/message_differencer.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/message_differencer.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/message_differencer.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/message_differencer.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/message_differencer.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/message_differencer.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/message_differencer.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/message_differencer.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/message_differencer.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/time_util.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/time_util.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/time_util.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/time_util.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/time_util.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/time_util.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/time_util.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/time_util.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/time_util.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/time_util.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/time_util.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/time_util.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/time_util.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/time_util.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/time_util.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/time_util.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/time_util.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/time_util.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/type_resolver_util.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/type_resolver_util.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/type_resolver_util.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/type_resolver_util.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/type_resolver_util.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/type_resolver_util.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/type_resolver_util.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/type_resolver_util.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/type_resolver_util.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/type_resolver_util.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/type_resolver_util.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/type_resolver_util.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/type_resolver_util.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/type_resolver_util.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/type_resolver_util.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/type_resolver_util.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/type_resolver_util.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/type_resolver_util.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format_lite.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format_lite.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format_lite.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format_lite.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format_lite.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format_lite.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format_lite.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format_lite.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format_lite.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format_lite.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format_lite.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format_lite.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format_lite.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format_lite.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format_lite.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format_lite.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format_lite.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format_lite.cc.s
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wrappers.pb.o: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wrappers.pb.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wrappers.pb.o
+
+# target to build an object file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wrappers.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wrappers.pb.cc.o
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wrappers.pb.cc.o
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wrappers.pb.i: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wrappers.pb.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wrappers.pb.i
+
+# target to preprocess a source file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wrappers.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wrappers.pb.cc.i
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wrappers.pb.cc.i
+
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wrappers.pb.s: build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wrappers.pb.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wrappers.pb.s
+
+# target to generate assembly for a file
+build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wrappers.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wrappers.pb.cc.s
+.PHONY : build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wrappers.pb.cc.s
+
+src/Base58.o: src/Base58.cpp.o
+.PHONY : src/Base58.o
+
+# target to build an object file
+src/Base58.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Base58.cpp.o
+.PHONY : src/Base58.cpp.o
+
+src/Base58.i: src/Base58.cpp.i
+.PHONY : src/Base58.i
+
+# target to preprocess a source file
+src/Base58.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Base58.cpp.i
+.PHONY : src/Base58.cpp.i
+
+src/Base58.s: src/Base58.cpp.s
+.PHONY : src/Base58.s
+
+# target to generate assembly for a file
+src/Base58.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Base58.cpp.s
+.PHONY : src/Base58.cpp.s
+
+src/Base64.o: src/Base64.cpp.o
+.PHONY : src/Base64.o
+
+# target to build an object file
+src/Base64.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Base64.cpp.o
+.PHONY : src/Base64.cpp.o
+
+src/Base64.i: src/Base64.cpp.i
+.PHONY : src/Base64.i
+
+# target to preprocess a source file
+src/Base64.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Base64.cpp.i
+.PHONY : src/Base64.cpp.i
+
+src/Base64.s: src/Base64.cpp.s
+.PHONY : src/Base64.s
+
+# target to generate assembly for a file
+src/Base64.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Base64.cpp.s
+.PHONY : src/Base64.cpp.s
+
+src/Bech32.o: src/Bech32.cpp.o
+.PHONY : src/Bech32.o
+
+# target to build an object file
+src/Bech32.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bech32.cpp.o
+.PHONY : src/Bech32.cpp.o
+
+src/Bech32.i: src/Bech32.cpp.i
+.PHONY : src/Bech32.i
+
+# target to preprocess a source file
+src/Bech32.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bech32.cpp.i
+.PHONY : src/Bech32.cpp.i
+
+src/Bech32.s: src/Bech32.cpp.s
+.PHONY : src/Bech32.s
+
+# target to generate assembly for a file
+src/Bech32.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bech32.cpp.s
+.PHONY : src/Bech32.cpp.s
+
+src/Bech32Address.o: src/Bech32Address.cpp.o
+.PHONY : src/Bech32Address.o
+
+# target to build an object file
+src/Bech32Address.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bech32Address.cpp.o
+.PHONY : src/Bech32Address.cpp.o
+
+src/Bech32Address.i: src/Bech32Address.cpp.i
+.PHONY : src/Bech32Address.i
+
+# target to preprocess a source file
+src/Bech32Address.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bech32Address.cpp.i
+.PHONY : src/Bech32Address.cpp.i
+
+src/Bech32Address.s: src/Bech32Address.cpp.s
+.PHONY : src/Bech32Address.s
+
+# target to generate assembly for a file
+src/Bech32Address.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bech32Address.cpp.s
+.PHONY : src/Bech32Address.cpp.s
+
+src/BinaryCoding.o: src/BinaryCoding.cpp.o
+.PHONY : src/BinaryCoding.o
+
+# target to build an object file
+src/BinaryCoding.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/BinaryCoding.cpp.o
+.PHONY : src/BinaryCoding.cpp.o
+
+src/BinaryCoding.i: src/BinaryCoding.cpp.i
+.PHONY : src/BinaryCoding.i
+
+# target to preprocess a source file
+src/BinaryCoding.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/BinaryCoding.cpp.i
+.PHONY : src/BinaryCoding.cpp.i
+
+src/BinaryCoding.s: src/BinaryCoding.cpp.s
+.PHONY : src/BinaryCoding.s
+
+# target to generate assembly for a file
+src/BinaryCoding.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/BinaryCoding.cpp.s
+.PHONY : src/BinaryCoding.cpp.s
+
+src/Bitcoin/Address.o: src/Bitcoin/Address.cpp.o
+.PHONY : src/Bitcoin/Address.o
+
+# target to build an object file
+src/Bitcoin/Address.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Address.cpp.o
+.PHONY : src/Bitcoin/Address.cpp.o
+
+src/Bitcoin/Address.i: src/Bitcoin/Address.cpp.i
+.PHONY : src/Bitcoin/Address.i
+
+# target to preprocess a source file
+src/Bitcoin/Address.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Address.cpp.i
+.PHONY : src/Bitcoin/Address.cpp.i
+
+src/Bitcoin/Address.s: src/Bitcoin/Address.cpp.s
+.PHONY : src/Bitcoin/Address.s
+
+# target to generate assembly for a file
+src/Bitcoin/Address.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Address.cpp.s
+.PHONY : src/Bitcoin/Address.cpp.s
+
+src/Bitcoin/Entry.o: src/Bitcoin/Entry.cpp.o
+.PHONY : src/Bitcoin/Entry.o
+
+# target to build an object file
+src/Bitcoin/Entry.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Entry.cpp.o
+.PHONY : src/Bitcoin/Entry.cpp.o
+
+src/Bitcoin/Entry.i: src/Bitcoin/Entry.cpp.i
+.PHONY : src/Bitcoin/Entry.i
+
+# target to preprocess a source file
+src/Bitcoin/Entry.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Entry.cpp.i
+.PHONY : src/Bitcoin/Entry.cpp.i
+
+src/Bitcoin/Entry.s: src/Bitcoin/Entry.cpp.s
+.PHONY : src/Bitcoin/Entry.s
+
+# target to generate assembly for a file
+src/Bitcoin/Entry.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Entry.cpp.s
+.PHONY : src/Bitcoin/Entry.cpp.s
+
+src/Bitcoin/FeeCalculator.o: src/Bitcoin/FeeCalculator.cpp.o
+.PHONY : src/Bitcoin/FeeCalculator.o
+
+# target to build an object file
+src/Bitcoin/FeeCalculator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/FeeCalculator.cpp.o
+.PHONY : src/Bitcoin/FeeCalculator.cpp.o
+
+src/Bitcoin/FeeCalculator.i: src/Bitcoin/FeeCalculator.cpp.i
+.PHONY : src/Bitcoin/FeeCalculator.i
+
+# target to preprocess a source file
+src/Bitcoin/FeeCalculator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/FeeCalculator.cpp.i
+.PHONY : src/Bitcoin/FeeCalculator.cpp.i
+
+src/Bitcoin/FeeCalculator.s: src/Bitcoin/FeeCalculator.cpp.s
+.PHONY : src/Bitcoin/FeeCalculator.s
+
+# target to generate assembly for a file
+src/Bitcoin/FeeCalculator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/FeeCalculator.cpp.s
+.PHONY : src/Bitcoin/FeeCalculator.cpp.s
+
+src/Bitcoin/InputSelector.o: src/Bitcoin/InputSelector.cpp.o
+.PHONY : src/Bitcoin/InputSelector.o
+
+# target to build an object file
+src/Bitcoin/InputSelector.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/InputSelector.cpp.o
+.PHONY : src/Bitcoin/InputSelector.cpp.o
+
+src/Bitcoin/InputSelector.i: src/Bitcoin/InputSelector.cpp.i
+.PHONY : src/Bitcoin/InputSelector.i
+
+# target to preprocess a source file
+src/Bitcoin/InputSelector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/InputSelector.cpp.i
+.PHONY : src/Bitcoin/InputSelector.cpp.i
+
+src/Bitcoin/InputSelector.s: src/Bitcoin/InputSelector.cpp.s
+.PHONY : src/Bitcoin/InputSelector.s
+
+# target to generate assembly for a file
+src/Bitcoin/InputSelector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/InputSelector.cpp.s
+.PHONY : src/Bitcoin/InputSelector.cpp.s
+
+src/Bitcoin/OutPoint.o: src/Bitcoin/OutPoint.cpp.o
+.PHONY : src/Bitcoin/OutPoint.o
+
+# target to build an object file
+src/Bitcoin/OutPoint.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/OutPoint.cpp.o
+.PHONY : src/Bitcoin/OutPoint.cpp.o
+
+src/Bitcoin/OutPoint.i: src/Bitcoin/OutPoint.cpp.i
+.PHONY : src/Bitcoin/OutPoint.i
+
+# target to preprocess a source file
+src/Bitcoin/OutPoint.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/OutPoint.cpp.i
+.PHONY : src/Bitcoin/OutPoint.cpp.i
+
+src/Bitcoin/OutPoint.s: src/Bitcoin/OutPoint.cpp.s
+.PHONY : src/Bitcoin/OutPoint.s
+
+# target to generate assembly for a file
+src/Bitcoin/OutPoint.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/OutPoint.cpp.s
+.PHONY : src/Bitcoin/OutPoint.cpp.s
+
+src/Bitcoin/Script.o: src/Bitcoin/Script.cpp.o
+.PHONY : src/Bitcoin/Script.o
+
+# target to build an object file
+src/Bitcoin/Script.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Script.cpp.o
+.PHONY : src/Bitcoin/Script.cpp.o
+
+src/Bitcoin/Script.i: src/Bitcoin/Script.cpp.i
+.PHONY : src/Bitcoin/Script.i
+
+# target to preprocess a source file
+src/Bitcoin/Script.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Script.cpp.i
+.PHONY : src/Bitcoin/Script.cpp.i
+
+src/Bitcoin/Script.s: src/Bitcoin/Script.cpp.s
+.PHONY : src/Bitcoin/Script.s
+
+# target to generate assembly for a file
+src/Bitcoin/Script.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Script.cpp.s
+.PHONY : src/Bitcoin/Script.cpp.s
+
+src/Bitcoin/SegwitAddress.o: src/Bitcoin/SegwitAddress.cpp.o
+.PHONY : src/Bitcoin/SegwitAddress.o
+
+# target to build an object file
+src/Bitcoin/SegwitAddress.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/SegwitAddress.cpp.o
+.PHONY : src/Bitcoin/SegwitAddress.cpp.o
+
+src/Bitcoin/SegwitAddress.i: src/Bitcoin/SegwitAddress.cpp.i
+.PHONY : src/Bitcoin/SegwitAddress.i
+
+# target to preprocess a source file
+src/Bitcoin/SegwitAddress.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/SegwitAddress.cpp.i
+.PHONY : src/Bitcoin/SegwitAddress.cpp.i
+
+src/Bitcoin/SegwitAddress.s: src/Bitcoin/SegwitAddress.cpp.s
+.PHONY : src/Bitcoin/SegwitAddress.s
+
+# target to generate assembly for a file
+src/Bitcoin/SegwitAddress.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/SegwitAddress.cpp.s
+.PHONY : src/Bitcoin/SegwitAddress.cpp.s
+
+src/Bitcoin/SignatureBuilder.o: src/Bitcoin/SignatureBuilder.cpp.o
+.PHONY : src/Bitcoin/SignatureBuilder.o
+
+# target to build an object file
+src/Bitcoin/SignatureBuilder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/SignatureBuilder.cpp.o
+.PHONY : src/Bitcoin/SignatureBuilder.cpp.o
+
+src/Bitcoin/SignatureBuilder.i: src/Bitcoin/SignatureBuilder.cpp.i
+.PHONY : src/Bitcoin/SignatureBuilder.i
+
+# target to preprocess a source file
+src/Bitcoin/SignatureBuilder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/SignatureBuilder.cpp.i
+.PHONY : src/Bitcoin/SignatureBuilder.cpp.i
+
+src/Bitcoin/SignatureBuilder.s: src/Bitcoin/SignatureBuilder.cpp.s
+.PHONY : src/Bitcoin/SignatureBuilder.s
+
+# target to generate assembly for a file
+src/Bitcoin/SignatureBuilder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/SignatureBuilder.cpp.s
+.PHONY : src/Bitcoin/SignatureBuilder.cpp.s
+
+src/Bitcoin/Signer.o: src/Bitcoin/Signer.cpp.o
+.PHONY : src/Bitcoin/Signer.o
+
+# target to build an object file
+src/Bitcoin/Signer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Signer.cpp.o
+.PHONY : src/Bitcoin/Signer.cpp.o
+
+src/Bitcoin/Signer.i: src/Bitcoin/Signer.cpp.i
+.PHONY : src/Bitcoin/Signer.i
+
+# target to preprocess a source file
+src/Bitcoin/Signer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Signer.cpp.i
+.PHONY : src/Bitcoin/Signer.cpp.i
+
+src/Bitcoin/Signer.s: src/Bitcoin/Signer.cpp.s
+.PHONY : src/Bitcoin/Signer.s
+
+# target to generate assembly for a file
+src/Bitcoin/Signer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Signer.cpp.s
+.PHONY : src/Bitcoin/Signer.cpp.s
+
+src/Bitcoin/SigningInput.o: src/Bitcoin/SigningInput.cpp.o
+.PHONY : src/Bitcoin/SigningInput.o
+
+# target to build an object file
+src/Bitcoin/SigningInput.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/SigningInput.cpp.o
+.PHONY : src/Bitcoin/SigningInput.cpp.o
+
+src/Bitcoin/SigningInput.i: src/Bitcoin/SigningInput.cpp.i
+.PHONY : src/Bitcoin/SigningInput.i
+
+# target to preprocess a source file
+src/Bitcoin/SigningInput.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/SigningInput.cpp.i
+.PHONY : src/Bitcoin/SigningInput.cpp.i
+
+src/Bitcoin/SigningInput.s: src/Bitcoin/SigningInput.cpp.s
+.PHONY : src/Bitcoin/SigningInput.s
+
+# target to generate assembly for a file
+src/Bitcoin/SigningInput.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/SigningInput.cpp.s
+.PHONY : src/Bitcoin/SigningInput.cpp.s
+
+src/Bitcoin/Transaction.o: src/Bitcoin/Transaction.cpp.o
+.PHONY : src/Bitcoin/Transaction.o
+
+# target to build an object file
+src/Bitcoin/Transaction.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Transaction.cpp.o
+.PHONY : src/Bitcoin/Transaction.cpp.o
+
+src/Bitcoin/Transaction.i: src/Bitcoin/Transaction.cpp.i
+.PHONY : src/Bitcoin/Transaction.i
+
+# target to preprocess a source file
+src/Bitcoin/Transaction.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Transaction.cpp.i
+.PHONY : src/Bitcoin/Transaction.cpp.i
+
+src/Bitcoin/Transaction.s: src/Bitcoin/Transaction.cpp.s
+.PHONY : src/Bitcoin/Transaction.s
+
+# target to generate assembly for a file
+src/Bitcoin/Transaction.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Transaction.cpp.s
+.PHONY : src/Bitcoin/Transaction.cpp.s
+
+src/Bitcoin/TransactionBuilder.o: src/Bitcoin/TransactionBuilder.cpp.o
+.PHONY : src/Bitcoin/TransactionBuilder.o
+
+# target to build an object file
+src/Bitcoin/TransactionBuilder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/TransactionBuilder.cpp.o
+.PHONY : src/Bitcoin/TransactionBuilder.cpp.o
+
+src/Bitcoin/TransactionBuilder.i: src/Bitcoin/TransactionBuilder.cpp.i
+.PHONY : src/Bitcoin/TransactionBuilder.i
+
+# target to preprocess a source file
+src/Bitcoin/TransactionBuilder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/TransactionBuilder.cpp.i
+.PHONY : src/Bitcoin/TransactionBuilder.cpp.i
+
+src/Bitcoin/TransactionBuilder.s: src/Bitcoin/TransactionBuilder.cpp.s
+.PHONY : src/Bitcoin/TransactionBuilder.s
+
+# target to generate assembly for a file
+src/Bitcoin/TransactionBuilder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/TransactionBuilder.cpp.s
+.PHONY : src/Bitcoin/TransactionBuilder.cpp.s
+
+src/Bitcoin/TransactionInput.o: src/Bitcoin/TransactionInput.cpp.o
+.PHONY : src/Bitcoin/TransactionInput.o
+
+# target to build an object file
+src/Bitcoin/TransactionInput.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/TransactionInput.cpp.o
+.PHONY : src/Bitcoin/TransactionInput.cpp.o
+
+src/Bitcoin/TransactionInput.i: src/Bitcoin/TransactionInput.cpp.i
+.PHONY : src/Bitcoin/TransactionInput.i
+
+# target to preprocess a source file
+src/Bitcoin/TransactionInput.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/TransactionInput.cpp.i
+.PHONY : src/Bitcoin/TransactionInput.cpp.i
+
+src/Bitcoin/TransactionInput.s: src/Bitcoin/TransactionInput.cpp.s
+.PHONY : src/Bitcoin/TransactionInput.s
+
+# target to generate assembly for a file
+src/Bitcoin/TransactionInput.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/TransactionInput.cpp.s
+.PHONY : src/Bitcoin/TransactionInput.cpp.s
+
+src/Bitcoin/TransactionOutput.o: src/Bitcoin/TransactionOutput.cpp.o
+.PHONY : src/Bitcoin/TransactionOutput.o
+
+# target to build an object file
+src/Bitcoin/TransactionOutput.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/TransactionOutput.cpp.o
+.PHONY : src/Bitcoin/TransactionOutput.cpp.o
+
+src/Bitcoin/TransactionOutput.i: src/Bitcoin/TransactionOutput.cpp.i
+.PHONY : src/Bitcoin/TransactionOutput.i
+
+# target to preprocess a source file
+src/Bitcoin/TransactionOutput.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/TransactionOutput.cpp.i
+.PHONY : src/Bitcoin/TransactionOutput.cpp.i
+
+src/Bitcoin/TransactionOutput.s: src/Bitcoin/TransactionOutput.cpp.s
+.PHONY : src/Bitcoin/TransactionOutput.s
+
+# target to generate assembly for a file
+src/Bitcoin/TransactionOutput.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/TransactionOutput.cpp.s
+.PHONY : src/Bitcoin/TransactionOutput.cpp.s
+
+src/Bitcoin/TransactionSigner.o: src/Bitcoin/TransactionSigner.cpp.o
+.PHONY : src/Bitcoin/TransactionSigner.o
+
+# target to build an object file
+src/Bitcoin/TransactionSigner.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/TransactionSigner.cpp.o
+.PHONY : src/Bitcoin/TransactionSigner.cpp.o
+
+src/Bitcoin/TransactionSigner.i: src/Bitcoin/TransactionSigner.cpp.i
+.PHONY : src/Bitcoin/TransactionSigner.i
+
+# target to preprocess a source file
+src/Bitcoin/TransactionSigner.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/TransactionSigner.cpp.i
+.PHONY : src/Bitcoin/TransactionSigner.cpp.i
+
+src/Bitcoin/TransactionSigner.s: src/Bitcoin/TransactionSigner.cpp.s
+.PHONY : src/Bitcoin/TransactionSigner.s
+
+# target to generate assembly for a file
+src/Bitcoin/TransactionSigner.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/TransactionSigner.cpp.s
+.PHONY : src/Bitcoin/TransactionSigner.cpp.s
+
+src/Cbor.o: src/Cbor.cpp.o
+.PHONY : src/Cbor.o
+
+# target to build an object file
+src/Cbor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Cbor.cpp.o
+.PHONY : src/Cbor.cpp.o
+
+src/Cbor.i: src/Cbor.cpp.i
+.PHONY : src/Cbor.i
+
+# target to preprocess a source file
+src/Cbor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Cbor.cpp.i
+.PHONY : src/Cbor.cpp.i
+
+src/Cbor.s: src/Cbor.cpp.s
+.PHONY : src/Cbor.s
+
+# target to generate assembly for a file
+src/Cbor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Cbor.cpp.s
+.PHONY : src/Cbor.cpp.s
+
+src/Coin.o: src/Coin.cpp.o
+.PHONY : src/Coin.o
+
+# target to build an object file
+src/Coin.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Coin.cpp.o
+.PHONY : src/Coin.cpp.o
+
+src/Coin.i: src/Coin.cpp.i
+.PHONY : src/Coin.i
+
+# target to preprocess a source file
+src/Coin.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Coin.cpp.i
+.PHONY : src/Coin.cpp.i
+
+src/Coin.s: src/Coin.cpp.s
+.PHONY : src/Coin.s
+
+# target to generate assembly for a file
+src/Coin.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Coin.cpp.s
+.PHONY : src/Coin.cpp.s
+
+src/Crc.o: src/Crc.cpp.o
+.PHONY : src/Crc.o
+
+# target to build an object file
+src/Crc.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Crc.cpp.o
+.PHONY : src/Crc.cpp.o
+
+src/Crc.i: src/Crc.cpp.i
+.PHONY : src/Crc.i
+
+# target to preprocess a source file
+src/Crc.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Crc.cpp.i
+.PHONY : src/Crc.cpp.i
+
+src/Crc.s: src/Crc.cpp.s
+.PHONY : src/Crc.s
+
+# target to generate assembly for a file
+src/Crc.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Crc.cpp.s
+.PHONY : src/Crc.cpp.s
+
+src/Data.o: src/Data.cpp.o
+.PHONY : src/Data.o
+
+# target to build an object file
+src/Data.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Data.cpp.o
+.PHONY : src/Data.cpp.o
+
+src/Data.i: src/Data.cpp.i
+.PHONY : src/Data.i
+
+# target to preprocess a source file
+src/Data.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Data.cpp.i
+.PHONY : src/Data.cpp.i
+
+src/Data.s: src/Data.cpp.s
+.PHONY : src/Data.s
+
+# target to generate assembly for a file
+src/Data.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Data.cpp.s
+.PHONY : src/Data.cpp.s
+
+src/DerivationPath.o: src/DerivationPath.cpp.o
+.PHONY : src/DerivationPath.o
+
+# target to build an object file
+src/DerivationPath.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/DerivationPath.cpp.o
+.PHONY : src/DerivationPath.cpp.o
+
+src/DerivationPath.i: src/DerivationPath.cpp.i
+.PHONY : src/DerivationPath.i
+
+# target to preprocess a source file
+src/DerivationPath.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/DerivationPath.cpp.i
+.PHONY : src/DerivationPath.cpp.i
+
+src/DerivationPath.s: src/DerivationPath.cpp.s
+.PHONY : src/DerivationPath.s
+
+# target to generate assembly for a file
+src/DerivationPath.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/DerivationPath.cpp.s
+.PHONY : src/DerivationPath.cpp.s
+
+src/Encrypt.o: src/Encrypt.cpp.o
+.PHONY : src/Encrypt.o
+
+# target to build an object file
+src/Encrypt.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Encrypt.cpp.o
+.PHONY : src/Encrypt.cpp.o
+
+src/Encrypt.i: src/Encrypt.cpp.i
+.PHONY : src/Encrypt.i
+
+# target to preprocess a source file
+src/Encrypt.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Encrypt.cpp.i
+.PHONY : src/Encrypt.cpp.i
+
+src/Encrypt.s: src/Encrypt.cpp.s
+.PHONY : src/Encrypt.s
+
+# target to generate assembly for a file
+src/Encrypt.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Encrypt.cpp.s
+.PHONY : src/Encrypt.cpp.s
+
+src/Ethereum/ABI/Array.o: src/Ethereum/ABI/Array.cpp.o
+.PHONY : src/Ethereum/ABI/Array.o
+
+# target to build an object file
+src/Ethereum/ABI/Array.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Array.cpp.o
+.PHONY : src/Ethereum/ABI/Array.cpp.o
+
+src/Ethereum/ABI/Array.i: src/Ethereum/ABI/Array.cpp.i
+.PHONY : src/Ethereum/ABI/Array.i
+
+# target to preprocess a source file
+src/Ethereum/ABI/Array.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Array.cpp.i
+.PHONY : src/Ethereum/ABI/Array.cpp.i
+
+src/Ethereum/ABI/Array.s: src/Ethereum/ABI/Array.cpp.s
+.PHONY : src/Ethereum/ABI/Array.s
+
+# target to generate assembly for a file
+src/Ethereum/ABI/Array.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Array.cpp.s
+.PHONY : src/Ethereum/ABI/Array.cpp.s
+
+src/Ethereum/ABI/Bytes.o: src/Ethereum/ABI/Bytes.cpp.o
+.PHONY : src/Ethereum/ABI/Bytes.o
+
+# target to build an object file
+src/Ethereum/ABI/Bytes.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Bytes.cpp.o
+.PHONY : src/Ethereum/ABI/Bytes.cpp.o
+
+src/Ethereum/ABI/Bytes.i: src/Ethereum/ABI/Bytes.cpp.i
+.PHONY : src/Ethereum/ABI/Bytes.i
+
+# target to preprocess a source file
+src/Ethereum/ABI/Bytes.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Bytes.cpp.i
+.PHONY : src/Ethereum/ABI/Bytes.cpp.i
+
+src/Ethereum/ABI/Bytes.s: src/Ethereum/ABI/Bytes.cpp.s
+.PHONY : src/Ethereum/ABI/Bytes.s
+
+# target to generate assembly for a file
+src/Ethereum/ABI/Bytes.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Bytes.cpp.s
+.PHONY : src/Ethereum/ABI/Bytes.cpp.s
+
+src/Ethereum/ABI/Function.o: src/Ethereum/ABI/Function.cpp.o
+.PHONY : src/Ethereum/ABI/Function.o
+
+# target to build an object file
+src/Ethereum/ABI/Function.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Function.cpp.o
+.PHONY : src/Ethereum/ABI/Function.cpp.o
+
+src/Ethereum/ABI/Function.i: src/Ethereum/ABI/Function.cpp.i
+.PHONY : src/Ethereum/ABI/Function.i
+
+# target to preprocess a source file
+src/Ethereum/ABI/Function.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Function.cpp.i
+.PHONY : src/Ethereum/ABI/Function.cpp.i
+
+src/Ethereum/ABI/Function.s: src/Ethereum/ABI/Function.cpp.s
+.PHONY : src/Ethereum/ABI/Function.s
+
+# target to generate assembly for a file
+src/Ethereum/ABI/Function.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Function.cpp.s
+.PHONY : src/Ethereum/ABI/Function.cpp.s
+
+src/Ethereum/ABI/ParamAddress.o: src/Ethereum/ABI/ParamAddress.cpp.o
+.PHONY : src/Ethereum/ABI/ParamAddress.o
+
+# target to build an object file
+src/Ethereum/ABI/ParamAddress.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamAddress.cpp.o
+.PHONY : src/Ethereum/ABI/ParamAddress.cpp.o
+
+src/Ethereum/ABI/ParamAddress.i: src/Ethereum/ABI/ParamAddress.cpp.i
+.PHONY : src/Ethereum/ABI/ParamAddress.i
+
+# target to preprocess a source file
+src/Ethereum/ABI/ParamAddress.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamAddress.cpp.i
+.PHONY : src/Ethereum/ABI/ParamAddress.cpp.i
+
+src/Ethereum/ABI/ParamAddress.s: src/Ethereum/ABI/ParamAddress.cpp.s
+.PHONY : src/Ethereum/ABI/ParamAddress.s
+
+# target to generate assembly for a file
+src/Ethereum/ABI/ParamAddress.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamAddress.cpp.s
+.PHONY : src/Ethereum/ABI/ParamAddress.cpp.s
+
+src/Ethereum/ABI/ParamBase.o: src/Ethereum/ABI/ParamBase.cpp.o
+.PHONY : src/Ethereum/ABI/ParamBase.o
+
+# target to build an object file
+src/Ethereum/ABI/ParamBase.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamBase.cpp.o
+.PHONY : src/Ethereum/ABI/ParamBase.cpp.o
+
+src/Ethereum/ABI/ParamBase.i: src/Ethereum/ABI/ParamBase.cpp.i
+.PHONY : src/Ethereum/ABI/ParamBase.i
+
+# target to preprocess a source file
+src/Ethereum/ABI/ParamBase.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamBase.cpp.i
+.PHONY : src/Ethereum/ABI/ParamBase.cpp.i
+
+src/Ethereum/ABI/ParamBase.s: src/Ethereum/ABI/ParamBase.cpp.s
+.PHONY : src/Ethereum/ABI/ParamBase.s
+
+# target to generate assembly for a file
+src/Ethereum/ABI/ParamBase.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamBase.cpp.s
+.PHONY : src/Ethereum/ABI/ParamBase.cpp.s
+
+src/Ethereum/ABI/ParamFactory.o: src/Ethereum/ABI/ParamFactory.cpp.o
+.PHONY : src/Ethereum/ABI/ParamFactory.o
+
+# target to build an object file
+src/Ethereum/ABI/ParamFactory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamFactory.cpp.o
+.PHONY : src/Ethereum/ABI/ParamFactory.cpp.o
+
+src/Ethereum/ABI/ParamFactory.i: src/Ethereum/ABI/ParamFactory.cpp.i
+.PHONY : src/Ethereum/ABI/ParamFactory.i
+
+# target to preprocess a source file
+src/Ethereum/ABI/ParamFactory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamFactory.cpp.i
+.PHONY : src/Ethereum/ABI/ParamFactory.cpp.i
+
+src/Ethereum/ABI/ParamFactory.s: src/Ethereum/ABI/ParamFactory.cpp.s
+.PHONY : src/Ethereum/ABI/ParamFactory.s
+
+# target to generate assembly for a file
+src/Ethereum/ABI/ParamFactory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamFactory.cpp.s
+.PHONY : src/Ethereum/ABI/ParamFactory.cpp.s
+
+src/Ethereum/ABI/ParamNumber.o: src/Ethereum/ABI/ParamNumber.cpp.o
+.PHONY : src/Ethereum/ABI/ParamNumber.o
+
+# target to build an object file
+src/Ethereum/ABI/ParamNumber.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamNumber.cpp.o
+.PHONY : src/Ethereum/ABI/ParamNumber.cpp.o
+
+src/Ethereum/ABI/ParamNumber.i: src/Ethereum/ABI/ParamNumber.cpp.i
+.PHONY : src/Ethereum/ABI/ParamNumber.i
+
+# target to preprocess a source file
+src/Ethereum/ABI/ParamNumber.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamNumber.cpp.i
+.PHONY : src/Ethereum/ABI/ParamNumber.cpp.i
+
+src/Ethereum/ABI/ParamNumber.s: src/Ethereum/ABI/ParamNumber.cpp.s
+.PHONY : src/Ethereum/ABI/ParamNumber.s
+
+# target to generate assembly for a file
+src/Ethereum/ABI/ParamNumber.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamNumber.cpp.s
+.PHONY : src/Ethereum/ABI/ParamNumber.cpp.s
+
+src/Ethereum/ABI/ParamStruct.o: src/Ethereum/ABI/ParamStruct.cpp.o
+.PHONY : src/Ethereum/ABI/ParamStruct.o
+
+# target to build an object file
+src/Ethereum/ABI/ParamStruct.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamStruct.cpp.o
+.PHONY : src/Ethereum/ABI/ParamStruct.cpp.o
+
+src/Ethereum/ABI/ParamStruct.i: src/Ethereum/ABI/ParamStruct.cpp.i
+.PHONY : src/Ethereum/ABI/ParamStruct.i
+
+# target to preprocess a source file
+src/Ethereum/ABI/ParamStruct.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamStruct.cpp.i
+.PHONY : src/Ethereum/ABI/ParamStruct.cpp.i
+
+src/Ethereum/ABI/ParamStruct.s: src/Ethereum/ABI/ParamStruct.cpp.s
+.PHONY : src/Ethereum/ABI/ParamStruct.s
+
+# target to generate assembly for a file
+src/Ethereum/ABI/ParamStruct.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamStruct.cpp.s
+.PHONY : src/Ethereum/ABI/ParamStruct.cpp.s
+
+src/Ethereum/ABI/Parameters.o: src/Ethereum/ABI/Parameters.cpp.o
+.PHONY : src/Ethereum/ABI/Parameters.o
+
+# target to build an object file
+src/Ethereum/ABI/Parameters.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Parameters.cpp.o
+.PHONY : src/Ethereum/ABI/Parameters.cpp.o
+
+src/Ethereum/ABI/Parameters.i: src/Ethereum/ABI/Parameters.cpp.i
+.PHONY : src/Ethereum/ABI/Parameters.i
+
+# target to preprocess a source file
+src/Ethereum/ABI/Parameters.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Parameters.cpp.i
+.PHONY : src/Ethereum/ABI/Parameters.cpp.i
+
+src/Ethereum/ABI/Parameters.s: src/Ethereum/ABI/Parameters.cpp.s
+.PHONY : src/Ethereum/ABI/Parameters.s
+
+# target to generate assembly for a file
+src/Ethereum/ABI/Parameters.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Parameters.cpp.s
+.PHONY : src/Ethereum/ABI/Parameters.cpp.s
+
+src/Ethereum/ABI/Tuple.o: src/Ethereum/ABI/Tuple.cpp.o
+.PHONY : src/Ethereum/ABI/Tuple.o
+
+# target to build an object file
+src/Ethereum/ABI/Tuple.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Tuple.cpp.o
+.PHONY : src/Ethereum/ABI/Tuple.cpp.o
+
+src/Ethereum/ABI/Tuple.i: src/Ethereum/ABI/Tuple.cpp.i
+.PHONY : src/Ethereum/ABI/Tuple.i
+
+# target to preprocess a source file
+src/Ethereum/ABI/Tuple.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Tuple.cpp.i
+.PHONY : src/Ethereum/ABI/Tuple.cpp.i
+
+src/Ethereum/ABI/Tuple.s: src/Ethereum/ABI/Tuple.cpp.s
+.PHONY : src/Ethereum/ABI/Tuple.s
+
+# target to generate assembly for a file
+src/Ethereum/ABI/Tuple.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Tuple.cpp.s
+.PHONY : src/Ethereum/ABI/Tuple.cpp.s
+
+src/Ethereum/ABI/ValueDecoder.o: src/Ethereum/ABI/ValueDecoder.cpp.o
+.PHONY : src/Ethereum/ABI/ValueDecoder.o
+
+# target to build an object file
+src/Ethereum/ABI/ValueDecoder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ValueDecoder.cpp.o
+.PHONY : src/Ethereum/ABI/ValueDecoder.cpp.o
+
+src/Ethereum/ABI/ValueDecoder.i: src/Ethereum/ABI/ValueDecoder.cpp.i
+.PHONY : src/Ethereum/ABI/ValueDecoder.i
+
+# target to preprocess a source file
+src/Ethereum/ABI/ValueDecoder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ValueDecoder.cpp.i
+.PHONY : src/Ethereum/ABI/ValueDecoder.cpp.i
+
+src/Ethereum/ABI/ValueDecoder.s: src/Ethereum/ABI/ValueDecoder.cpp.s
+.PHONY : src/Ethereum/ABI/ValueDecoder.s
+
+# target to generate assembly for a file
+src/Ethereum/ABI/ValueDecoder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ValueDecoder.cpp.s
+.PHONY : src/Ethereum/ABI/ValueDecoder.cpp.s
+
+src/Ethereum/ABI/ValueEncoder.o: src/Ethereum/ABI/ValueEncoder.cpp.o
+.PHONY : src/Ethereum/ABI/ValueEncoder.o
+
+# target to build an object file
+src/Ethereum/ABI/ValueEncoder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ValueEncoder.cpp.o
+.PHONY : src/Ethereum/ABI/ValueEncoder.cpp.o
+
+src/Ethereum/ABI/ValueEncoder.i: src/Ethereum/ABI/ValueEncoder.cpp.i
+.PHONY : src/Ethereum/ABI/ValueEncoder.i
+
+# target to preprocess a source file
+src/Ethereum/ABI/ValueEncoder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ValueEncoder.cpp.i
+.PHONY : src/Ethereum/ABI/ValueEncoder.cpp.i
+
+src/Ethereum/ABI/ValueEncoder.s: src/Ethereum/ABI/ValueEncoder.cpp.s
+.PHONY : src/Ethereum/ABI/ValueEncoder.s
+
+# target to generate assembly for a file
+src/Ethereum/ABI/ValueEncoder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ValueEncoder.cpp.s
+.PHONY : src/Ethereum/ABI/ValueEncoder.cpp.s
+
+src/Ethereum/Address.o: src/Ethereum/Address.cpp.o
+.PHONY : src/Ethereum/Address.o
+
+# target to build an object file
+src/Ethereum/Address.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/Address.cpp.o
+.PHONY : src/Ethereum/Address.cpp.o
+
+src/Ethereum/Address.i: src/Ethereum/Address.cpp.i
+.PHONY : src/Ethereum/Address.i
+
+# target to preprocess a source file
+src/Ethereum/Address.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/Address.cpp.i
+.PHONY : src/Ethereum/Address.cpp.i
+
+src/Ethereum/Address.s: src/Ethereum/Address.cpp.s
+.PHONY : src/Ethereum/Address.s
+
+# target to generate assembly for a file
+src/Ethereum/Address.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/Address.cpp.s
+.PHONY : src/Ethereum/Address.cpp.s
+
+src/Ethereum/AddressChecksum.o: src/Ethereum/AddressChecksum.cpp.o
+.PHONY : src/Ethereum/AddressChecksum.o
+
+# target to build an object file
+src/Ethereum/AddressChecksum.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/AddressChecksum.cpp.o
+.PHONY : src/Ethereum/AddressChecksum.cpp.o
+
+src/Ethereum/AddressChecksum.i: src/Ethereum/AddressChecksum.cpp.i
+.PHONY : src/Ethereum/AddressChecksum.i
+
+# target to preprocess a source file
+src/Ethereum/AddressChecksum.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/AddressChecksum.cpp.i
+.PHONY : src/Ethereum/AddressChecksum.cpp.i
+
+src/Ethereum/AddressChecksum.s: src/Ethereum/AddressChecksum.cpp.s
+.PHONY : src/Ethereum/AddressChecksum.s
+
+# target to generate assembly for a file
+src/Ethereum/AddressChecksum.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/AddressChecksum.cpp.s
+.PHONY : src/Ethereum/AddressChecksum.cpp.s
+
+src/Ethereum/ContractCall.o: src/Ethereum/ContractCall.cpp.o
+.PHONY : src/Ethereum/ContractCall.o
+
+# target to build an object file
+src/Ethereum/ContractCall.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ContractCall.cpp.o
+.PHONY : src/Ethereum/ContractCall.cpp.o
+
+src/Ethereum/ContractCall.i: src/Ethereum/ContractCall.cpp.i
+.PHONY : src/Ethereum/ContractCall.i
+
+# target to preprocess a source file
+src/Ethereum/ContractCall.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ContractCall.cpp.i
+.PHONY : src/Ethereum/ContractCall.cpp.i
+
+src/Ethereum/ContractCall.s: src/Ethereum/ContractCall.cpp.s
+.PHONY : src/Ethereum/ContractCall.s
+
+# target to generate assembly for a file
+src/Ethereum/ContractCall.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ContractCall.cpp.s
+.PHONY : src/Ethereum/ContractCall.cpp.s
+
+src/Ethereum/Entry.o: src/Ethereum/Entry.cpp.o
+.PHONY : src/Ethereum/Entry.o
+
+# target to build an object file
+src/Ethereum/Entry.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/Entry.cpp.o
+.PHONY : src/Ethereum/Entry.cpp.o
+
+src/Ethereum/Entry.i: src/Ethereum/Entry.cpp.i
+.PHONY : src/Ethereum/Entry.i
+
+# target to preprocess a source file
+src/Ethereum/Entry.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/Entry.cpp.i
+.PHONY : src/Ethereum/Entry.cpp.i
+
+src/Ethereum/Entry.s: src/Ethereum/Entry.cpp.s
+.PHONY : src/Ethereum/Entry.s
+
+# target to generate assembly for a file
+src/Ethereum/Entry.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/Entry.cpp.s
+.PHONY : src/Ethereum/Entry.cpp.s
+
+src/Ethereum/RLP.o: src/Ethereum/RLP.cpp.o
+.PHONY : src/Ethereum/RLP.o
+
+# target to build an object file
+src/Ethereum/RLP.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/RLP.cpp.o
+.PHONY : src/Ethereum/RLP.cpp.o
+
+src/Ethereum/RLP.i: src/Ethereum/RLP.cpp.i
+.PHONY : src/Ethereum/RLP.i
+
+# target to preprocess a source file
+src/Ethereum/RLP.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/RLP.cpp.i
+.PHONY : src/Ethereum/RLP.cpp.i
+
+src/Ethereum/RLP.s: src/Ethereum/RLP.cpp.s
+.PHONY : src/Ethereum/RLP.s
+
+# target to generate assembly for a file
+src/Ethereum/RLP.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/RLP.cpp.s
+.PHONY : src/Ethereum/RLP.cpp.s
+
+src/Ethereum/Signer.o: src/Ethereum/Signer.cpp.o
+.PHONY : src/Ethereum/Signer.o
+
+# target to build an object file
+src/Ethereum/Signer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/Signer.cpp.o
+.PHONY : src/Ethereum/Signer.cpp.o
+
+src/Ethereum/Signer.i: src/Ethereum/Signer.cpp.i
+.PHONY : src/Ethereum/Signer.i
+
+# target to preprocess a source file
+src/Ethereum/Signer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/Signer.cpp.i
+.PHONY : src/Ethereum/Signer.cpp.i
+
+src/Ethereum/Signer.s: src/Ethereum/Signer.cpp.s
+.PHONY : src/Ethereum/Signer.s
+
+# target to generate assembly for a file
+src/Ethereum/Signer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/Signer.cpp.s
+.PHONY : src/Ethereum/Signer.cpp.s
+
+src/Ethereum/Transaction.o: src/Ethereum/Transaction.cpp.o
+.PHONY : src/Ethereum/Transaction.o
+
+# target to build an object file
+src/Ethereum/Transaction.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/Transaction.cpp.o
+.PHONY : src/Ethereum/Transaction.cpp.o
+
+src/Ethereum/Transaction.i: src/Ethereum/Transaction.cpp.i
+.PHONY : src/Ethereum/Transaction.i
+
+# target to preprocess a source file
+src/Ethereum/Transaction.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/Transaction.cpp.i
+.PHONY : src/Ethereum/Transaction.cpp.i
+
+src/Ethereum/Transaction.s: src/Ethereum/Transaction.cpp.s
+.PHONY : src/Ethereum/Transaction.s
+
+# target to generate assembly for a file
+src/Ethereum/Transaction.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/Transaction.cpp.s
+.PHONY : src/Ethereum/Transaction.cpp.s
+
+src/Generated/CoinInfoData.o: src/Generated/CoinInfoData.cpp.o
+.PHONY : src/Generated/CoinInfoData.o
+
+# target to build an object file
+src/Generated/CoinInfoData.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Generated/CoinInfoData.cpp.o
+.PHONY : src/Generated/CoinInfoData.cpp.o
+
+src/Generated/CoinInfoData.i: src/Generated/CoinInfoData.cpp.i
+.PHONY : src/Generated/CoinInfoData.i
+
+# target to preprocess a source file
+src/Generated/CoinInfoData.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Generated/CoinInfoData.cpp.i
+.PHONY : src/Generated/CoinInfoData.cpp.i
+
+src/Generated/CoinInfoData.s: src/Generated/CoinInfoData.cpp.s
+.PHONY : src/Generated/CoinInfoData.s
+
+# target to generate assembly for a file
+src/Generated/CoinInfoData.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Generated/CoinInfoData.cpp.s
+.PHONY : src/Generated/CoinInfoData.cpp.s
+
+src/Generated/NWHRP.o: src/Generated/NWHRP.cpp.o
+.PHONY : src/Generated/NWHRP.o
+
+# target to build an object file
+src/Generated/NWHRP.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Generated/NWHRP.cpp.o
+.PHONY : src/Generated/NWHRP.cpp.o
+
+src/Generated/NWHRP.i: src/Generated/NWHRP.cpp.i
+.PHONY : src/Generated/NWHRP.i
+
+# target to preprocess a source file
+src/Generated/NWHRP.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Generated/NWHRP.cpp.i
+.PHONY : src/Generated/NWHRP.cpp.i
+
+src/Generated/NWHRP.s: src/Generated/NWHRP.cpp.s
+.PHONY : src/Generated/NWHRP.s
+
+# target to generate assembly for a file
+src/Generated/NWHRP.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Generated/NWHRP.cpp.s
+.PHONY : src/Generated/NWHRP.cpp.s
+
+src/HDWallet.o: src/HDWallet.cpp.o
+.PHONY : src/HDWallet.o
+
+# target to build an object file
+src/HDWallet.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/HDWallet.cpp.o
+.PHONY : src/HDWallet.cpp.o
+
+src/HDWallet.i: src/HDWallet.cpp.i
+.PHONY : src/HDWallet.i
+
+# target to preprocess a source file
+src/HDWallet.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/HDWallet.cpp.i
+.PHONY : src/HDWallet.cpp.i
+
+src/HDWallet.s: src/HDWallet.cpp.s
+.PHONY : src/HDWallet.s
+
+# target to generate assembly for a file
+src/HDWallet.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/HDWallet.cpp.s
+.PHONY : src/HDWallet.cpp.s
+
+src/Hash.o: src/Hash.cpp.o
+.PHONY : src/Hash.o
+
+# target to build an object file
+src/Hash.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Hash.cpp.o
+.PHONY : src/Hash.cpp.o
+
+src/Hash.i: src/Hash.cpp.i
+.PHONY : src/Hash.i
+
+# target to preprocess a source file
+src/Hash.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Hash.cpp.i
+.PHONY : src/Hash.cpp.i
+
+src/Hash.s: src/Hash.cpp.s
+.PHONY : src/Hash.s
+
+# target to generate assembly for a file
+src/Hash.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Hash.cpp.s
+.PHONY : src/Hash.cpp.s
+
+src/Keystore/AESParameters.o: src/Keystore/AESParameters.cpp.o
+.PHONY : src/Keystore/AESParameters.o
+
+# target to build an object file
+src/Keystore/AESParameters.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/AESParameters.cpp.o
+.PHONY : src/Keystore/AESParameters.cpp.o
+
+src/Keystore/AESParameters.i: src/Keystore/AESParameters.cpp.i
+.PHONY : src/Keystore/AESParameters.i
+
+# target to preprocess a source file
+src/Keystore/AESParameters.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/AESParameters.cpp.i
+.PHONY : src/Keystore/AESParameters.cpp.i
+
+src/Keystore/AESParameters.s: src/Keystore/AESParameters.cpp.s
+.PHONY : src/Keystore/AESParameters.s
+
+# target to generate assembly for a file
+src/Keystore/AESParameters.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/AESParameters.cpp.s
+.PHONY : src/Keystore/AESParameters.cpp.s
+
+src/Keystore/Account.o: src/Keystore/Account.cpp.o
+.PHONY : src/Keystore/Account.o
+
+# target to build an object file
+src/Keystore/Account.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/Account.cpp.o
+.PHONY : src/Keystore/Account.cpp.o
+
+src/Keystore/Account.i: src/Keystore/Account.cpp.i
+.PHONY : src/Keystore/Account.i
+
+# target to preprocess a source file
+src/Keystore/Account.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/Account.cpp.i
+.PHONY : src/Keystore/Account.cpp.i
+
+src/Keystore/Account.s: src/Keystore/Account.cpp.s
+.PHONY : src/Keystore/Account.s
+
+# target to generate assembly for a file
+src/Keystore/Account.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/Account.cpp.s
+.PHONY : src/Keystore/Account.cpp.s
+
+src/Keystore/EncryptionParameters.o: src/Keystore/EncryptionParameters.cpp.o
+.PHONY : src/Keystore/EncryptionParameters.o
+
+# target to build an object file
+src/Keystore/EncryptionParameters.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/EncryptionParameters.cpp.o
+.PHONY : src/Keystore/EncryptionParameters.cpp.o
+
+src/Keystore/EncryptionParameters.i: src/Keystore/EncryptionParameters.cpp.i
+.PHONY : src/Keystore/EncryptionParameters.i
+
+# target to preprocess a source file
+src/Keystore/EncryptionParameters.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/EncryptionParameters.cpp.i
+.PHONY : src/Keystore/EncryptionParameters.cpp.i
+
+src/Keystore/EncryptionParameters.s: src/Keystore/EncryptionParameters.cpp.s
+.PHONY : src/Keystore/EncryptionParameters.s
+
+# target to generate assembly for a file
+src/Keystore/EncryptionParameters.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/EncryptionParameters.cpp.s
+.PHONY : src/Keystore/EncryptionParameters.cpp.s
+
+src/Keystore/PBKDF2Parameters.o: src/Keystore/PBKDF2Parameters.cpp.o
+.PHONY : src/Keystore/PBKDF2Parameters.o
+
+# target to build an object file
+src/Keystore/PBKDF2Parameters.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/PBKDF2Parameters.cpp.o
+.PHONY : src/Keystore/PBKDF2Parameters.cpp.o
+
+src/Keystore/PBKDF2Parameters.i: src/Keystore/PBKDF2Parameters.cpp.i
+.PHONY : src/Keystore/PBKDF2Parameters.i
+
+# target to preprocess a source file
+src/Keystore/PBKDF2Parameters.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/PBKDF2Parameters.cpp.i
+.PHONY : src/Keystore/PBKDF2Parameters.cpp.i
+
+src/Keystore/PBKDF2Parameters.s: src/Keystore/PBKDF2Parameters.cpp.s
+.PHONY : src/Keystore/PBKDF2Parameters.s
+
+# target to generate assembly for a file
+src/Keystore/PBKDF2Parameters.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/PBKDF2Parameters.cpp.s
+.PHONY : src/Keystore/PBKDF2Parameters.cpp.s
+
+src/Keystore/ScryptParameters.o: src/Keystore/ScryptParameters.cpp.o
+.PHONY : src/Keystore/ScryptParameters.o
+
+# target to build an object file
+src/Keystore/ScryptParameters.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/ScryptParameters.cpp.o
+.PHONY : src/Keystore/ScryptParameters.cpp.o
+
+src/Keystore/ScryptParameters.i: src/Keystore/ScryptParameters.cpp.i
+.PHONY : src/Keystore/ScryptParameters.i
+
+# target to preprocess a source file
+src/Keystore/ScryptParameters.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/ScryptParameters.cpp.i
+.PHONY : src/Keystore/ScryptParameters.cpp.i
+
+src/Keystore/ScryptParameters.s: src/Keystore/ScryptParameters.cpp.s
+.PHONY : src/Keystore/ScryptParameters.s
+
+# target to generate assembly for a file
+src/Keystore/ScryptParameters.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/ScryptParameters.cpp.s
+.PHONY : src/Keystore/ScryptParameters.cpp.s
+
+src/Keystore/StoredKey.o: src/Keystore/StoredKey.cpp.o
+.PHONY : src/Keystore/StoredKey.o
+
+# target to build an object file
+src/Keystore/StoredKey.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/StoredKey.cpp.o
+.PHONY : src/Keystore/StoredKey.cpp.o
+
+src/Keystore/StoredKey.i: src/Keystore/StoredKey.cpp.i
+.PHONY : src/Keystore/StoredKey.i
+
+# target to preprocess a source file
+src/Keystore/StoredKey.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/StoredKey.cpp.i
+.PHONY : src/Keystore/StoredKey.cpp.i
+
+src/Keystore/StoredKey.s: src/Keystore/StoredKey.cpp.s
+.PHONY : src/Keystore/StoredKey.s
+
+# target to generate assembly for a file
+src/Keystore/StoredKey.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/StoredKey.cpp.s
+.PHONY : src/Keystore/StoredKey.cpp.s
+
+src/Mnemonic.o: src/Mnemonic.cpp.o
+.PHONY : src/Mnemonic.o
+
+# target to build an object file
+src/Mnemonic.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Mnemonic.cpp.o
+.PHONY : src/Mnemonic.cpp.o
+
+src/Mnemonic.i: src/Mnemonic.cpp.i
+.PHONY : src/Mnemonic.i
+
+# target to preprocess a source file
+src/Mnemonic.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Mnemonic.cpp.i
+.PHONY : src/Mnemonic.cpp.i
+
+src/Mnemonic.s: src/Mnemonic.cpp.s
+.PHONY : src/Mnemonic.s
+
+# target to generate assembly for a file
+src/Mnemonic.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Mnemonic.cpp.s
+.PHONY : src/Mnemonic.cpp.s
+
+src/PrivateKey.o: src/PrivateKey.cpp.o
+.PHONY : src/PrivateKey.o
+
+# target to build an object file
+src/PrivateKey.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/PrivateKey.cpp.o
+.PHONY : src/PrivateKey.cpp.o
+
+src/PrivateKey.i: src/PrivateKey.cpp.i
+.PHONY : src/PrivateKey.i
+
+# target to preprocess a source file
+src/PrivateKey.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/PrivateKey.cpp.i
+.PHONY : src/PrivateKey.cpp.i
+
+src/PrivateKey.s: src/PrivateKey.cpp.s
+.PHONY : src/PrivateKey.s
+
+# target to generate assembly for a file
+src/PrivateKey.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/PrivateKey.cpp.s
+.PHONY : src/PrivateKey.cpp.s
+
+src/PublicKey.o: src/PublicKey.cpp.o
+.PHONY : src/PublicKey.o
+
+# target to build an object file
+src/PublicKey.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/PublicKey.cpp.o
+.PHONY : src/PublicKey.cpp.o
+
+src/PublicKey.i: src/PublicKey.cpp.i
+.PHONY : src/PublicKey.i
+
+# target to preprocess a source file
+src/PublicKey.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/PublicKey.cpp.i
+.PHONY : src/PublicKey.cpp.i
+
+src/PublicKey.s: src/PublicKey.cpp.s
+.PHONY : src/PublicKey.s
+
+# target to generate assembly for a file
+src/PublicKey.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/PublicKey.cpp.s
+.PHONY : src/PublicKey.cpp.s
+
+src/TransactionCompiler.o: src/TransactionCompiler.cpp.o
+.PHONY : src/TransactionCompiler.o
+
+# target to build an object file
+src/TransactionCompiler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/TransactionCompiler.cpp.o
+.PHONY : src/TransactionCompiler.cpp.o
+
+src/TransactionCompiler.i: src/TransactionCompiler.cpp.i
+.PHONY : src/TransactionCompiler.i
+
+# target to preprocess a source file
+src/TransactionCompiler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/TransactionCompiler.cpp.i
+.PHONY : src/TransactionCompiler.cpp.i
+
+src/TransactionCompiler.s: src/TransactionCompiler.cpp.s
+.PHONY : src/TransactionCompiler.s
+
+# target to generate assembly for a file
+src/TransactionCompiler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/TransactionCompiler.cpp.s
+.PHONY : src/TransactionCompiler.cpp.s
+
+src/interface/NWAES.o: src/interface/NWAES.cpp.o
+.PHONY : src/interface/NWAES.o
+
+# target to build an object file
+src/interface/NWAES.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWAES.cpp.o
+.PHONY : src/interface/NWAES.cpp.o
+
+src/interface/NWAES.i: src/interface/NWAES.cpp.i
+.PHONY : src/interface/NWAES.i
+
+# target to preprocess a source file
+src/interface/NWAES.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWAES.cpp.i
+.PHONY : src/interface/NWAES.cpp.i
+
+src/interface/NWAES.s: src/interface/NWAES.cpp.s
+.PHONY : src/interface/NWAES.s
+
+# target to generate assembly for a file
+src/interface/NWAES.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWAES.cpp.s
+.PHONY : src/interface/NWAES.cpp.s
+
+src/interface/NWAccount.o: src/interface/NWAccount.cpp.o
+.PHONY : src/interface/NWAccount.o
+
+# target to build an object file
+src/interface/NWAccount.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWAccount.cpp.o
+.PHONY : src/interface/NWAccount.cpp.o
+
+src/interface/NWAccount.i: src/interface/NWAccount.cpp.i
+.PHONY : src/interface/NWAccount.i
+
+# target to preprocess a source file
+src/interface/NWAccount.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWAccount.cpp.i
+.PHONY : src/interface/NWAccount.cpp.i
+
+src/interface/NWAccount.s: src/interface/NWAccount.cpp.s
+.PHONY : src/interface/NWAccount.s
+
+# target to generate assembly for a file
+src/interface/NWAccount.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWAccount.cpp.s
+.PHONY : src/interface/NWAccount.cpp.s
+
+src/interface/NWAnyAddress.o: src/interface/NWAnyAddress.cpp.o
+.PHONY : src/interface/NWAnyAddress.o
+
+# target to build an object file
+src/interface/NWAnyAddress.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWAnyAddress.cpp.o
+.PHONY : src/interface/NWAnyAddress.cpp.o
+
+src/interface/NWAnyAddress.i: src/interface/NWAnyAddress.cpp.i
+.PHONY : src/interface/NWAnyAddress.i
+
+# target to preprocess a source file
+src/interface/NWAnyAddress.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWAnyAddress.cpp.i
+.PHONY : src/interface/NWAnyAddress.cpp.i
+
+src/interface/NWAnyAddress.s: src/interface/NWAnyAddress.cpp.s
+.PHONY : src/interface/NWAnyAddress.s
+
+# target to generate assembly for a file
+src/interface/NWAnyAddress.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWAnyAddress.cpp.s
+.PHONY : src/interface/NWAnyAddress.cpp.s
+
+src/interface/NWAnySigner.o: src/interface/NWAnySigner.cpp.o
+.PHONY : src/interface/NWAnySigner.o
+
+# target to build an object file
+src/interface/NWAnySigner.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWAnySigner.cpp.o
+.PHONY : src/interface/NWAnySigner.cpp.o
+
+src/interface/NWAnySigner.i: src/interface/NWAnySigner.cpp.i
+.PHONY : src/interface/NWAnySigner.i
+
+# target to preprocess a source file
+src/interface/NWAnySigner.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWAnySigner.cpp.i
+.PHONY : src/interface/NWAnySigner.cpp.i
+
+src/interface/NWAnySigner.s: src/interface/NWAnySigner.cpp.s
+.PHONY : src/interface/NWAnySigner.s
+
+# target to generate assembly for a file
+src/interface/NWAnySigner.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWAnySigner.cpp.s
+.PHONY : src/interface/NWAnySigner.cpp.s
+
+src/interface/NWBase32.o: src/interface/NWBase32.cpp.o
+.PHONY : src/interface/NWBase32.o
+
+# target to build an object file
+src/interface/NWBase32.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBase32.cpp.o
+.PHONY : src/interface/NWBase32.cpp.o
+
+src/interface/NWBase32.i: src/interface/NWBase32.cpp.i
+.PHONY : src/interface/NWBase32.i
+
+# target to preprocess a source file
+src/interface/NWBase32.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBase32.cpp.i
+.PHONY : src/interface/NWBase32.cpp.i
+
+src/interface/NWBase32.s: src/interface/NWBase32.cpp.s
+.PHONY : src/interface/NWBase32.s
+
+# target to generate assembly for a file
+src/interface/NWBase32.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBase32.cpp.s
+.PHONY : src/interface/NWBase32.cpp.s
+
+src/interface/NWBase58.o: src/interface/NWBase58.cpp.o
+.PHONY : src/interface/NWBase58.o
+
+# target to build an object file
+src/interface/NWBase58.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBase58.cpp.o
+.PHONY : src/interface/NWBase58.cpp.o
+
+src/interface/NWBase58.i: src/interface/NWBase58.cpp.i
+.PHONY : src/interface/NWBase58.i
+
+# target to preprocess a source file
+src/interface/NWBase58.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBase58.cpp.i
+.PHONY : src/interface/NWBase58.cpp.i
+
+src/interface/NWBase58.s: src/interface/NWBase58.cpp.s
+.PHONY : src/interface/NWBase58.s
+
+# target to generate assembly for a file
+src/interface/NWBase58.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBase58.cpp.s
+.PHONY : src/interface/NWBase58.cpp.s
+
+src/interface/NWBase64.o: src/interface/NWBase64.cpp.o
+.PHONY : src/interface/NWBase64.o
+
+# target to build an object file
+src/interface/NWBase64.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBase64.cpp.o
+.PHONY : src/interface/NWBase64.cpp.o
+
+src/interface/NWBase64.i: src/interface/NWBase64.cpp.i
+.PHONY : src/interface/NWBase64.i
+
+# target to preprocess a source file
+src/interface/NWBase64.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBase64.cpp.i
+.PHONY : src/interface/NWBase64.cpp.i
+
+src/interface/NWBase64.s: src/interface/NWBase64.cpp.s
+.PHONY : src/interface/NWBase64.s
+
+# target to generate assembly for a file
+src/interface/NWBase64.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBase64.cpp.s
+.PHONY : src/interface/NWBase64.cpp.s
+
+src/interface/NWBitcoin.o: src/interface/NWBitcoin.cpp.o
+.PHONY : src/interface/NWBitcoin.o
+
+# target to build an object file
+src/interface/NWBitcoin.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBitcoin.cpp.o
+.PHONY : src/interface/NWBitcoin.cpp.o
+
+src/interface/NWBitcoin.i: src/interface/NWBitcoin.cpp.i
+.PHONY : src/interface/NWBitcoin.i
+
+# target to preprocess a source file
+src/interface/NWBitcoin.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBitcoin.cpp.i
+.PHONY : src/interface/NWBitcoin.cpp.i
+
+src/interface/NWBitcoin.s: src/interface/NWBitcoin.cpp.s
+.PHONY : src/interface/NWBitcoin.s
+
+# target to generate assembly for a file
+src/interface/NWBitcoin.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBitcoin.cpp.s
+.PHONY : src/interface/NWBitcoin.cpp.s
+
+src/interface/NWBitcoinAddress.o: src/interface/NWBitcoinAddress.cpp.o
+.PHONY : src/interface/NWBitcoinAddress.o
+
+# target to build an object file
+src/interface/NWBitcoinAddress.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBitcoinAddress.cpp.o
+.PHONY : src/interface/NWBitcoinAddress.cpp.o
+
+src/interface/NWBitcoinAddress.i: src/interface/NWBitcoinAddress.cpp.i
+.PHONY : src/interface/NWBitcoinAddress.i
+
+# target to preprocess a source file
+src/interface/NWBitcoinAddress.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBitcoinAddress.cpp.i
+.PHONY : src/interface/NWBitcoinAddress.cpp.i
+
+src/interface/NWBitcoinAddress.s: src/interface/NWBitcoinAddress.cpp.s
+.PHONY : src/interface/NWBitcoinAddress.s
+
+# target to generate assembly for a file
+src/interface/NWBitcoinAddress.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBitcoinAddress.cpp.s
+.PHONY : src/interface/NWBitcoinAddress.cpp.s
+
+src/interface/NWBitcoinScript.o: src/interface/NWBitcoinScript.cpp.o
+.PHONY : src/interface/NWBitcoinScript.o
+
+# target to build an object file
+src/interface/NWBitcoinScript.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBitcoinScript.cpp.o
+.PHONY : src/interface/NWBitcoinScript.cpp.o
+
+src/interface/NWBitcoinScript.i: src/interface/NWBitcoinScript.cpp.i
+.PHONY : src/interface/NWBitcoinScript.i
+
+# target to preprocess a source file
+src/interface/NWBitcoinScript.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBitcoinScript.cpp.i
+.PHONY : src/interface/NWBitcoinScript.cpp.i
+
+src/interface/NWBitcoinScript.s: src/interface/NWBitcoinScript.cpp.s
+.PHONY : src/interface/NWBitcoinScript.s
+
+# target to generate assembly for a file
+src/interface/NWBitcoinScript.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBitcoinScript.cpp.s
+.PHONY : src/interface/NWBitcoinScript.cpp.s
+
+src/interface/NWCoinType.o: src/interface/NWCoinType.cpp.o
+.PHONY : src/interface/NWCoinType.o
+
+# target to build an object file
+src/interface/NWCoinType.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWCoinType.cpp.o
+.PHONY : src/interface/NWCoinType.cpp.o
+
+src/interface/NWCoinType.i: src/interface/NWCoinType.cpp.i
+.PHONY : src/interface/NWCoinType.i
+
+# target to preprocess a source file
+src/interface/NWCoinType.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWCoinType.cpp.i
+.PHONY : src/interface/NWCoinType.cpp.i
+
+src/interface/NWCoinType.s: src/interface/NWCoinType.cpp.s
+.PHONY : src/interface/NWCoinType.s
+
+# target to generate assembly for a file
+src/interface/NWCoinType.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWCoinType.cpp.s
+.PHONY : src/interface/NWCoinType.cpp.s
+
+src/interface/NWData.o: src/interface/NWData.cpp.o
+.PHONY : src/interface/NWData.o
+
+# target to build an object file
+src/interface/NWData.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWData.cpp.o
+.PHONY : src/interface/NWData.cpp.o
+
+src/interface/NWData.i: src/interface/NWData.cpp.i
+.PHONY : src/interface/NWData.i
+
+# target to preprocess a source file
+src/interface/NWData.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWData.cpp.i
+.PHONY : src/interface/NWData.cpp.i
+
+src/interface/NWData.s: src/interface/NWData.cpp.s
+.PHONY : src/interface/NWData.s
+
+# target to generate assembly for a file
+src/interface/NWData.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWData.cpp.s
+.PHONY : src/interface/NWData.cpp.s
+
+src/interface/NWDataVector.o: src/interface/NWDataVector.cpp.o
+.PHONY : src/interface/NWDataVector.o
+
+# target to build an object file
+src/interface/NWDataVector.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWDataVector.cpp.o
+.PHONY : src/interface/NWDataVector.cpp.o
+
+src/interface/NWDataVector.i: src/interface/NWDataVector.cpp.i
+.PHONY : src/interface/NWDataVector.i
+
+# target to preprocess a source file
+src/interface/NWDataVector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWDataVector.cpp.i
+.PHONY : src/interface/NWDataVector.cpp.i
+
+src/interface/NWDataVector.s: src/interface/NWDataVector.cpp.s
+.PHONY : src/interface/NWDataVector.s
+
+# target to generate assembly for a file
+src/interface/NWDataVector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWDataVector.cpp.s
+.PHONY : src/interface/NWDataVector.cpp.s
+
+src/interface/NWEthereumAbi.o: src/interface/NWEthereumAbi.cpp.o
+.PHONY : src/interface/NWEthereumAbi.o
+
+# target to build an object file
+src/interface/NWEthereumAbi.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWEthereumAbi.cpp.o
+.PHONY : src/interface/NWEthereumAbi.cpp.o
+
+src/interface/NWEthereumAbi.i: src/interface/NWEthereumAbi.cpp.i
+.PHONY : src/interface/NWEthereumAbi.i
+
+# target to preprocess a source file
+src/interface/NWEthereumAbi.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWEthereumAbi.cpp.i
+.PHONY : src/interface/NWEthereumAbi.cpp.i
+
+src/interface/NWEthereumAbi.s: src/interface/NWEthereumAbi.cpp.s
+.PHONY : src/interface/NWEthereumAbi.s
+
+# target to generate assembly for a file
+src/interface/NWEthereumAbi.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWEthereumAbi.cpp.s
+.PHONY : src/interface/NWEthereumAbi.cpp.s
+
+src/interface/NWEthereumAbiFunction.o: src/interface/NWEthereumAbiFunction.cpp.o
+.PHONY : src/interface/NWEthereumAbiFunction.o
+
+# target to build an object file
+src/interface/NWEthereumAbiFunction.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWEthereumAbiFunction.cpp.o
+.PHONY : src/interface/NWEthereumAbiFunction.cpp.o
+
+src/interface/NWEthereumAbiFunction.i: src/interface/NWEthereumAbiFunction.cpp.i
+.PHONY : src/interface/NWEthereumAbiFunction.i
+
+# target to preprocess a source file
+src/interface/NWEthereumAbiFunction.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWEthereumAbiFunction.cpp.i
+.PHONY : src/interface/NWEthereumAbiFunction.cpp.i
+
+src/interface/NWEthereumAbiFunction.s: src/interface/NWEthereumAbiFunction.cpp.s
+.PHONY : src/interface/NWEthereumAbiFunction.s
+
+# target to generate assembly for a file
+src/interface/NWEthereumAbiFunction.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWEthereumAbiFunction.cpp.s
+.PHONY : src/interface/NWEthereumAbiFunction.cpp.s
+
+src/interface/NWEthereumAbiValue.o: src/interface/NWEthereumAbiValue.cpp.o
+.PHONY : src/interface/NWEthereumAbiValue.o
+
+# target to build an object file
+src/interface/NWEthereumAbiValue.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWEthereumAbiValue.cpp.o
+.PHONY : src/interface/NWEthereumAbiValue.cpp.o
+
+src/interface/NWEthereumAbiValue.i: src/interface/NWEthereumAbiValue.cpp.i
+.PHONY : src/interface/NWEthereumAbiValue.i
+
+# target to preprocess a source file
+src/interface/NWEthereumAbiValue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWEthereumAbiValue.cpp.i
+.PHONY : src/interface/NWEthereumAbiValue.cpp.i
+
+src/interface/NWEthereumAbiValue.s: src/interface/NWEthereumAbiValue.cpp.s
+.PHONY : src/interface/NWEthereumAbiValue.s
+
+# target to generate assembly for a file
+src/interface/NWEthereumAbiValue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWEthereumAbiValue.cpp.s
+.PHONY : src/interface/NWEthereumAbiValue.cpp.s
+
+src/interface/NWHDVersion.o: src/interface/NWHDVersion.cpp.o
+.PHONY : src/interface/NWHDVersion.o
+
+# target to build an object file
+src/interface/NWHDVersion.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWHDVersion.cpp.o
+.PHONY : src/interface/NWHDVersion.cpp.o
+
+src/interface/NWHDVersion.i: src/interface/NWHDVersion.cpp.i
+.PHONY : src/interface/NWHDVersion.i
+
+# target to preprocess a source file
+src/interface/NWHDVersion.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWHDVersion.cpp.i
+.PHONY : src/interface/NWHDVersion.cpp.i
+
+src/interface/NWHDVersion.s: src/interface/NWHDVersion.cpp.s
+.PHONY : src/interface/NWHDVersion.s
+
+# target to generate assembly for a file
+src/interface/NWHDVersion.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWHDVersion.cpp.s
+.PHONY : src/interface/NWHDVersion.cpp.s
+
+src/interface/NWHDWallet.o: src/interface/NWHDWallet.cpp.o
+.PHONY : src/interface/NWHDWallet.o
+
+# target to build an object file
+src/interface/NWHDWallet.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWHDWallet.cpp.o
+.PHONY : src/interface/NWHDWallet.cpp.o
+
+src/interface/NWHDWallet.i: src/interface/NWHDWallet.cpp.i
+.PHONY : src/interface/NWHDWallet.i
+
+# target to preprocess a source file
+src/interface/NWHDWallet.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWHDWallet.cpp.i
+.PHONY : src/interface/NWHDWallet.cpp.i
+
+src/interface/NWHDWallet.s: src/interface/NWHDWallet.cpp.s
+.PHONY : src/interface/NWHDWallet.s
+
+# target to generate assembly for a file
+src/interface/NWHDWallet.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWHDWallet.cpp.s
+.PHONY : src/interface/NWHDWallet.cpp.s
+
+src/interface/NWHash.o: src/interface/NWHash.cpp.o
+.PHONY : src/interface/NWHash.o
+
+# target to build an object file
+src/interface/NWHash.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWHash.cpp.o
+.PHONY : src/interface/NWHash.cpp.o
+
+src/interface/NWHash.i: src/interface/NWHash.cpp.i
+.PHONY : src/interface/NWHash.i
+
+# target to preprocess a source file
+src/interface/NWHash.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWHash.cpp.i
+.PHONY : src/interface/NWHash.cpp.i
+
+src/interface/NWHash.s: src/interface/NWHash.cpp.s
+.PHONY : src/interface/NWHash.s
+
+# target to generate assembly for a file
+src/interface/NWHash.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWHash.cpp.s
+.PHONY : src/interface/NWHash.cpp.s
+
+src/interface/NWMnemonic.o: src/interface/NWMnemonic.cpp.o
+.PHONY : src/interface/NWMnemonic.o
+
+# target to build an object file
+src/interface/NWMnemonic.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWMnemonic.cpp.o
+.PHONY : src/interface/NWMnemonic.cpp.o
+
+src/interface/NWMnemonic.i: src/interface/NWMnemonic.cpp.i
+.PHONY : src/interface/NWMnemonic.i
+
+# target to preprocess a source file
+src/interface/NWMnemonic.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWMnemonic.cpp.i
+.PHONY : src/interface/NWMnemonic.cpp.i
+
+src/interface/NWMnemonic.s: src/interface/NWMnemonic.cpp.s
+.PHONY : src/interface/NWMnemonic.s
+
+# target to generate assembly for a file
+src/interface/NWMnemonic.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWMnemonic.cpp.s
+.PHONY : src/interface/NWMnemonic.cpp.s
+
+src/interface/NWPBKDF2.o: src/interface/NWPBKDF2.cpp.o
+.PHONY : src/interface/NWPBKDF2.o
+
+# target to build an object file
+src/interface/NWPBKDF2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWPBKDF2.cpp.o
+.PHONY : src/interface/NWPBKDF2.cpp.o
+
+src/interface/NWPBKDF2.i: src/interface/NWPBKDF2.cpp.i
+.PHONY : src/interface/NWPBKDF2.i
+
+# target to preprocess a source file
+src/interface/NWPBKDF2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWPBKDF2.cpp.i
+.PHONY : src/interface/NWPBKDF2.cpp.i
+
+src/interface/NWPBKDF2.s: src/interface/NWPBKDF2.cpp.s
+.PHONY : src/interface/NWPBKDF2.s
+
+# target to generate assembly for a file
+src/interface/NWPBKDF2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWPBKDF2.cpp.s
+.PHONY : src/interface/NWPBKDF2.cpp.s
+
+src/interface/NWPrivateKey.o: src/interface/NWPrivateKey.cpp.o
+.PHONY : src/interface/NWPrivateKey.o
+
+# target to build an object file
+src/interface/NWPrivateKey.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWPrivateKey.cpp.o
+.PHONY : src/interface/NWPrivateKey.cpp.o
+
+src/interface/NWPrivateKey.i: src/interface/NWPrivateKey.cpp.i
+.PHONY : src/interface/NWPrivateKey.i
+
+# target to preprocess a source file
+src/interface/NWPrivateKey.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWPrivateKey.cpp.i
+.PHONY : src/interface/NWPrivateKey.cpp.i
+
+src/interface/NWPrivateKey.s: src/interface/NWPrivateKey.cpp.s
+.PHONY : src/interface/NWPrivateKey.s
+
+# target to generate assembly for a file
+src/interface/NWPrivateKey.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWPrivateKey.cpp.s
+.PHONY : src/interface/NWPrivateKey.cpp.s
+
+src/interface/NWPublicKey.o: src/interface/NWPublicKey.cpp.o
+.PHONY : src/interface/NWPublicKey.o
+
+# target to build an object file
+src/interface/NWPublicKey.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWPublicKey.cpp.o
+.PHONY : src/interface/NWPublicKey.cpp.o
+
+src/interface/NWPublicKey.i: src/interface/NWPublicKey.cpp.i
+.PHONY : src/interface/NWPublicKey.i
+
+# target to preprocess a source file
+src/interface/NWPublicKey.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWPublicKey.cpp.i
+.PHONY : src/interface/NWPublicKey.cpp.i
+
+src/interface/NWPublicKey.s: src/interface/NWPublicKey.cpp.s
+.PHONY : src/interface/NWPublicKey.s
+
+# target to generate assembly for a file
+src/interface/NWPublicKey.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWPublicKey.cpp.s
+.PHONY : src/interface/NWPublicKey.cpp.s
+
+src/interface/NWStoredKey.o: src/interface/NWStoredKey.cpp.o
+.PHONY : src/interface/NWStoredKey.o
+
+# target to build an object file
+src/interface/NWStoredKey.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWStoredKey.cpp.o
+.PHONY : src/interface/NWStoredKey.cpp.o
+
+src/interface/NWStoredKey.i: src/interface/NWStoredKey.cpp.i
+.PHONY : src/interface/NWStoredKey.i
+
+# target to preprocess a source file
+src/interface/NWStoredKey.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWStoredKey.cpp.i
+.PHONY : src/interface/NWStoredKey.cpp.i
+
+src/interface/NWStoredKey.s: src/interface/NWStoredKey.cpp.s
+.PHONY : src/interface/NWStoredKey.s
+
+# target to generate assembly for a file
+src/interface/NWStoredKey.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWStoredKey.cpp.s
+.PHONY : src/interface/NWStoredKey.cpp.s
+
+src/interface/NWString+Hex.o: src/interface/NWString+Hex.cpp.o
+.PHONY : src/interface/NWString+Hex.o
+
+# target to build an object file
+src/interface/NWString+Hex.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWString+Hex.cpp.o
+.PHONY : src/interface/NWString+Hex.cpp.o
+
+src/interface/NWString+Hex.i: src/interface/NWString+Hex.cpp.i
+.PHONY : src/interface/NWString+Hex.i
+
+# target to preprocess a source file
+src/interface/NWString+Hex.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWString+Hex.cpp.i
+.PHONY : src/interface/NWString+Hex.cpp.i
+
+src/interface/NWString+Hex.s: src/interface/NWString+Hex.cpp.s
+.PHONY : src/interface/NWString+Hex.s
+
+# target to generate assembly for a file
+src/interface/NWString+Hex.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWString+Hex.cpp.s
+.PHONY : src/interface/NWString+Hex.cpp.s
+
+src/interface/NWString.o: src/interface/NWString.cpp.o
+.PHONY : src/interface/NWString.o
+
+# target to build an object file
+src/interface/NWString.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWString.cpp.o
+.PHONY : src/interface/NWString.cpp.o
+
+src/interface/NWString.i: src/interface/NWString.cpp.i
+.PHONY : src/interface/NWString.i
+
+# target to preprocess a source file
+src/interface/NWString.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWString.cpp.i
+.PHONY : src/interface/NWString.cpp.i
+
+src/interface/NWString.s: src/interface/NWString.cpp.s
+.PHONY : src/interface/NWString.s
+
+# target to generate assembly for a file
+src/interface/NWString.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWString.cpp.s
+.PHONY : src/interface/NWString.cpp.s
+
+src/interface/NWTransactionCompiler.o: src/interface/NWTransactionCompiler.cpp.o
+.PHONY : src/interface/NWTransactionCompiler.o
+
+# target to build an object file
+src/interface/NWTransactionCompiler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWTransactionCompiler.cpp.o
+.PHONY : src/interface/NWTransactionCompiler.cpp.o
+
+src/interface/NWTransactionCompiler.i: src/interface/NWTransactionCompiler.cpp.i
+.PHONY : src/interface/NWTransactionCompiler.i
+
+# target to preprocess a source file
+src/interface/NWTransactionCompiler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWTransactionCompiler.cpp.i
+.PHONY : src/interface/NWTransactionCompiler.cpp.i
+
+src/interface/NWTransactionCompiler.s: src/interface/NWTransactionCompiler.cpp.s
+.PHONY : src/interface/NWTransactionCompiler.s
+
+# target to generate assembly for a file
+src/interface/NWTransactionCompiler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWTransactionCompiler.cpp.s
+.PHONY : src/interface/NWTransactionCompiler.cpp.s
+
+src/proto/Bitcoin.pb.o: src/proto/Bitcoin.pb.cc.o
+.PHONY : src/proto/Bitcoin.pb.o
+
+# target to build an object file
+src/proto/Bitcoin.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/proto/Bitcoin.pb.cc.o
+.PHONY : src/proto/Bitcoin.pb.cc.o
+
+src/proto/Bitcoin.pb.i: src/proto/Bitcoin.pb.cc.i
+.PHONY : src/proto/Bitcoin.pb.i
+
+# target to preprocess a source file
+src/proto/Bitcoin.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/proto/Bitcoin.pb.cc.i
+.PHONY : src/proto/Bitcoin.pb.cc.i
+
+src/proto/Bitcoin.pb.s: src/proto/Bitcoin.pb.cc.s
+.PHONY : src/proto/Bitcoin.pb.s
+
+# target to generate assembly for a file
+src/proto/Bitcoin.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/proto/Bitcoin.pb.cc.s
+.PHONY : src/proto/Bitcoin.pb.cc.s
+
+src/proto/Common.pb.o: src/proto/Common.pb.cc.o
+.PHONY : src/proto/Common.pb.o
+
+# target to build an object file
+src/proto/Common.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/proto/Common.pb.cc.o
+.PHONY : src/proto/Common.pb.cc.o
+
+src/proto/Common.pb.i: src/proto/Common.pb.cc.i
+.PHONY : src/proto/Common.pb.i
+
+# target to preprocess a source file
+src/proto/Common.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/proto/Common.pb.cc.i
+.PHONY : src/proto/Common.pb.cc.i
+
+src/proto/Common.pb.s: src/proto/Common.pb.cc.s
+.PHONY : src/proto/Common.pb.s
+
+# target to generate assembly for a file
+src/proto/Common.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/proto/Common.pb.cc.s
+.PHONY : src/proto/Common.pb.cc.s
+
+src/proto/Ethereum.pb.o: src/proto/Ethereum.pb.cc.o
+.PHONY : src/proto/Ethereum.pb.o
+
+# target to build an object file
+src/proto/Ethereum.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/proto/Ethereum.pb.cc.o
+.PHONY : src/proto/Ethereum.pb.cc.o
+
+src/proto/Ethereum.pb.i: src/proto/Ethereum.pb.cc.i
+.PHONY : src/proto/Ethereum.pb.i
+
+# target to preprocess a source file
+src/proto/Ethereum.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/proto/Ethereum.pb.cc.i
+.PHONY : src/proto/Ethereum.pb.cc.i
+
+src/proto/Ethereum.pb.s: src/proto/Ethereum.pb.cc.s
+.PHONY : src/proto/Ethereum.pb.s
+
+# target to generate assembly for a file
+src/proto/Ethereum.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/proto/Ethereum.pb.cc.s
+.PHONY : src/proto/Ethereum.pb.cc.s
+
+src/proto/TransactionCompiler.pb.o: src/proto/TransactionCompiler.pb.cc.o
+.PHONY : src/proto/TransactionCompiler.pb.o
+
+# target to build an object file
+src/proto/TransactionCompiler.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/proto/TransactionCompiler.pb.cc.o
+.PHONY : src/proto/TransactionCompiler.pb.cc.o
+
+src/proto/TransactionCompiler.pb.i: src/proto/TransactionCompiler.pb.cc.i
+.PHONY : src/proto/TransactionCompiler.pb.i
+
+# target to preprocess a source file
+src/proto/TransactionCompiler.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/proto/TransactionCompiler.pb.cc.i
+.PHONY : src/proto/TransactionCompiler.pb.cc.i
+
+src/proto/TransactionCompiler.pb.s: src/proto/TransactionCompiler.pb.cc.s
+.PHONY : src/proto/TransactionCompiler.pb.s
+
+# target to generate assembly for a file
+src/proto/TransactionCompiler.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/proto/TransactionCompiler.pb.cc.s
+.PHONY : src/proto/TransactionCompiler.pb.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -123,7 +4446,542 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... NiceWCore"
+	@echo "... TrezorCrypto"
+	@echo "... TrezorCryptoTests"
+	@echo "... protobuf"
+	@echo "... walletconsole"
+	@echo "... walletconsolelib"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.pb.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.pb.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any.pb.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any_lite.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any_lite.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/any_lite.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/api.pb.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/api.pb.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/api.pb.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arena.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arena.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arena.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arenastring.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arenastring.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/arenastring.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/importer.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/importer.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/importer.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/parser.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/parser.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/compiler/parser.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.pb.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.pb.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor.pb.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor_database.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor_database.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/descriptor_database.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/duration.pb.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/duration.pb.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/duration.pb.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/dynamic_message.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/dynamic_message.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/dynamic_message.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/empty.pb.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/empty.pb.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/empty.pb.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set_heavy.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set_heavy.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/extension_set_heavy.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/field_mask.pb.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/field_mask.pb.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/field_mask.pb.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_enum_util.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_enum_util.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_enum_util.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_bases.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_bases.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_bases.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_reflection.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_reflection.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_reflection.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven_lite.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven_lite.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_table_driven_lite.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_full.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_full.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_full.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_lite.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_lite.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_tctable_lite.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_util.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_util.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/generated_message_util.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/implicit_weak_message.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/implicit_weak_message.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/implicit_weak_message.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/inlined_string_field.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/inlined_string_field.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/inlined_string_field.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/coded_stream.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/coded_stream.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/coded_stream.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/gzip_stream.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/gzip_stream.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/gzip_stream.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/io_win32.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/io_win32.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/io_win32.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/printer.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/printer.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/printer.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/strtod.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/strtod.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/strtod.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/tokenizer.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/tokenizer.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/tokenizer.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl_lite.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl_lite.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/io/zero_copy_stream_impl_lite.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map_field.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map_field.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/map_field.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message_lite.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message_lite.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/message_lite.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/parse_context.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/parse_context.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/parse_context.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/reflection_ops.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/reflection_ops.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/reflection_ops.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_field.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_field.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_field.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_ptr_field.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_ptr_field.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/repeated_ptr_field.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/service.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/service.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/service.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/source_context.pb.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/source_context.pb.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/source_context.pb.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/struct.pb.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/struct.pb.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/struct.pb.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/bytestream.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/bytestream.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/bytestream.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/common.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/common.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/common.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/int128.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/int128.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/int128.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/status.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/status.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/status.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/statusor.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/statusor.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/statusor.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringpiece.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringpiece.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringpiece.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringprintf.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringprintf.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/stringprintf.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/structurally_valid.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/structurally_valid.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/structurally_valid.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/strutil.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/strutil.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/strutil.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/substitute.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/substitute.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/substitute.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/time.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/time.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/stubs/time.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/text_format.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/text_format.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/text_format.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/timestamp.pb.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/timestamp.pb.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/timestamp.pb.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/type.pb.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/type.pb.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/type.pb.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/unknown_field_set.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/unknown_field_set.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/unknown_field_set.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/delimited_message_util.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/delimited_message_util.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/delimited_message_util.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_comparator.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_comparator.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_comparator.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_mask_util.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_mask_util.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/field_mask_util.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/datapiece.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/datapiece.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/datapiece.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/default_value_objectwriter.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/default_value_objectwriter.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/default_value_objectwriter.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/error_listener.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/error_listener.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/error_listener.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/field_mask_utility.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/field_mask_utility.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/field_mask_utility.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_escaping.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_escaping.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_escaping.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_objectwriter.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_objectwriter.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_objectwriter.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_stream_parser.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_stream_parser.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/json_stream_parser.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/object_writer.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/object_writer.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/object_writer.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/proto_writer.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/proto_writer.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/proto_writer.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectsource.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectsource.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectsource.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectwriter.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectwriter.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/protostream_objectwriter.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/type_info.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/type_info.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/type_info.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/utility.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/utility.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/internal/utility.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/json_util.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/json_util.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/json_util.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/message_differencer.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/message_differencer.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/message_differencer.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/time_util.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/time_util.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/time_util.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/type_resolver_util.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/type_resolver_util.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/util/type_resolver_util.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format_lite.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format_lite.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wire_format_lite.s"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wrappers.pb.o"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wrappers.pb.i"
+	@echo "... build/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wrappers.pb.s"
+	@echo "... src/Base58.o"
+	@echo "... src/Base58.i"
+	@echo "... src/Base58.s"
+	@echo "... src/Base64.o"
+	@echo "... src/Base64.i"
+	@echo "... src/Base64.s"
+	@echo "... src/Bech32.o"
+	@echo "... src/Bech32.i"
+	@echo "... src/Bech32.s"
+	@echo "... src/Bech32Address.o"
+	@echo "... src/Bech32Address.i"
+	@echo "... src/Bech32Address.s"
+	@echo "... src/BinaryCoding.o"
+	@echo "... src/BinaryCoding.i"
+	@echo "... src/BinaryCoding.s"
+	@echo "... src/Bitcoin/Address.o"
+	@echo "... src/Bitcoin/Address.i"
+	@echo "... src/Bitcoin/Address.s"
+	@echo "... src/Bitcoin/Entry.o"
+	@echo "... src/Bitcoin/Entry.i"
+	@echo "... src/Bitcoin/Entry.s"
+	@echo "... src/Bitcoin/FeeCalculator.o"
+	@echo "... src/Bitcoin/FeeCalculator.i"
+	@echo "... src/Bitcoin/FeeCalculator.s"
+	@echo "... src/Bitcoin/InputSelector.o"
+	@echo "... src/Bitcoin/InputSelector.i"
+	@echo "... src/Bitcoin/InputSelector.s"
+	@echo "... src/Bitcoin/OutPoint.o"
+	@echo "... src/Bitcoin/OutPoint.i"
+	@echo "... src/Bitcoin/OutPoint.s"
+	@echo "... src/Bitcoin/Script.o"
+	@echo "... src/Bitcoin/Script.i"
+	@echo "... src/Bitcoin/Script.s"
+	@echo "... src/Bitcoin/SegwitAddress.o"
+	@echo "... src/Bitcoin/SegwitAddress.i"
+	@echo "... src/Bitcoin/SegwitAddress.s"
+	@echo "... src/Bitcoin/SignatureBuilder.o"
+	@echo "... src/Bitcoin/SignatureBuilder.i"
+	@echo "... src/Bitcoin/SignatureBuilder.s"
+	@echo "... src/Bitcoin/Signer.o"
+	@echo "... src/Bitcoin/Signer.i"
+	@echo "... src/Bitcoin/Signer.s"
+	@echo "... src/Bitcoin/SigningInput.o"
+	@echo "... src/Bitcoin/SigningInput.i"
+	@echo "... src/Bitcoin/SigningInput.s"
+	@echo "... src/Bitcoin/Transaction.o"
+	@echo "... src/Bitcoin/Transaction.i"
+	@echo "... src/Bitcoin/Transaction.s"
+	@echo "... src/Bitcoin/TransactionBuilder.o"
+	@echo "... src/Bitcoin/TransactionBuilder.i"
+	@echo "... src/Bitcoin/TransactionBuilder.s"
+	@echo "... src/Bitcoin/TransactionInput.o"
+	@echo "... src/Bitcoin/TransactionInput.i"
+	@echo "... src/Bitcoin/TransactionInput.s"
+	@echo "... src/Bitcoin/TransactionOutput.o"
+	@echo "... src/Bitcoin/TransactionOutput.i"
+	@echo "... src/Bitcoin/TransactionOutput.s"
+	@echo "... src/Bitcoin/TransactionSigner.o"
+	@echo "... src/Bitcoin/TransactionSigner.i"
+	@echo "... src/Bitcoin/TransactionSigner.s"
+	@echo "... src/Cbor.o"
+	@echo "... src/Cbor.i"
+	@echo "... src/Cbor.s"
+	@echo "... src/Coin.o"
+	@echo "... src/Coin.i"
+	@echo "... src/Coin.s"
+	@echo "... src/Crc.o"
+	@echo "... src/Crc.i"
+	@echo "... src/Crc.s"
+	@echo "... src/Data.o"
+	@echo "... src/Data.i"
+	@echo "... src/Data.s"
+	@echo "... src/DerivationPath.o"
+	@echo "... src/DerivationPath.i"
+	@echo "... src/DerivationPath.s"
+	@echo "... src/Encrypt.o"
+	@echo "... src/Encrypt.i"
+	@echo "... src/Encrypt.s"
+	@echo "... src/Ethereum/ABI/Array.o"
+	@echo "... src/Ethereum/ABI/Array.i"
+	@echo "... src/Ethereum/ABI/Array.s"
+	@echo "... src/Ethereum/ABI/Bytes.o"
+	@echo "... src/Ethereum/ABI/Bytes.i"
+	@echo "... src/Ethereum/ABI/Bytes.s"
+	@echo "... src/Ethereum/ABI/Function.o"
+	@echo "... src/Ethereum/ABI/Function.i"
+	@echo "... src/Ethereum/ABI/Function.s"
+	@echo "... src/Ethereum/ABI/ParamAddress.o"
+	@echo "... src/Ethereum/ABI/ParamAddress.i"
+	@echo "... src/Ethereum/ABI/ParamAddress.s"
+	@echo "... src/Ethereum/ABI/ParamBase.o"
+	@echo "... src/Ethereum/ABI/ParamBase.i"
+	@echo "... src/Ethereum/ABI/ParamBase.s"
+	@echo "... src/Ethereum/ABI/ParamFactory.o"
+	@echo "... src/Ethereum/ABI/ParamFactory.i"
+	@echo "... src/Ethereum/ABI/ParamFactory.s"
+	@echo "... src/Ethereum/ABI/ParamNumber.o"
+	@echo "... src/Ethereum/ABI/ParamNumber.i"
+	@echo "... src/Ethereum/ABI/ParamNumber.s"
+	@echo "... src/Ethereum/ABI/ParamStruct.o"
+	@echo "... src/Ethereum/ABI/ParamStruct.i"
+	@echo "... src/Ethereum/ABI/ParamStruct.s"
+	@echo "... src/Ethereum/ABI/Parameters.o"
+	@echo "... src/Ethereum/ABI/Parameters.i"
+	@echo "... src/Ethereum/ABI/Parameters.s"
+	@echo "... src/Ethereum/ABI/Tuple.o"
+	@echo "... src/Ethereum/ABI/Tuple.i"
+	@echo "... src/Ethereum/ABI/Tuple.s"
+	@echo "... src/Ethereum/ABI/ValueDecoder.o"
+	@echo "... src/Ethereum/ABI/ValueDecoder.i"
+	@echo "... src/Ethereum/ABI/ValueDecoder.s"
+	@echo "... src/Ethereum/ABI/ValueEncoder.o"
+	@echo "... src/Ethereum/ABI/ValueEncoder.i"
+	@echo "... src/Ethereum/ABI/ValueEncoder.s"
+	@echo "... src/Ethereum/Address.o"
+	@echo "... src/Ethereum/Address.i"
+	@echo "... src/Ethereum/Address.s"
+	@echo "... src/Ethereum/AddressChecksum.o"
+	@echo "... src/Ethereum/AddressChecksum.i"
+	@echo "... src/Ethereum/AddressChecksum.s"
+	@echo "... src/Ethereum/ContractCall.o"
+	@echo "... src/Ethereum/ContractCall.i"
+	@echo "... src/Ethereum/ContractCall.s"
+	@echo "... src/Ethereum/Entry.o"
+	@echo "... src/Ethereum/Entry.i"
+	@echo "... src/Ethereum/Entry.s"
+	@echo "... src/Ethereum/RLP.o"
+	@echo "... src/Ethereum/RLP.i"
+	@echo "... src/Ethereum/RLP.s"
+	@echo "... src/Ethereum/Signer.o"
+	@echo "... src/Ethereum/Signer.i"
+	@echo "... src/Ethereum/Signer.s"
+	@echo "... src/Ethereum/Transaction.o"
+	@echo "... src/Ethereum/Transaction.i"
+	@echo "... src/Ethereum/Transaction.s"
+	@echo "... src/Generated/CoinInfoData.o"
+	@echo "... src/Generated/CoinInfoData.i"
+	@echo "... src/Generated/CoinInfoData.s"
+	@echo "... src/Generated/NWHRP.o"
+	@echo "... src/Generated/NWHRP.i"
+	@echo "... src/Generated/NWHRP.s"
+	@echo "... src/HDWallet.o"
+	@echo "... src/HDWallet.i"
+	@echo "... src/HDWallet.s"
+	@echo "... src/Hash.o"
+	@echo "... src/Hash.i"
+	@echo "... src/Hash.s"
+	@echo "... src/Keystore/AESParameters.o"
+	@echo "... src/Keystore/AESParameters.i"
+	@echo "... src/Keystore/AESParameters.s"
+	@echo "... src/Keystore/Account.o"
+	@echo "... src/Keystore/Account.i"
+	@echo "... src/Keystore/Account.s"
+	@echo "... src/Keystore/EncryptionParameters.o"
+	@echo "... src/Keystore/EncryptionParameters.i"
+	@echo "... src/Keystore/EncryptionParameters.s"
+	@echo "... src/Keystore/PBKDF2Parameters.o"
+	@echo "... src/Keystore/PBKDF2Parameters.i"
+	@echo "... src/Keystore/PBKDF2Parameters.s"
+	@echo "... src/Keystore/ScryptParameters.o"
+	@echo "... src/Keystore/ScryptParameters.i"
+	@echo "... src/Keystore/ScryptParameters.s"
+	@echo "... src/Keystore/StoredKey.o"
+	@echo "... src/Keystore/StoredKey.i"
+	@echo "... src/Keystore/StoredKey.s"
+	@echo "... src/Mnemonic.o"
+	@echo "... src/Mnemonic.i"
+	@echo "... src/Mnemonic.s"
+	@echo "... src/PrivateKey.o"
+	@echo "... src/PrivateKey.i"
+	@echo "... src/PrivateKey.s"
+	@echo "... src/PublicKey.o"
+	@echo "... src/PublicKey.i"
+	@echo "... src/PublicKey.s"
+	@echo "... src/TransactionCompiler.o"
+	@echo "... src/TransactionCompiler.i"
+	@echo "... src/TransactionCompiler.s"
+	@echo "... src/interface/NWAES.o"
+	@echo "... src/interface/NWAES.i"
+	@echo "... src/interface/NWAES.s"
+	@echo "... src/interface/NWAccount.o"
+	@echo "... src/interface/NWAccount.i"
+	@echo "... src/interface/NWAccount.s"
+	@echo "... src/interface/NWAnyAddress.o"
+	@echo "... src/interface/NWAnyAddress.i"
+	@echo "... src/interface/NWAnyAddress.s"
+	@echo "... src/interface/NWAnySigner.o"
+	@echo "... src/interface/NWAnySigner.i"
+	@echo "... src/interface/NWAnySigner.s"
+	@echo "... src/interface/NWBase32.o"
+	@echo "... src/interface/NWBase32.i"
+	@echo "... src/interface/NWBase32.s"
+	@echo "... src/interface/NWBase58.o"
+	@echo "... src/interface/NWBase58.i"
+	@echo "... src/interface/NWBase58.s"
+	@echo "... src/interface/NWBase64.o"
+	@echo "... src/interface/NWBase64.i"
+	@echo "... src/interface/NWBase64.s"
+	@echo "... src/interface/NWBitcoin.o"
+	@echo "... src/interface/NWBitcoin.i"
+	@echo "... src/interface/NWBitcoin.s"
+	@echo "... src/interface/NWBitcoinAddress.o"
+	@echo "... src/interface/NWBitcoinAddress.i"
+	@echo "... src/interface/NWBitcoinAddress.s"
+	@echo "... src/interface/NWBitcoinScript.o"
+	@echo "... src/interface/NWBitcoinScript.i"
+	@echo "... src/interface/NWBitcoinScript.s"
+	@echo "... src/interface/NWCoinType.o"
+	@echo "... src/interface/NWCoinType.i"
+	@echo "... src/interface/NWCoinType.s"
+	@echo "... src/interface/NWData.o"
+	@echo "... src/interface/NWData.i"
+	@echo "... src/interface/NWData.s"
+	@echo "... src/interface/NWDataVector.o"
+	@echo "... src/interface/NWDataVector.i"
+	@echo "... src/interface/NWDataVector.s"
+	@echo "... src/interface/NWEthereumAbi.o"
+	@echo "... src/interface/NWEthereumAbi.i"
+	@echo "... src/interface/NWEthereumAbi.s"
+	@echo "... src/interface/NWEthereumAbiFunction.o"
+	@echo "... src/interface/NWEthereumAbiFunction.i"
+	@echo "... src/interface/NWEthereumAbiFunction.s"
+	@echo "... src/interface/NWEthereumAbiValue.o"
+	@echo "... src/interface/NWEthereumAbiValue.i"
+	@echo "... src/interface/NWEthereumAbiValue.s"
+	@echo "... src/interface/NWHDVersion.o"
+	@echo "... src/interface/NWHDVersion.i"
+	@echo "... src/interface/NWHDVersion.s"
+	@echo "... src/interface/NWHDWallet.o"
+	@echo "... src/interface/NWHDWallet.i"
+	@echo "... src/interface/NWHDWallet.s"
+	@echo "... src/interface/NWHash.o"
+	@echo "... src/interface/NWHash.i"
+	@echo "... src/interface/NWHash.s"
+	@echo "... src/interface/NWMnemonic.o"
+	@echo "... src/interface/NWMnemonic.i"
+	@echo "... src/interface/NWMnemonic.s"
+	@echo "... src/interface/NWPBKDF2.o"
+	@echo "... src/interface/NWPBKDF2.i"
+	@echo "... src/interface/NWPBKDF2.s"
+	@echo "... src/interface/NWPrivateKey.o"
+	@echo "... src/interface/NWPrivateKey.i"
+	@echo "... src/interface/NWPrivateKey.s"
+	@echo "... src/interface/NWPublicKey.o"
+	@echo "... src/interface/NWPublicKey.i"
+	@echo "... src/interface/NWPublicKey.s"
+	@echo "... src/interface/NWStoredKey.o"
+	@echo "... src/interface/NWStoredKey.i"
+	@echo "... src/interface/NWStoredKey.s"
+	@echo "... src/interface/NWString+Hex.o"
+	@echo "... src/interface/NWString+Hex.i"
+	@echo "... src/interface/NWString+Hex.s"
+	@echo "... src/interface/NWString.o"
+	@echo "... src/interface/NWString.i"
+	@echo "... src/interface/NWString.s"
+	@echo "... src/interface/NWTransactionCompiler.o"
+	@echo "... src/interface/NWTransactionCompiler.i"
+	@echo "... src/interface/NWTransactionCompiler.s"
+	@echo "... src/proto/Bitcoin.pb.o"
+	@echo "... src/proto/Bitcoin.pb.i"
+	@echo "... src/proto/Bitcoin.pb.s"
+	@echo "... src/proto/Common.pb.o"
+	@echo "... src/proto/Common.pb.i"
+	@echo "... src/proto/Common.pb.s"
+	@echo "... src/proto/Ethereum.pb.o"
+	@echo "... src/proto/Ethereum.pb.i"
+	@echo "... src/proto/Ethereum.pb.s"
+	@echo "... src/proto/TransactionCompiler.pb.o"
+	@echo "... src/proto/TransactionCompiler.pb.i"
+	@echo "... src/proto/TransactionCompiler.pb.s"
 .PHONY : help
 
 

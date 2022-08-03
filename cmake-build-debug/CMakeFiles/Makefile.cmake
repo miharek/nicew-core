@@ -22,6 +22,11 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.20/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
   "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.20/Modules/Compiler/Clang.cmake"
   "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.20/Modules/Compiler/GNU.cmake"
+  "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.20/Modules/ExternalProject.cmake"
+  "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.20/Modules/FindBoost.cmake"
+  "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.20/Modules/FindPackageHandleStandardArgs.cmake"
+  "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.20/Modules/FindPackageMessage.cmake"
+  "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.20/Modules/GNUInstallDirs.cmake"
   "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.20/Modules/Platform/Apple-AppleClang-C.cmake"
   "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.20/Modules/Platform/Apple-AppleClang-CXX.cmake"
   "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.20/Modules/Platform/Apple-Clang-C.cmake"
@@ -35,6 +40,20 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.20.2/CMakeCCompiler.cmake"
   "CMakeFiles/3.20.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.20.2/CMakeSystem.cmake"
+  "../cmake/CompilerWarnings.cmake"
+  "../cmake/FindHostPackage.cmake"
+  "../cmake/Protobuf.cmake"
+  "../cmake/StandardSettings.cmake"
+  "../cmake/StaticAnalyzers.cmake"
+  "../swift/cpp.xcconfig.in"
+  "../trezor-crypto/CMakeLists.txt"
+  "../trezor-crypto/crypto/tests/CMakeLists.txt"
+  "../walletconsole/CMakeLists.txt"
+  "../walletconsole/lib/CMakeLists.txt"
+  "/usr/local/lib/cmake/Boost-1.79.0/BoostConfig.cmake"
+  "/usr/local/lib/cmake/Boost-1.79.0/BoostConfigVersion.cmake"
+  "/usr/local/lib/cmake/boost_headers-1.79.0/boost_headers-config-version.cmake"
+  "/usr/local/lib/cmake/boost_headers-1.79.0/boost_headers-config.cmake"
   )
 
 # The corresponding makefile is:
@@ -45,9 +64,20 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
+  "../swift/cpp.xcconfig"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "trezor-crypto/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "trezor-crypto/crypto/tests/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "walletconsole/lib/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "walletconsole/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/NiceWCore.dir/DependInfo.cmake"
+  "CMakeFiles/protobuf.dir/DependInfo.cmake"
+  "trezor-crypto/CMakeFiles/TrezorCrypto.dir/DependInfo.cmake"
+  "trezor-crypto/crypto/tests/CMakeFiles/TrezorCryptoTests.dir/DependInfo.cmake"
+  "walletconsole/lib/CMakeFiles/walletconsolelib.dir/DependInfo.cmake"
+  "walletconsole/CMakeFiles/walletconsole.dir/DependInfo.cmake"
   )
