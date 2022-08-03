@@ -1,4 +1,4 @@
-version = '2.6.5'
+version = '0.0.1'
 
 Pod::Spec.new do |s|
   s.name         = 'WalletCore'
