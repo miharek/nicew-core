@@ -13,7 +13,7 @@
 #include <array>
 #include <string>
 
-namespace TW {
+namespace NW {
 
 template <std::size_t S>
 class Base58Address {
@@ -77,7 +77,7 @@ class Base58Address {
 
     /// Initializes an address with a public key and a prefix.
     Base58Address(const PublicKey& publicKey, const Data& prefix) {
-        if (publicKey.type != TWPublicKeyTypeSECP256k1) {
+        if (publicKey.type != NWPublicKeyTypeSECP256k1) {
             throw std::invalid_argument("Bitcoin::Address needs a compressed SECP256k1 public key.");
         }
         const auto data = publicKey.hash(prefix, Hash::HasherSha256ripemd);
@@ -95,4 +95,4 @@ inline bool operator==(const Base58Address<S>& lhs, const Base58Address<S>& rhs)
     return lhs.bytes == rhs.bytes;
 }
 
-} // namespace TW
+} // namespace NW

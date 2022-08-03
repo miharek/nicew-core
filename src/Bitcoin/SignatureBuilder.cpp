@@ -340,5 +340,3 @@ Data SignatureBuilder<Transaction>::scriptForScriptHash(const Data& hash) const 
 
 // Explicitly instantiate a Signers for compatible transactions.
 template class Bitcoin::SignatureBuilder<Bitcoin::Transaction>;
-template class Bitcoin::SignatureBuilder<Zcash::Transaction>;
-template class Bitcoin::SignatureBuilder<Groestlcoin::Transaction>;

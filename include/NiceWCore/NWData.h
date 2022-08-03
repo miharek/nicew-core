@@ -34,7 +34,7 @@ size_t  NWDataSize(NWData *_Nonnull data) NW_VISIBILITY_DEFAULT;
 uint8_t *_Nonnull NWDataBytes(NWData *_Nonnull data) NW_VISIBILITY_DEFAULT;
 
 /// Returns the byte at the provided index.
-uint8_t NWDataGet(NWDataSize *_Nonnull data, size_t index) NW_VISIBILITY_DEFAULT;
+uint8_t NWDataGet(NWData *_Nonnull data, size_t index) NW_VISIBILITY_DEFAULT;
 
 /// Sets the byte at the provided index.
 void NWDataSet(NWData *_Nonnull data, size_t index, uint8_t byte) NW_VISIBILITY_DEFAULT;

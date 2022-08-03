@@ -5,7 +5,6 @@
 #include "Entry.h"
 
 #include "Address.h"
-#include "CashAddress.h"
 #include "SegwitAddress.h"
 #include "Signer.h"
 
@@ -19,24 +18,7 @@ bool Entry::validateAddress(NWCoinType coin, const string& address, byte p2pkh, 
                             const char* hrp) const {
     switch (coin) {
     case NWCoinTypeBitcoin:
-    case NWCoinTypeDigiByte:
-    case NWCoinTypeLitecoin:
-    case NWCoinTypeMonacoin:
-    case NWCoinTypeQtum:
-    case NWCoinTypeViacoin:
-    case NWCoinTypeBitcoinGold:
         return SegwitAddress::isValid(address, hrp) || Address::isValid(address, {{p2pkh}, {p2sh}});
-
-    case NWCoinTypeBitcoinCash:
-        return BitcoinCashAddress::isValid(address) || Address::isValid(address, {{p2pkh}, {p2sh}});
-
-    case NWCoinTypeECash:
-        return ECashAddress::isValid(address) || Address::isValid(address, {{p2pkh}, {p2sh}});
-
-    case NWCoinTypeDash:
-    case NWCoinTypeDogecoin:
-    case NWCoinTypeRavencoin:
-    case NWCoinTypeFiro:
     default:
         return Address::isValid(address, {{p2pkh}, {p2sh}});
     }
@@ -44,20 +26,6 @@ bool Entry::validateAddress(NWCoinType coin, const string& address, byte p2pkh, 
 
 string Entry::normalizeAddress(NWCoinType coin, const string& address) const {
     switch (coin) {
-    case NWCoinTypeBitcoinCash:
-        // normalized with bitcoincash: prefix
-        if (BitcoinCashAddress::isValid(address)) {
-            return BitcoinCashAddress(address).string();
-        }
-        return address;
-
-    case NWCoinTypeECash:
-        // normalized with ecash: prefix
-        if (ECashAddress::isValid(address)) {
-            return ECashAddress(address).string();
-        }
-        return address;
-
     default:
         // no change
         return address;
@@ -68,35 +36,14 @@ string Entry::deriveAddress(NWCoinType coin, NWDerivation derivation, const Publ
                             byte p2pkh, const char* hrp) const {
     switch (coin) {
     case NWCoinTypeBitcoin:
-    case NWCoinTypeLitecoin:
         switch (derivation) {
         case NWDerivationBitcoinLegacy:
-        case NWDerivationLitecoinLegacy:
             return Address(publicKey, p2pkh).string();
-
         case NWDerivationBitcoinSegwit:
         case NWDerivationDefault:
         default:
             return SegwitAddress(publicKey, hrp).string();
         }
-
-    case NWCoinTypeDigiByte:
-    case NWCoinTypeViacoin:
-    case NWCoinTypeBitcoinGold:
-        return SegwitAddress(publicKey, hrp).string();
-
-    case NWCoinTypeBitcoinCash:
-        return BitcoinCashAddress(publicKey).string();
-
-    case NWCoinTypeECash:
-        return ECashAddress(publicKey).string();
-
-    case NWCoinTypeDash:
-    case NWCoinTypeDogecoin:
-    case NWCoinTypeMonacoin:
-    case NWCoinTypeQtum:
-    case NWCoinTypeRavencoin:
-    case NWCoinTypeFiro:
     default:
         return Address(publicKey, p2pkh).string();
     }
@@ -110,11 +57,6 @@ inline Data cashAddressToData(const CashAddress&& addr) {
 Data Entry::addressToData(NWCoinType coin, const std::string& address) const {
     switch (coin) {
         case NWCoinTypeBitcoin:
-        case NWCoinTypeBitcoinGold:
-        case NWCoinTypeDigiByte:
-        case NWCoinTypeGroestlcoin:
-        case NWCoinTypeLitecoin:
-        case NWCoinTypeViacoin:
             {
                 const auto decoded = SegwitAddress::decode(address);
                 if (!std::get<2>(decoded)) {
@@ -122,24 +64,6 @@ Data Entry::addressToData(NWCoinType coin, const std::string& address) const {
                 }
                 return std::get<0>(decoded).witnessProgram;
             }
-
-        case NWCoinTypeBitcoinCash:
-            return cashAddressToData(BitcoinCashAddress(address));
-
-        case NWCoinTypeECash:
-            return cashAddressToData(ECashAddress(address));
-
-        case NWCoinTypeDash:
-        case NWCoinTypeDogecoin:
-        case NWCoinTypeMonacoin:
-        case NWCoinTypeQtum:
-        case NWCoinTypeRavencoin:
-        case NWCoinTypeFiro:
-            {
-                const auto addr = Address(address);
-                return {addr.bytes.begin() + 1, addr.bytes.end()};
-            }
-
         default:
             return Data();
     }

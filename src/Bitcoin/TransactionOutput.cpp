@@ -6,7 +6,7 @@
 
 #include "../BinaryCoding.h"
 
-using namespace TW::Bitcoin;
+using namespace NW::Bitcoin;
 
 void TransactionOutput::encode(Data& data) const {
     encode64LE(value, data);

@@ -4,7 +4,7 @@
 # terms governing use, modification, and redistribution, is contained in the
 # file LICENSE at the root of the source code distribution tree.
 
-set(TW_WARNING_FLAGS 
+set(NW_WARNING_FLAGS
     -W
     -Wall
     -Wextra
@@ -63,14 +63,14 @@ add_library(TrezorCrypto
 
 if (EMSCRIPTEN)
     message(STATUS "Skip building trezor-crypto/tests")
-    set(TW_WARNING_FLAGS ${TW_WARNING_FLAGS} -Wno-bitwise-instead-of-logical)
+    set(NW_WARNING_FLAGS ${NW_WARNING_FLAGS} -Wno-bitwise-instead-of-logical)
 else ()
     if(NOT ANDROID AND NOT IOS_PLATFORM)
         add_subdirectory(crypto/tests)
     endif()
 endif()
 
-target_compile_options(TrezorCrypto PRIVATE ${TW_WARNING_FLAGS} -Werror PUBLIC -Wno-deprecated-volatile)
+target_compile_options(TrezorCrypto PRIVATE ${NW_WARNING_FLAGS} -Werror PUBLIC -Wno-deprecated-volatile)
 
 target_include_directories(TrezorCrypto
     PUBLIC

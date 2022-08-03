@@ -8,7 +8,6 @@
 
 #include "Base58.h"
 #include "BinaryCoding.h"
-#include "Bitcoin/CashAddress.h"
 #include "Bitcoin/SegwitAddress.h"
 #include "Coin.h"
 #include "Mnemonic.h"

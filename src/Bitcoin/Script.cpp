@@ -7,7 +7,6 @@
 #include "Script.h"
 
 #include "Address.h"
-#include "CashAddress.h"
 #include "SegwitAddress.h"
 
 #include "../Base58.h"
@@ -15,11 +14,8 @@
 
 #include "../BinaryCoding.h"
 #include "../Data.h"
-#include "../Decred/Address.h"
-#include "../Groestlcoin/Address.h"
 #include "../Hash.h"
 #include "../PublicKey.h"
-#include "../Zcash/TAddress.h"
 
 #include "OpCodes.h"
 
@@ -309,43 +305,6 @@ Script Script::lockScriptForAddress(const std::string& string, enum NWCoinType c
         }
         if (address.witnessVersion == 1 && address.witnessProgram.size() == 32) {
             return buildPayToV1WitnessProgram(address.witnessProgram);
-        }
-    } else if (BitcoinCashAddress::isValid(string)) {
-        auto address = BitcoinCashAddress(string);
-        auto bitcoinAddress = address.legacyAddress();
-        return lockScriptForAddress(bitcoinAddress.string(), NWCoinTypeBitcoinCash);
-    } else if (Decred::Address::isValid(string)) {
-        auto bytes = Base58::bitcoin.decodeCheck(string, Hash::HasherBlake256d);
-        if (bytes[1] == NW::p2pkhPrefix(NWCoinTypeDecred)) {
-            return buildPayToPublicKeyHash(Data(bytes.begin() + 2, bytes.end()));
-        }
-        if (bytes[1] == NW::p2shPrefix(NWCoinTypeDecred)) {
-            return buildPayToScriptHash(Data(bytes.begin() + 2, bytes.end()));
-        }
-    } else if (ECashAddress::isValid(string)) {
-        auto address = ECashAddress(string);
-        auto bitcoinAddress = address.legacyAddress();
-        return lockScriptForAddress(bitcoinAddress.string(), NWCoinTypeECash);
-    } else if (Groestlcoin::Address::isValid(string)) {
-        auto address = Groestlcoin::Address(string);
-        auto data = Data();
-        data.reserve(Address::size - 1);
-        std::copy(address.bytes.begin() + 1, address.bytes.end(), std::back_inserter(data));
-        if (address.bytes[0] == NW::p2pkhPrefix(NWCoinTypeGroestlcoin)) {
-            return buildPayToPublicKeyHash(data);
-        }
-        if (address.bytes[0] == NW::p2shPrefix(NWCoinTypeGroestlcoin)) {
-            return buildPayToScriptHash(data);
-        }
-    } else if (Zcash::TAddress::isValid(string)) {
-        auto address = Zcash::TAddress(string);
-        auto data = Data();
-        data.reserve(Address::size - 2);
-        std::copy(address.bytes.begin() + 2, address.bytes.end(), std::back_inserter(data));
-        if (address.bytes[1] == NW::p2pkhPrefix(NWCoinTypeZcash)) {
-            return buildPayToPublicKeyHash(data);
-        } else if (address.bytes[1] == NW::p2shPrefix(NWCoinTypeZcash)) {
-            return buildPayToScriptHash(data);
         }
     }
     return {};

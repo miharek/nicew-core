@@ -10,8 +10,8 @@ NW_EXTERN_C_BEGIN
 
 NW_EXPORT_ENUM(uint32_t)
 enum NWBlockchain {
-    TWBlockchainBitcoin = 0,
-    TWBlockchainEthereum = 1
+    NWBlockchainBitcoin = 0,
+    NWBlockchainEthereum = 1
 };
 
 NW_EXTERN_C_END

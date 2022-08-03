@@ -67,7 +67,7 @@ CMAKE_BINARY_DIR = /Users/miharek/Desktop/Magisterska/nicew-core/build
 
 # Special rule for the target edit_cache
 edit_cache:
-	@echo "Running CMake cache editor..."
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
 	/usr/local/Cellar/cmake/3.23.3/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
@@ -77,7 +77,7 @@ edit_cache/fast: edit_cache
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
-	@echo "Running CMake to regenerate build system..."
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
 	/usr/local/Cellar/cmake/3.23.3/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
@@ -87,7 +87,7 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target list_install_components
 list_install_components:
-	@echo "Available install components are: \"Unspecified\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
 .PHONY : list_install_components
 
 # Special rule for the target list_install_components
@@ -96,37 +96,37 @@ list_install_components/fast: list_install_components
 
 # Special rule for the target install
 install: preinstall
-	@echo "Install the project..."
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/local/Cellar/cmake/3.23.3/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
-	@echo "Install the project..."
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/local/Cellar/cmake/3.23.3/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target install/local
 install/local: preinstall
-	@echo "Installing only the local directory..."
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
 	/usr/local/Cellar/cmake/3.23.3/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
-	@echo "Installing only the local directory..."
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
 	/usr/local/Cellar/cmake/3.23.3/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
-	@echo "Installing the project stripped..."
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
 	/usr/local/Cellar/cmake/3.23.3/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
-	@echo "Installing the project stripped..."
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
 	/usr/local/Cellar/cmake/3.23.3/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
@@ -2253,6 +2253,2022 @@ local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wrappers.pb.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/protobuf.dir/build.make CMakeFiles/protobuf.dir/local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wrappers.pb.cc.s
 .PHONY : local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wrappers.pb.cc.s
 
+src/Base58.o: src/Base58.cpp.o
+.PHONY : src/Base58.o
+
+# target to build an object file
+src/Base58.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Base58.cpp.o
+.PHONY : src/Base58.cpp.o
+
+src/Base58.i: src/Base58.cpp.i
+.PHONY : src/Base58.i
+
+# target to preprocess a source file
+src/Base58.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Base58.cpp.i
+.PHONY : src/Base58.cpp.i
+
+src/Base58.s: src/Base58.cpp.s
+.PHONY : src/Base58.s
+
+# target to generate assembly for a file
+src/Base58.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Base58.cpp.s
+.PHONY : src/Base58.cpp.s
+
+src/Base64.o: src/Base64.cpp.o
+.PHONY : src/Base64.o
+
+# target to build an object file
+src/Base64.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Base64.cpp.o
+.PHONY : src/Base64.cpp.o
+
+src/Base64.i: src/Base64.cpp.i
+.PHONY : src/Base64.i
+
+# target to preprocess a source file
+src/Base64.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Base64.cpp.i
+.PHONY : src/Base64.cpp.i
+
+src/Base64.s: src/Base64.cpp.s
+.PHONY : src/Base64.s
+
+# target to generate assembly for a file
+src/Base64.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Base64.cpp.s
+.PHONY : src/Base64.cpp.s
+
+src/Bech32.o: src/Bech32.cpp.o
+.PHONY : src/Bech32.o
+
+# target to build an object file
+src/Bech32.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bech32.cpp.o
+.PHONY : src/Bech32.cpp.o
+
+src/Bech32.i: src/Bech32.cpp.i
+.PHONY : src/Bech32.i
+
+# target to preprocess a source file
+src/Bech32.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bech32.cpp.i
+.PHONY : src/Bech32.cpp.i
+
+src/Bech32.s: src/Bech32.cpp.s
+.PHONY : src/Bech32.s
+
+# target to generate assembly for a file
+src/Bech32.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bech32.cpp.s
+.PHONY : src/Bech32.cpp.s
+
+src/Bech32Address.o: src/Bech32Address.cpp.o
+.PHONY : src/Bech32Address.o
+
+# target to build an object file
+src/Bech32Address.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bech32Address.cpp.o
+.PHONY : src/Bech32Address.cpp.o
+
+src/Bech32Address.i: src/Bech32Address.cpp.i
+.PHONY : src/Bech32Address.i
+
+# target to preprocess a source file
+src/Bech32Address.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bech32Address.cpp.i
+.PHONY : src/Bech32Address.cpp.i
+
+src/Bech32Address.s: src/Bech32Address.cpp.s
+.PHONY : src/Bech32Address.s
+
+# target to generate assembly for a file
+src/Bech32Address.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bech32Address.cpp.s
+.PHONY : src/Bech32Address.cpp.s
+
+src/BinaryCoding.o: src/BinaryCoding.cpp.o
+.PHONY : src/BinaryCoding.o
+
+# target to build an object file
+src/BinaryCoding.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/BinaryCoding.cpp.o
+.PHONY : src/BinaryCoding.cpp.o
+
+src/BinaryCoding.i: src/BinaryCoding.cpp.i
+.PHONY : src/BinaryCoding.i
+
+# target to preprocess a source file
+src/BinaryCoding.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/BinaryCoding.cpp.i
+.PHONY : src/BinaryCoding.cpp.i
+
+src/BinaryCoding.s: src/BinaryCoding.cpp.s
+.PHONY : src/BinaryCoding.s
+
+# target to generate assembly for a file
+src/BinaryCoding.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/BinaryCoding.cpp.s
+.PHONY : src/BinaryCoding.cpp.s
+
+src/Bitcoin/Address.o: src/Bitcoin/Address.cpp.o
+.PHONY : src/Bitcoin/Address.o
+
+# target to build an object file
+src/Bitcoin/Address.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Address.cpp.o
+.PHONY : src/Bitcoin/Address.cpp.o
+
+src/Bitcoin/Address.i: src/Bitcoin/Address.cpp.i
+.PHONY : src/Bitcoin/Address.i
+
+# target to preprocess a source file
+src/Bitcoin/Address.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Address.cpp.i
+.PHONY : src/Bitcoin/Address.cpp.i
+
+src/Bitcoin/Address.s: src/Bitcoin/Address.cpp.s
+.PHONY : src/Bitcoin/Address.s
+
+# target to generate assembly for a file
+src/Bitcoin/Address.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Address.cpp.s
+.PHONY : src/Bitcoin/Address.cpp.s
+
+src/Bitcoin/Entry.o: src/Bitcoin/Entry.cpp.o
+.PHONY : src/Bitcoin/Entry.o
+
+# target to build an object file
+src/Bitcoin/Entry.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Entry.cpp.o
+.PHONY : src/Bitcoin/Entry.cpp.o
+
+src/Bitcoin/Entry.i: src/Bitcoin/Entry.cpp.i
+.PHONY : src/Bitcoin/Entry.i
+
+# target to preprocess a source file
+src/Bitcoin/Entry.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Entry.cpp.i
+.PHONY : src/Bitcoin/Entry.cpp.i
+
+src/Bitcoin/Entry.s: src/Bitcoin/Entry.cpp.s
+.PHONY : src/Bitcoin/Entry.s
+
+# target to generate assembly for a file
+src/Bitcoin/Entry.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Entry.cpp.s
+.PHONY : src/Bitcoin/Entry.cpp.s
+
+src/Bitcoin/FeeCalculator.o: src/Bitcoin/FeeCalculator.cpp.o
+.PHONY : src/Bitcoin/FeeCalculator.o
+
+# target to build an object file
+src/Bitcoin/FeeCalculator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/FeeCalculator.cpp.o
+.PHONY : src/Bitcoin/FeeCalculator.cpp.o
+
+src/Bitcoin/FeeCalculator.i: src/Bitcoin/FeeCalculator.cpp.i
+.PHONY : src/Bitcoin/FeeCalculator.i
+
+# target to preprocess a source file
+src/Bitcoin/FeeCalculator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/FeeCalculator.cpp.i
+.PHONY : src/Bitcoin/FeeCalculator.cpp.i
+
+src/Bitcoin/FeeCalculator.s: src/Bitcoin/FeeCalculator.cpp.s
+.PHONY : src/Bitcoin/FeeCalculator.s
+
+# target to generate assembly for a file
+src/Bitcoin/FeeCalculator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/FeeCalculator.cpp.s
+.PHONY : src/Bitcoin/FeeCalculator.cpp.s
+
+src/Bitcoin/InputSelector.o: src/Bitcoin/InputSelector.cpp.o
+.PHONY : src/Bitcoin/InputSelector.o
+
+# target to build an object file
+src/Bitcoin/InputSelector.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/InputSelector.cpp.o
+.PHONY : src/Bitcoin/InputSelector.cpp.o
+
+src/Bitcoin/InputSelector.i: src/Bitcoin/InputSelector.cpp.i
+.PHONY : src/Bitcoin/InputSelector.i
+
+# target to preprocess a source file
+src/Bitcoin/InputSelector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/InputSelector.cpp.i
+.PHONY : src/Bitcoin/InputSelector.cpp.i
+
+src/Bitcoin/InputSelector.s: src/Bitcoin/InputSelector.cpp.s
+.PHONY : src/Bitcoin/InputSelector.s
+
+# target to generate assembly for a file
+src/Bitcoin/InputSelector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/InputSelector.cpp.s
+.PHONY : src/Bitcoin/InputSelector.cpp.s
+
+src/Bitcoin/OutPoint.o: src/Bitcoin/OutPoint.cpp.o
+.PHONY : src/Bitcoin/OutPoint.o
+
+# target to build an object file
+src/Bitcoin/OutPoint.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/OutPoint.cpp.o
+.PHONY : src/Bitcoin/OutPoint.cpp.o
+
+src/Bitcoin/OutPoint.i: src/Bitcoin/OutPoint.cpp.i
+.PHONY : src/Bitcoin/OutPoint.i
+
+# target to preprocess a source file
+src/Bitcoin/OutPoint.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/OutPoint.cpp.i
+.PHONY : src/Bitcoin/OutPoint.cpp.i
+
+src/Bitcoin/OutPoint.s: src/Bitcoin/OutPoint.cpp.s
+.PHONY : src/Bitcoin/OutPoint.s
+
+# target to generate assembly for a file
+src/Bitcoin/OutPoint.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/OutPoint.cpp.s
+.PHONY : src/Bitcoin/OutPoint.cpp.s
+
+src/Bitcoin/Script.o: src/Bitcoin/Script.cpp.o
+.PHONY : src/Bitcoin/Script.o
+
+# target to build an object file
+src/Bitcoin/Script.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Script.cpp.o
+.PHONY : src/Bitcoin/Script.cpp.o
+
+src/Bitcoin/Script.i: src/Bitcoin/Script.cpp.i
+.PHONY : src/Bitcoin/Script.i
+
+# target to preprocess a source file
+src/Bitcoin/Script.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Script.cpp.i
+.PHONY : src/Bitcoin/Script.cpp.i
+
+src/Bitcoin/Script.s: src/Bitcoin/Script.cpp.s
+.PHONY : src/Bitcoin/Script.s
+
+# target to generate assembly for a file
+src/Bitcoin/Script.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Script.cpp.s
+.PHONY : src/Bitcoin/Script.cpp.s
+
+src/Bitcoin/SegwitAddress.o: src/Bitcoin/SegwitAddress.cpp.o
+.PHONY : src/Bitcoin/SegwitAddress.o
+
+# target to build an object file
+src/Bitcoin/SegwitAddress.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/SegwitAddress.cpp.o
+.PHONY : src/Bitcoin/SegwitAddress.cpp.o
+
+src/Bitcoin/SegwitAddress.i: src/Bitcoin/SegwitAddress.cpp.i
+.PHONY : src/Bitcoin/SegwitAddress.i
+
+# target to preprocess a source file
+src/Bitcoin/SegwitAddress.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/SegwitAddress.cpp.i
+.PHONY : src/Bitcoin/SegwitAddress.cpp.i
+
+src/Bitcoin/SegwitAddress.s: src/Bitcoin/SegwitAddress.cpp.s
+.PHONY : src/Bitcoin/SegwitAddress.s
+
+# target to generate assembly for a file
+src/Bitcoin/SegwitAddress.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/SegwitAddress.cpp.s
+.PHONY : src/Bitcoin/SegwitAddress.cpp.s
+
+src/Bitcoin/SignatureBuilder.o: src/Bitcoin/SignatureBuilder.cpp.o
+.PHONY : src/Bitcoin/SignatureBuilder.o
+
+# target to build an object file
+src/Bitcoin/SignatureBuilder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/SignatureBuilder.cpp.o
+.PHONY : src/Bitcoin/SignatureBuilder.cpp.o
+
+src/Bitcoin/SignatureBuilder.i: src/Bitcoin/SignatureBuilder.cpp.i
+.PHONY : src/Bitcoin/SignatureBuilder.i
+
+# target to preprocess a source file
+src/Bitcoin/SignatureBuilder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/SignatureBuilder.cpp.i
+.PHONY : src/Bitcoin/SignatureBuilder.cpp.i
+
+src/Bitcoin/SignatureBuilder.s: src/Bitcoin/SignatureBuilder.cpp.s
+.PHONY : src/Bitcoin/SignatureBuilder.s
+
+# target to generate assembly for a file
+src/Bitcoin/SignatureBuilder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/SignatureBuilder.cpp.s
+.PHONY : src/Bitcoin/SignatureBuilder.cpp.s
+
+src/Bitcoin/Signer.o: src/Bitcoin/Signer.cpp.o
+.PHONY : src/Bitcoin/Signer.o
+
+# target to build an object file
+src/Bitcoin/Signer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Signer.cpp.o
+.PHONY : src/Bitcoin/Signer.cpp.o
+
+src/Bitcoin/Signer.i: src/Bitcoin/Signer.cpp.i
+.PHONY : src/Bitcoin/Signer.i
+
+# target to preprocess a source file
+src/Bitcoin/Signer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Signer.cpp.i
+.PHONY : src/Bitcoin/Signer.cpp.i
+
+src/Bitcoin/Signer.s: src/Bitcoin/Signer.cpp.s
+.PHONY : src/Bitcoin/Signer.s
+
+# target to generate assembly for a file
+src/Bitcoin/Signer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Signer.cpp.s
+.PHONY : src/Bitcoin/Signer.cpp.s
+
+src/Bitcoin/SigningInput.o: src/Bitcoin/SigningInput.cpp.o
+.PHONY : src/Bitcoin/SigningInput.o
+
+# target to build an object file
+src/Bitcoin/SigningInput.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/SigningInput.cpp.o
+.PHONY : src/Bitcoin/SigningInput.cpp.o
+
+src/Bitcoin/SigningInput.i: src/Bitcoin/SigningInput.cpp.i
+.PHONY : src/Bitcoin/SigningInput.i
+
+# target to preprocess a source file
+src/Bitcoin/SigningInput.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/SigningInput.cpp.i
+.PHONY : src/Bitcoin/SigningInput.cpp.i
+
+src/Bitcoin/SigningInput.s: src/Bitcoin/SigningInput.cpp.s
+.PHONY : src/Bitcoin/SigningInput.s
+
+# target to generate assembly for a file
+src/Bitcoin/SigningInput.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/SigningInput.cpp.s
+.PHONY : src/Bitcoin/SigningInput.cpp.s
+
+src/Bitcoin/Transaction.o: src/Bitcoin/Transaction.cpp.o
+.PHONY : src/Bitcoin/Transaction.o
+
+# target to build an object file
+src/Bitcoin/Transaction.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Transaction.cpp.o
+.PHONY : src/Bitcoin/Transaction.cpp.o
+
+src/Bitcoin/Transaction.i: src/Bitcoin/Transaction.cpp.i
+.PHONY : src/Bitcoin/Transaction.i
+
+# target to preprocess a source file
+src/Bitcoin/Transaction.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Transaction.cpp.i
+.PHONY : src/Bitcoin/Transaction.cpp.i
+
+src/Bitcoin/Transaction.s: src/Bitcoin/Transaction.cpp.s
+.PHONY : src/Bitcoin/Transaction.s
+
+# target to generate assembly for a file
+src/Bitcoin/Transaction.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/Transaction.cpp.s
+.PHONY : src/Bitcoin/Transaction.cpp.s
+
+src/Bitcoin/TransactionBuilder.o: src/Bitcoin/TransactionBuilder.cpp.o
+.PHONY : src/Bitcoin/TransactionBuilder.o
+
+# target to build an object file
+src/Bitcoin/TransactionBuilder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/TransactionBuilder.cpp.o
+.PHONY : src/Bitcoin/TransactionBuilder.cpp.o
+
+src/Bitcoin/TransactionBuilder.i: src/Bitcoin/TransactionBuilder.cpp.i
+.PHONY : src/Bitcoin/TransactionBuilder.i
+
+# target to preprocess a source file
+src/Bitcoin/TransactionBuilder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/TransactionBuilder.cpp.i
+.PHONY : src/Bitcoin/TransactionBuilder.cpp.i
+
+src/Bitcoin/TransactionBuilder.s: src/Bitcoin/TransactionBuilder.cpp.s
+.PHONY : src/Bitcoin/TransactionBuilder.s
+
+# target to generate assembly for a file
+src/Bitcoin/TransactionBuilder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/TransactionBuilder.cpp.s
+.PHONY : src/Bitcoin/TransactionBuilder.cpp.s
+
+src/Bitcoin/TransactionInput.o: src/Bitcoin/TransactionInput.cpp.o
+.PHONY : src/Bitcoin/TransactionInput.o
+
+# target to build an object file
+src/Bitcoin/TransactionInput.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/TransactionInput.cpp.o
+.PHONY : src/Bitcoin/TransactionInput.cpp.o
+
+src/Bitcoin/TransactionInput.i: src/Bitcoin/TransactionInput.cpp.i
+.PHONY : src/Bitcoin/TransactionInput.i
+
+# target to preprocess a source file
+src/Bitcoin/TransactionInput.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/TransactionInput.cpp.i
+.PHONY : src/Bitcoin/TransactionInput.cpp.i
+
+src/Bitcoin/TransactionInput.s: src/Bitcoin/TransactionInput.cpp.s
+.PHONY : src/Bitcoin/TransactionInput.s
+
+# target to generate assembly for a file
+src/Bitcoin/TransactionInput.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/TransactionInput.cpp.s
+.PHONY : src/Bitcoin/TransactionInput.cpp.s
+
+src/Bitcoin/TransactionOutput.o: src/Bitcoin/TransactionOutput.cpp.o
+.PHONY : src/Bitcoin/TransactionOutput.o
+
+# target to build an object file
+src/Bitcoin/TransactionOutput.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/TransactionOutput.cpp.o
+.PHONY : src/Bitcoin/TransactionOutput.cpp.o
+
+src/Bitcoin/TransactionOutput.i: src/Bitcoin/TransactionOutput.cpp.i
+.PHONY : src/Bitcoin/TransactionOutput.i
+
+# target to preprocess a source file
+src/Bitcoin/TransactionOutput.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/TransactionOutput.cpp.i
+.PHONY : src/Bitcoin/TransactionOutput.cpp.i
+
+src/Bitcoin/TransactionOutput.s: src/Bitcoin/TransactionOutput.cpp.s
+.PHONY : src/Bitcoin/TransactionOutput.s
+
+# target to generate assembly for a file
+src/Bitcoin/TransactionOutput.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/TransactionOutput.cpp.s
+.PHONY : src/Bitcoin/TransactionOutput.cpp.s
+
+src/Bitcoin/TransactionSigner.o: src/Bitcoin/TransactionSigner.cpp.o
+.PHONY : src/Bitcoin/TransactionSigner.o
+
+# target to build an object file
+src/Bitcoin/TransactionSigner.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/TransactionSigner.cpp.o
+.PHONY : src/Bitcoin/TransactionSigner.cpp.o
+
+src/Bitcoin/TransactionSigner.i: src/Bitcoin/TransactionSigner.cpp.i
+.PHONY : src/Bitcoin/TransactionSigner.i
+
+# target to preprocess a source file
+src/Bitcoin/TransactionSigner.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/TransactionSigner.cpp.i
+.PHONY : src/Bitcoin/TransactionSigner.cpp.i
+
+src/Bitcoin/TransactionSigner.s: src/Bitcoin/TransactionSigner.cpp.s
+.PHONY : src/Bitcoin/TransactionSigner.s
+
+# target to generate assembly for a file
+src/Bitcoin/TransactionSigner.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Bitcoin/TransactionSigner.cpp.s
+.PHONY : src/Bitcoin/TransactionSigner.cpp.s
+
+src/Cbor.o: src/Cbor.cpp.o
+.PHONY : src/Cbor.o
+
+# target to build an object file
+src/Cbor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Cbor.cpp.o
+.PHONY : src/Cbor.cpp.o
+
+src/Cbor.i: src/Cbor.cpp.i
+.PHONY : src/Cbor.i
+
+# target to preprocess a source file
+src/Cbor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Cbor.cpp.i
+.PHONY : src/Cbor.cpp.i
+
+src/Cbor.s: src/Cbor.cpp.s
+.PHONY : src/Cbor.s
+
+# target to generate assembly for a file
+src/Cbor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Cbor.cpp.s
+.PHONY : src/Cbor.cpp.s
+
+src/Coin.o: src/Coin.cpp.o
+.PHONY : src/Coin.o
+
+# target to build an object file
+src/Coin.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Coin.cpp.o
+.PHONY : src/Coin.cpp.o
+
+src/Coin.i: src/Coin.cpp.i
+.PHONY : src/Coin.i
+
+# target to preprocess a source file
+src/Coin.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Coin.cpp.i
+.PHONY : src/Coin.cpp.i
+
+src/Coin.s: src/Coin.cpp.s
+.PHONY : src/Coin.s
+
+# target to generate assembly for a file
+src/Coin.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Coin.cpp.s
+.PHONY : src/Coin.cpp.s
+
+src/Crc.o: src/Crc.cpp.o
+.PHONY : src/Crc.o
+
+# target to build an object file
+src/Crc.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Crc.cpp.o
+.PHONY : src/Crc.cpp.o
+
+src/Crc.i: src/Crc.cpp.i
+.PHONY : src/Crc.i
+
+# target to preprocess a source file
+src/Crc.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Crc.cpp.i
+.PHONY : src/Crc.cpp.i
+
+src/Crc.s: src/Crc.cpp.s
+.PHONY : src/Crc.s
+
+# target to generate assembly for a file
+src/Crc.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Crc.cpp.s
+.PHONY : src/Crc.cpp.s
+
+src/Data.o: src/Data.cpp.o
+.PHONY : src/Data.o
+
+# target to build an object file
+src/Data.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Data.cpp.o
+.PHONY : src/Data.cpp.o
+
+src/Data.i: src/Data.cpp.i
+.PHONY : src/Data.i
+
+# target to preprocess a source file
+src/Data.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Data.cpp.i
+.PHONY : src/Data.cpp.i
+
+src/Data.s: src/Data.cpp.s
+.PHONY : src/Data.s
+
+# target to generate assembly for a file
+src/Data.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Data.cpp.s
+.PHONY : src/Data.cpp.s
+
+src/DerivationPath.o: src/DerivationPath.cpp.o
+.PHONY : src/DerivationPath.o
+
+# target to build an object file
+src/DerivationPath.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/DerivationPath.cpp.o
+.PHONY : src/DerivationPath.cpp.o
+
+src/DerivationPath.i: src/DerivationPath.cpp.i
+.PHONY : src/DerivationPath.i
+
+# target to preprocess a source file
+src/DerivationPath.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/DerivationPath.cpp.i
+.PHONY : src/DerivationPath.cpp.i
+
+src/DerivationPath.s: src/DerivationPath.cpp.s
+.PHONY : src/DerivationPath.s
+
+# target to generate assembly for a file
+src/DerivationPath.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/DerivationPath.cpp.s
+.PHONY : src/DerivationPath.cpp.s
+
+src/Encrypt.o: src/Encrypt.cpp.o
+.PHONY : src/Encrypt.o
+
+# target to build an object file
+src/Encrypt.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Encrypt.cpp.o
+.PHONY : src/Encrypt.cpp.o
+
+src/Encrypt.i: src/Encrypt.cpp.i
+.PHONY : src/Encrypt.i
+
+# target to preprocess a source file
+src/Encrypt.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Encrypt.cpp.i
+.PHONY : src/Encrypt.cpp.i
+
+src/Encrypt.s: src/Encrypt.cpp.s
+.PHONY : src/Encrypt.s
+
+# target to generate assembly for a file
+src/Encrypt.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Encrypt.cpp.s
+.PHONY : src/Encrypt.cpp.s
+
+src/Ethereum/ABI/Array.o: src/Ethereum/ABI/Array.cpp.o
+.PHONY : src/Ethereum/ABI/Array.o
+
+# target to build an object file
+src/Ethereum/ABI/Array.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Array.cpp.o
+.PHONY : src/Ethereum/ABI/Array.cpp.o
+
+src/Ethereum/ABI/Array.i: src/Ethereum/ABI/Array.cpp.i
+.PHONY : src/Ethereum/ABI/Array.i
+
+# target to preprocess a source file
+src/Ethereum/ABI/Array.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Array.cpp.i
+.PHONY : src/Ethereum/ABI/Array.cpp.i
+
+src/Ethereum/ABI/Array.s: src/Ethereum/ABI/Array.cpp.s
+.PHONY : src/Ethereum/ABI/Array.s
+
+# target to generate assembly for a file
+src/Ethereum/ABI/Array.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Array.cpp.s
+.PHONY : src/Ethereum/ABI/Array.cpp.s
+
+src/Ethereum/ABI/Bytes.o: src/Ethereum/ABI/Bytes.cpp.o
+.PHONY : src/Ethereum/ABI/Bytes.o
+
+# target to build an object file
+src/Ethereum/ABI/Bytes.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Bytes.cpp.o
+.PHONY : src/Ethereum/ABI/Bytes.cpp.o
+
+src/Ethereum/ABI/Bytes.i: src/Ethereum/ABI/Bytes.cpp.i
+.PHONY : src/Ethereum/ABI/Bytes.i
+
+# target to preprocess a source file
+src/Ethereum/ABI/Bytes.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Bytes.cpp.i
+.PHONY : src/Ethereum/ABI/Bytes.cpp.i
+
+src/Ethereum/ABI/Bytes.s: src/Ethereum/ABI/Bytes.cpp.s
+.PHONY : src/Ethereum/ABI/Bytes.s
+
+# target to generate assembly for a file
+src/Ethereum/ABI/Bytes.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Bytes.cpp.s
+.PHONY : src/Ethereum/ABI/Bytes.cpp.s
+
+src/Ethereum/ABI/Function.o: src/Ethereum/ABI/Function.cpp.o
+.PHONY : src/Ethereum/ABI/Function.o
+
+# target to build an object file
+src/Ethereum/ABI/Function.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Function.cpp.o
+.PHONY : src/Ethereum/ABI/Function.cpp.o
+
+src/Ethereum/ABI/Function.i: src/Ethereum/ABI/Function.cpp.i
+.PHONY : src/Ethereum/ABI/Function.i
+
+# target to preprocess a source file
+src/Ethereum/ABI/Function.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Function.cpp.i
+.PHONY : src/Ethereum/ABI/Function.cpp.i
+
+src/Ethereum/ABI/Function.s: src/Ethereum/ABI/Function.cpp.s
+.PHONY : src/Ethereum/ABI/Function.s
+
+# target to generate assembly for a file
+src/Ethereum/ABI/Function.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Function.cpp.s
+.PHONY : src/Ethereum/ABI/Function.cpp.s
+
+src/Ethereum/ABI/ParamAddress.o: src/Ethereum/ABI/ParamAddress.cpp.o
+.PHONY : src/Ethereum/ABI/ParamAddress.o
+
+# target to build an object file
+src/Ethereum/ABI/ParamAddress.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamAddress.cpp.o
+.PHONY : src/Ethereum/ABI/ParamAddress.cpp.o
+
+src/Ethereum/ABI/ParamAddress.i: src/Ethereum/ABI/ParamAddress.cpp.i
+.PHONY : src/Ethereum/ABI/ParamAddress.i
+
+# target to preprocess a source file
+src/Ethereum/ABI/ParamAddress.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamAddress.cpp.i
+.PHONY : src/Ethereum/ABI/ParamAddress.cpp.i
+
+src/Ethereum/ABI/ParamAddress.s: src/Ethereum/ABI/ParamAddress.cpp.s
+.PHONY : src/Ethereum/ABI/ParamAddress.s
+
+# target to generate assembly for a file
+src/Ethereum/ABI/ParamAddress.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamAddress.cpp.s
+.PHONY : src/Ethereum/ABI/ParamAddress.cpp.s
+
+src/Ethereum/ABI/ParamBase.o: src/Ethereum/ABI/ParamBase.cpp.o
+.PHONY : src/Ethereum/ABI/ParamBase.o
+
+# target to build an object file
+src/Ethereum/ABI/ParamBase.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamBase.cpp.o
+.PHONY : src/Ethereum/ABI/ParamBase.cpp.o
+
+src/Ethereum/ABI/ParamBase.i: src/Ethereum/ABI/ParamBase.cpp.i
+.PHONY : src/Ethereum/ABI/ParamBase.i
+
+# target to preprocess a source file
+src/Ethereum/ABI/ParamBase.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamBase.cpp.i
+.PHONY : src/Ethereum/ABI/ParamBase.cpp.i
+
+src/Ethereum/ABI/ParamBase.s: src/Ethereum/ABI/ParamBase.cpp.s
+.PHONY : src/Ethereum/ABI/ParamBase.s
+
+# target to generate assembly for a file
+src/Ethereum/ABI/ParamBase.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamBase.cpp.s
+.PHONY : src/Ethereum/ABI/ParamBase.cpp.s
+
+src/Ethereum/ABI/ParamFactory.o: src/Ethereum/ABI/ParamFactory.cpp.o
+.PHONY : src/Ethereum/ABI/ParamFactory.o
+
+# target to build an object file
+src/Ethereum/ABI/ParamFactory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamFactory.cpp.o
+.PHONY : src/Ethereum/ABI/ParamFactory.cpp.o
+
+src/Ethereum/ABI/ParamFactory.i: src/Ethereum/ABI/ParamFactory.cpp.i
+.PHONY : src/Ethereum/ABI/ParamFactory.i
+
+# target to preprocess a source file
+src/Ethereum/ABI/ParamFactory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamFactory.cpp.i
+.PHONY : src/Ethereum/ABI/ParamFactory.cpp.i
+
+src/Ethereum/ABI/ParamFactory.s: src/Ethereum/ABI/ParamFactory.cpp.s
+.PHONY : src/Ethereum/ABI/ParamFactory.s
+
+# target to generate assembly for a file
+src/Ethereum/ABI/ParamFactory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamFactory.cpp.s
+.PHONY : src/Ethereum/ABI/ParamFactory.cpp.s
+
+src/Ethereum/ABI/ParamNumber.o: src/Ethereum/ABI/ParamNumber.cpp.o
+.PHONY : src/Ethereum/ABI/ParamNumber.o
+
+# target to build an object file
+src/Ethereum/ABI/ParamNumber.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamNumber.cpp.o
+.PHONY : src/Ethereum/ABI/ParamNumber.cpp.o
+
+src/Ethereum/ABI/ParamNumber.i: src/Ethereum/ABI/ParamNumber.cpp.i
+.PHONY : src/Ethereum/ABI/ParamNumber.i
+
+# target to preprocess a source file
+src/Ethereum/ABI/ParamNumber.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamNumber.cpp.i
+.PHONY : src/Ethereum/ABI/ParamNumber.cpp.i
+
+src/Ethereum/ABI/ParamNumber.s: src/Ethereum/ABI/ParamNumber.cpp.s
+.PHONY : src/Ethereum/ABI/ParamNumber.s
+
+# target to generate assembly for a file
+src/Ethereum/ABI/ParamNumber.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamNumber.cpp.s
+.PHONY : src/Ethereum/ABI/ParamNumber.cpp.s
+
+src/Ethereum/ABI/ParamStruct.o: src/Ethereum/ABI/ParamStruct.cpp.o
+.PHONY : src/Ethereum/ABI/ParamStruct.o
+
+# target to build an object file
+src/Ethereum/ABI/ParamStruct.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamStruct.cpp.o
+.PHONY : src/Ethereum/ABI/ParamStruct.cpp.o
+
+src/Ethereum/ABI/ParamStruct.i: src/Ethereum/ABI/ParamStruct.cpp.i
+.PHONY : src/Ethereum/ABI/ParamStruct.i
+
+# target to preprocess a source file
+src/Ethereum/ABI/ParamStruct.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamStruct.cpp.i
+.PHONY : src/Ethereum/ABI/ParamStruct.cpp.i
+
+src/Ethereum/ABI/ParamStruct.s: src/Ethereum/ABI/ParamStruct.cpp.s
+.PHONY : src/Ethereum/ABI/ParamStruct.s
+
+# target to generate assembly for a file
+src/Ethereum/ABI/ParamStruct.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ParamStruct.cpp.s
+.PHONY : src/Ethereum/ABI/ParamStruct.cpp.s
+
+src/Ethereum/ABI/Parameters.o: src/Ethereum/ABI/Parameters.cpp.o
+.PHONY : src/Ethereum/ABI/Parameters.o
+
+# target to build an object file
+src/Ethereum/ABI/Parameters.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Parameters.cpp.o
+.PHONY : src/Ethereum/ABI/Parameters.cpp.o
+
+src/Ethereum/ABI/Parameters.i: src/Ethereum/ABI/Parameters.cpp.i
+.PHONY : src/Ethereum/ABI/Parameters.i
+
+# target to preprocess a source file
+src/Ethereum/ABI/Parameters.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Parameters.cpp.i
+.PHONY : src/Ethereum/ABI/Parameters.cpp.i
+
+src/Ethereum/ABI/Parameters.s: src/Ethereum/ABI/Parameters.cpp.s
+.PHONY : src/Ethereum/ABI/Parameters.s
+
+# target to generate assembly for a file
+src/Ethereum/ABI/Parameters.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Parameters.cpp.s
+.PHONY : src/Ethereum/ABI/Parameters.cpp.s
+
+src/Ethereum/ABI/Tuple.o: src/Ethereum/ABI/Tuple.cpp.o
+.PHONY : src/Ethereum/ABI/Tuple.o
+
+# target to build an object file
+src/Ethereum/ABI/Tuple.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Tuple.cpp.o
+.PHONY : src/Ethereum/ABI/Tuple.cpp.o
+
+src/Ethereum/ABI/Tuple.i: src/Ethereum/ABI/Tuple.cpp.i
+.PHONY : src/Ethereum/ABI/Tuple.i
+
+# target to preprocess a source file
+src/Ethereum/ABI/Tuple.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Tuple.cpp.i
+.PHONY : src/Ethereum/ABI/Tuple.cpp.i
+
+src/Ethereum/ABI/Tuple.s: src/Ethereum/ABI/Tuple.cpp.s
+.PHONY : src/Ethereum/ABI/Tuple.s
+
+# target to generate assembly for a file
+src/Ethereum/ABI/Tuple.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/Tuple.cpp.s
+.PHONY : src/Ethereum/ABI/Tuple.cpp.s
+
+src/Ethereum/ABI/ValueDecoder.o: src/Ethereum/ABI/ValueDecoder.cpp.o
+.PHONY : src/Ethereum/ABI/ValueDecoder.o
+
+# target to build an object file
+src/Ethereum/ABI/ValueDecoder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ValueDecoder.cpp.o
+.PHONY : src/Ethereum/ABI/ValueDecoder.cpp.o
+
+src/Ethereum/ABI/ValueDecoder.i: src/Ethereum/ABI/ValueDecoder.cpp.i
+.PHONY : src/Ethereum/ABI/ValueDecoder.i
+
+# target to preprocess a source file
+src/Ethereum/ABI/ValueDecoder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ValueDecoder.cpp.i
+.PHONY : src/Ethereum/ABI/ValueDecoder.cpp.i
+
+src/Ethereum/ABI/ValueDecoder.s: src/Ethereum/ABI/ValueDecoder.cpp.s
+.PHONY : src/Ethereum/ABI/ValueDecoder.s
+
+# target to generate assembly for a file
+src/Ethereum/ABI/ValueDecoder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ValueDecoder.cpp.s
+.PHONY : src/Ethereum/ABI/ValueDecoder.cpp.s
+
+src/Ethereum/ABI/ValueEncoder.o: src/Ethereum/ABI/ValueEncoder.cpp.o
+.PHONY : src/Ethereum/ABI/ValueEncoder.o
+
+# target to build an object file
+src/Ethereum/ABI/ValueEncoder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ValueEncoder.cpp.o
+.PHONY : src/Ethereum/ABI/ValueEncoder.cpp.o
+
+src/Ethereum/ABI/ValueEncoder.i: src/Ethereum/ABI/ValueEncoder.cpp.i
+.PHONY : src/Ethereum/ABI/ValueEncoder.i
+
+# target to preprocess a source file
+src/Ethereum/ABI/ValueEncoder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ValueEncoder.cpp.i
+.PHONY : src/Ethereum/ABI/ValueEncoder.cpp.i
+
+src/Ethereum/ABI/ValueEncoder.s: src/Ethereum/ABI/ValueEncoder.cpp.s
+.PHONY : src/Ethereum/ABI/ValueEncoder.s
+
+# target to generate assembly for a file
+src/Ethereum/ABI/ValueEncoder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ABI/ValueEncoder.cpp.s
+.PHONY : src/Ethereum/ABI/ValueEncoder.cpp.s
+
+src/Ethereum/Address.o: src/Ethereum/Address.cpp.o
+.PHONY : src/Ethereum/Address.o
+
+# target to build an object file
+src/Ethereum/Address.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/Address.cpp.o
+.PHONY : src/Ethereum/Address.cpp.o
+
+src/Ethereum/Address.i: src/Ethereum/Address.cpp.i
+.PHONY : src/Ethereum/Address.i
+
+# target to preprocess a source file
+src/Ethereum/Address.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/Address.cpp.i
+.PHONY : src/Ethereum/Address.cpp.i
+
+src/Ethereum/Address.s: src/Ethereum/Address.cpp.s
+.PHONY : src/Ethereum/Address.s
+
+# target to generate assembly for a file
+src/Ethereum/Address.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/Address.cpp.s
+.PHONY : src/Ethereum/Address.cpp.s
+
+src/Ethereum/AddressChecksum.o: src/Ethereum/AddressChecksum.cpp.o
+.PHONY : src/Ethereum/AddressChecksum.o
+
+# target to build an object file
+src/Ethereum/AddressChecksum.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/AddressChecksum.cpp.o
+.PHONY : src/Ethereum/AddressChecksum.cpp.o
+
+src/Ethereum/AddressChecksum.i: src/Ethereum/AddressChecksum.cpp.i
+.PHONY : src/Ethereum/AddressChecksum.i
+
+# target to preprocess a source file
+src/Ethereum/AddressChecksum.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/AddressChecksum.cpp.i
+.PHONY : src/Ethereum/AddressChecksum.cpp.i
+
+src/Ethereum/AddressChecksum.s: src/Ethereum/AddressChecksum.cpp.s
+.PHONY : src/Ethereum/AddressChecksum.s
+
+# target to generate assembly for a file
+src/Ethereum/AddressChecksum.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/AddressChecksum.cpp.s
+.PHONY : src/Ethereum/AddressChecksum.cpp.s
+
+src/Ethereum/ContractCall.o: src/Ethereum/ContractCall.cpp.o
+.PHONY : src/Ethereum/ContractCall.o
+
+# target to build an object file
+src/Ethereum/ContractCall.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ContractCall.cpp.o
+.PHONY : src/Ethereum/ContractCall.cpp.o
+
+src/Ethereum/ContractCall.i: src/Ethereum/ContractCall.cpp.i
+.PHONY : src/Ethereum/ContractCall.i
+
+# target to preprocess a source file
+src/Ethereum/ContractCall.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ContractCall.cpp.i
+.PHONY : src/Ethereum/ContractCall.cpp.i
+
+src/Ethereum/ContractCall.s: src/Ethereum/ContractCall.cpp.s
+.PHONY : src/Ethereum/ContractCall.s
+
+# target to generate assembly for a file
+src/Ethereum/ContractCall.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/ContractCall.cpp.s
+.PHONY : src/Ethereum/ContractCall.cpp.s
+
+src/Ethereum/Entry.o: src/Ethereum/Entry.cpp.o
+.PHONY : src/Ethereum/Entry.o
+
+# target to build an object file
+src/Ethereum/Entry.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/Entry.cpp.o
+.PHONY : src/Ethereum/Entry.cpp.o
+
+src/Ethereum/Entry.i: src/Ethereum/Entry.cpp.i
+.PHONY : src/Ethereum/Entry.i
+
+# target to preprocess a source file
+src/Ethereum/Entry.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/Entry.cpp.i
+.PHONY : src/Ethereum/Entry.cpp.i
+
+src/Ethereum/Entry.s: src/Ethereum/Entry.cpp.s
+.PHONY : src/Ethereum/Entry.s
+
+# target to generate assembly for a file
+src/Ethereum/Entry.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/Entry.cpp.s
+.PHONY : src/Ethereum/Entry.cpp.s
+
+src/Ethereum/RLP.o: src/Ethereum/RLP.cpp.o
+.PHONY : src/Ethereum/RLP.o
+
+# target to build an object file
+src/Ethereum/RLP.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/RLP.cpp.o
+.PHONY : src/Ethereum/RLP.cpp.o
+
+src/Ethereum/RLP.i: src/Ethereum/RLP.cpp.i
+.PHONY : src/Ethereum/RLP.i
+
+# target to preprocess a source file
+src/Ethereum/RLP.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/RLP.cpp.i
+.PHONY : src/Ethereum/RLP.cpp.i
+
+src/Ethereum/RLP.s: src/Ethereum/RLP.cpp.s
+.PHONY : src/Ethereum/RLP.s
+
+# target to generate assembly for a file
+src/Ethereum/RLP.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/RLP.cpp.s
+.PHONY : src/Ethereum/RLP.cpp.s
+
+src/Ethereum/Signer.o: src/Ethereum/Signer.cpp.o
+.PHONY : src/Ethereum/Signer.o
+
+# target to build an object file
+src/Ethereum/Signer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/Signer.cpp.o
+.PHONY : src/Ethereum/Signer.cpp.o
+
+src/Ethereum/Signer.i: src/Ethereum/Signer.cpp.i
+.PHONY : src/Ethereum/Signer.i
+
+# target to preprocess a source file
+src/Ethereum/Signer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/Signer.cpp.i
+.PHONY : src/Ethereum/Signer.cpp.i
+
+src/Ethereum/Signer.s: src/Ethereum/Signer.cpp.s
+.PHONY : src/Ethereum/Signer.s
+
+# target to generate assembly for a file
+src/Ethereum/Signer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/Signer.cpp.s
+.PHONY : src/Ethereum/Signer.cpp.s
+
+src/Ethereum/Transaction.o: src/Ethereum/Transaction.cpp.o
+.PHONY : src/Ethereum/Transaction.o
+
+# target to build an object file
+src/Ethereum/Transaction.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/Transaction.cpp.o
+.PHONY : src/Ethereum/Transaction.cpp.o
+
+src/Ethereum/Transaction.i: src/Ethereum/Transaction.cpp.i
+.PHONY : src/Ethereum/Transaction.i
+
+# target to preprocess a source file
+src/Ethereum/Transaction.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/Transaction.cpp.i
+.PHONY : src/Ethereum/Transaction.cpp.i
+
+src/Ethereum/Transaction.s: src/Ethereum/Transaction.cpp.s
+.PHONY : src/Ethereum/Transaction.s
+
+# target to generate assembly for a file
+src/Ethereum/Transaction.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Ethereum/Transaction.cpp.s
+.PHONY : src/Ethereum/Transaction.cpp.s
+
+src/Generated/CoinInfoData.o: src/Generated/CoinInfoData.cpp.o
+.PHONY : src/Generated/CoinInfoData.o
+
+# target to build an object file
+src/Generated/CoinInfoData.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Generated/CoinInfoData.cpp.o
+.PHONY : src/Generated/CoinInfoData.cpp.o
+
+src/Generated/CoinInfoData.i: src/Generated/CoinInfoData.cpp.i
+.PHONY : src/Generated/CoinInfoData.i
+
+# target to preprocess a source file
+src/Generated/CoinInfoData.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Generated/CoinInfoData.cpp.i
+.PHONY : src/Generated/CoinInfoData.cpp.i
+
+src/Generated/CoinInfoData.s: src/Generated/CoinInfoData.cpp.s
+.PHONY : src/Generated/CoinInfoData.s
+
+# target to generate assembly for a file
+src/Generated/CoinInfoData.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Generated/CoinInfoData.cpp.s
+.PHONY : src/Generated/CoinInfoData.cpp.s
+
+src/Generated/NWHRP.o: src/Generated/NWHRP.cpp.o
+.PHONY : src/Generated/NWHRP.o
+
+# target to build an object file
+src/Generated/NWHRP.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Generated/NWHRP.cpp.o
+.PHONY : src/Generated/NWHRP.cpp.o
+
+src/Generated/NWHRP.i: src/Generated/NWHRP.cpp.i
+.PHONY : src/Generated/NWHRP.i
+
+# target to preprocess a source file
+src/Generated/NWHRP.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Generated/NWHRP.cpp.i
+.PHONY : src/Generated/NWHRP.cpp.i
+
+src/Generated/NWHRP.s: src/Generated/NWHRP.cpp.s
+.PHONY : src/Generated/NWHRP.s
+
+# target to generate assembly for a file
+src/Generated/NWHRP.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Generated/NWHRP.cpp.s
+.PHONY : src/Generated/NWHRP.cpp.s
+
+src/HDWallet.o: src/HDWallet.cpp.o
+.PHONY : src/HDWallet.o
+
+# target to build an object file
+src/HDWallet.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/HDWallet.cpp.o
+.PHONY : src/HDWallet.cpp.o
+
+src/HDWallet.i: src/HDWallet.cpp.i
+.PHONY : src/HDWallet.i
+
+# target to preprocess a source file
+src/HDWallet.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/HDWallet.cpp.i
+.PHONY : src/HDWallet.cpp.i
+
+src/HDWallet.s: src/HDWallet.cpp.s
+.PHONY : src/HDWallet.s
+
+# target to generate assembly for a file
+src/HDWallet.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/HDWallet.cpp.s
+.PHONY : src/HDWallet.cpp.s
+
+src/Hash.o: src/Hash.cpp.o
+.PHONY : src/Hash.o
+
+# target to build an object file
+src/Hash.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Hash.cpp.o
+.PHONY : src/Hash.cpp.o
+
+src/Hash.i: src/Hash.cpp.i
+.PHONY : src/Hash.i
+
+# target to preprocess a source file
+src/Hash.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Hash.cpp.i
+.PHONY : src/Hash.cpp.i
+
+src/Hash.s: src/Hash.cpp.s
+.PHONY : src/Hash.s
+
+# target to generate assembly for a file
+src/Hash.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Hash.cpp.s
+.PHONY : src/Hash.cpp.s
+
+src/Keystore/AESParameters.o: src/Keystore/AESParameters.cpp.o
+.PHONY : src/Keystore/AESParameters.o
+
+# target to build an object file
+src/Keystore/AESParameters.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/AESParameters.cpp.o
+.PHONY : src/Keystore/AESParameters.cpp.o
+
+src/Keystore/AESParameters.i: src/Keystore/AESParameters.cpp.i
+.PHONY : src/Keystore/AESParameters.i
+
+# target to preprocess a source file
+src/Keystore/AESParameters.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/AESParameters.cpp.i
+.PHONY : src/Keystore/AESParameters.cpp.i
+
+src/Keystore/AESParameters.s: src/Keystore/AESParameters.cpp.s
+.PHONY : src/Keystore/AESParameters.s
+
+# target to generate assembly for a file
+src/Keystore/AESParameters.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/AESParameters.cpp.s
+.PHONY : src/Keystore/AESParameters.cpp.s
+
+src/Keystore/Account.o: src/Keystore/Account.cpp.o
+.PHONY : src/Keystore/Account.o
+
+# target to build an object file
+src/Keystore/Account.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/Account.cpp.o
+.PHONY : src/Keystore/Account.cpp.o
+
+src/Keystore/Account.i: src/Keystore/Account.cpp.i
+.PHONY : src/Keystore/Account.i
+
+# target to preprocess a source file
+src/Keystore/Account.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/Account.cpp.i
+.PHONY : src/Keystore/Account.cpp.i
+
+src/Keystore/Account.s: src/Keystore/Account.cpp.s
+.PHONY : src/Keystore/Account.s
+
+# target to generate assembly for a file
+src/Keystore/Account.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/Account.cpp.s
+.PHONY : src/Keystore/Account.cpp.s
+
+src/Keystore/EncryptionParameters.o: src/Keystore/EncryptionParameters.cpp.o
+.PHONY : src/Keystore/EncryptionParameters.o
+
+# target to build an object file
+src/Keystore/EncryptionParameters.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/EncryptionParameters.cpp.o
+.PHONY : src/Keystore/EncryptionParameters.cpp.o
+
+src/Keystore/EncryptionParameters.i: src/Keystore/EncryptionParameters.cpp.i
+.PHONY : src/Keystore/EncryptionParameters.i
+
+# target to preprocess a source file
+src/Keystore/EncryptionParameters.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/EncryptionParameters.cpp.i
+.PHONY : src/Keystore/EncryptionParameters.cpp.i
+
+src/Keystore/EncryptionParameters.s: src/Keystore/EncryptionParameters.cpp.s
+.PHONY : src/Keystore/EncryptionParameters.s
+
+# target to generate assembly for a file
+src/Keystore/EncryptionParameters.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/EncryptionParameters.cpp.s
+.PHONY : src/Keystore/EncryptionParameters.cpp.s
+
+src/Keystore/PBKDF2Parameters.o: src/Keystore/PBKDF2Parameters.cpp.o
+.PHONY : src/Keystore/PBKDF2Parameters.o
+
+# target to build an object file
+src/Keystore/PBKDF2Parameters.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/PBKDF2Parameters.cpp.o
+.PHONY : src/Keystore/PBKDF2Parameters.cpp.o
+
+src/Keystore/PBKDF2Parameters.i: src/Keystore/PBKDF2Parameters.cpp.i
+.PHONY : src/Keystore/PBKDF2Parameters.i
+
+# target to preprocess a source file
+src/Keystore/PBKDF2Parameters.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/PBKDF2Parameters.cpp.i
+.PHONY : src/Keystore/PBKDF2Parameters.cpp.i
+
+src/Keystore/PBKDF2Parameters.s: src/Keystore/PBKDF2Parameters.cpp.s
+.PHONY : src/Keystore/PBKDF2Parameters.s
+
+# target to generate assembly for a file
+src/Keystore/PBKDF2Parameters.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/PBKDF2Parameters.cpp.s
+.PHONY : src/Keystore/PBKDF2Parameters.cpp.s
+
+src/Keystore/ScryptParameters.o: src/Keystore/ScryptParameters.cpp.o
+.PHONY : src/Keystore/ScryptParameters.o
+
+# target to build an object file
+src/Keystore/ScryptParameters.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/ScryptParameters.cpp.o
+.PHONY : src/Keystore/ScryptParameters.cpp.o
+
+src/Keystore/ScryptParameters.i: src/Keystore/ScryptParameters.cpp.i
+.PHONY : src/Keystore/ScryptParameters.i
+
+# target to preprocess a source file
+src/Keystore/ScryptParameters.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/ScryptParameters.cpp.i
+.PHONY : src/Keystore/ScryptParameters.cpp.i
+
+src/Keystore/ScryptParameters.s: src/Keystore/ScryptParameters.cpp.s
+.PHONY : src/Keystore/ScryptParameters.s
+
+# target to generate assembly for a file
+src/Keystore/ScryptParameters.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/ScryptParameters.cpp.s
+.PHONY : src/Keystore/ScryptParameters.cpp.s
+
+src/Keystore/StoredKey.o: src/Keystore/StoredKey.cpp.o
+.PHONY : src/Keystore/StoredKey.o
+
+# target to build an object file
+src/Keystore/StoredKey.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/StoredKey.cpp.o
+.PHONY : src/Keystore/StoredKey.cpp.o
+
+src/Keystore/StoredKey.i: src/Keystore/StoredKey.cpp.i
+.PHONY : src/Keystore/StoredKey.i
+
+# target to preprocess a source file
+src/Keystore/StoredKey.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/StoredKey.cpp.i
+.PHONY : src/Keystore/StoredKey.cpp.i
+
+src/Keystore/StoredKey.s: src/Keystore/StoredKey.cpp.s
+.PHONY : src/Keystore/StoredKey.s
+
+# target to generate assembly for a file
+src/Keystore/StoredKey.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Keystore/StoredKey.cpp.s
+.PHONY : src/Keystore/StoredKey.cpp.s
+
+src/Mnemonic.o: src/Mnemonic.cpp.o
+.PHONY : src/Mnemonic.o
+
+# target to build an object file
+src/Mnemonic.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Mnemonic.cpp.o
+.PHONY : src/Mnemonic.cpp.o
+
+src/Mnemonic.i: src/Mnemonic.cpp.i
+.PHONY : src/Mnemonic.i
+
+# target to preprocess a source file
+src/Mnemonic.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Mnemonic.cpp.i
+.PHONY : src/Mnemonic.cpp.i
+
+src/Mnemonic.s: src/Mnemonic.cpp.s
+.PHONY : src/Mnemonic.s
+
+# target to generate assembly for a file
+src/Mnemonic.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/Mnemonic.cpp.s
+.PHONY : src/Mnemonic.cpp.s
+
+src/PrivateKey.o: src/PrivateKey.cpp.o
+.PHONY : src/PrivateKey.o
+
+# target to build an object file
+src/PrivateKey.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/PrivateKey.cpp.o
+.PHONY : src/PrivateKey.cpp.o
+
+src/PrivateKey.i: src/PrivateKey.cpp.i
+.PHONY : src/PrivateKey.i
+
+# target to preprocess a source file
+src/PrivateKey.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/PrivateKey.cpp.i
+.PHONY : src/PrivateKey.cpp.i
+
+src/PrivateKey.s: src/PrivateKey.cpp.s
+.PHONY : src/PrivateKey.s
+
+# target to generate assembly for a file
+src/PrivateKey.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/PrivateKey.cpp.s
+.PHONY : src/PrivateKey.cpp.s
+
+src/PublicKey.o: src/PublicKey.cpp.o
+.PHONY : src/PublicKey.o
+
+# target to build an object file
+src/PublicKey.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/PublicKey.cpp.o
+.PHONY : src/PublicKey.cpp.o
+
+src/PublicKey.i: src/PublicKey.cpp.i
+.PHONY : src/PublicKey.i
+
+# target to preprocess a source file
+src/PublicKey.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/PublicKey.cpp.i
+.PHONY : src/PublicKey.cpp.i
+
+src/PublicKey.s: src/PublicKey.cpp.s
+.PHONY : src/PublicKey.s
+
+# target to generate assembly for a file
+src/PublicKey.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/PublicKey.cpp.s
+.PHONY : src/PublicKey.cpp.s
+
+src/TransactionCompiler.o: src/TransactionCompiler.cpp.o
+.PHONY : src/TransactionCompiler.o
+
+# target to build an object file
+src/TransactionCompiler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/TransactionCompiler.cpp.o
+.PHONY : src/TransactionCompiler.cpp.o
+
+src/TransactionCompiler.i: src/TransactionCompiler.cpp.i
+.PHONY : src/TransactionCompiler.i
+
+# target to preprocess a source file
+src/TransactionCompiler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/TransactionCompiler.cpp.i
+.PHONY : src/TransactionCompiler.cpp.i
+
+src/TransactionCompiler.s: src/TransactionCompiler.cpp.s
+.PHONY : src/TransactionCompiler.s
+
+# target to generate assembly for a file
+src/TransactionCompiler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/TransactionCompiler.cpp.s
+.PHONY : src/TransactionCompiler.cpp.s
+
+src/interface/NWAES.o: src/interface/NWAES.cpp.o
+.PHONY : src/interface/NWAES.o
+
+# target to build an object file
+src/interface/NWAES.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWAES.cpp.o
+.PHONY : src/interface/NWAES.cpp.o
+
+src/interface/NWAES.i: src/interface/NWAES.cpp.i
+.PHONY : src/interface/NWAES.i
+
+# target to preprocess a source file
+src/interface/NWAES.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWAES.cpp.i
+.PHONY : src/interface/NWAES.cpp.i
+
+src/interface/NWAES.s: src/interface/NWAES.cpp.s
+.PHONY : src/interface/NWAES.s
+
+# target to generate assembly for a file
+src/interface/NWAES.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWAES.cpp.s
+.PHONY : src/interface/NWAES.cpp.s
+
+src/interface/NWAccount.o: src/interface/NWAccount.cpp.o
+.PHONY : src/interface/NWAccount.o
+
+# target to build an object file
+src/interface/NWAccount.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWAccount.cpp.o
+.PHONY : src/interface/NWAccount.cpp.o
+
+src/interface/NWAccount.i: src/interface/NWAccount.cpp.i
+.PHONY : src/interface/NWAccount.i
+
+# target to preprocess a source file
+src/interface/NWAccount.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWAccount.cpp.i
+.PHONY : src/interface/NWAccount.cpp.i
+
+src/interface/NWAccount.s: src/interface/NWAccount.cpp.s
+.PHONY : src/interface/NWAccount.s
+
+# target to generate assembly for a file
+src/interface/NWAccount.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWAccount.cpp.s
+.PHONY : src/interface/NWAccount.cpp.s
+
+src/interface/NWAnyAddress.o: src/interface/NWAnyAddress.cpp.o
+.PHONY : src/interface/NWAnyAddress.o
+
+# target to build an object file
+src/interface/NWAnyAddress.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWAnyAddress.cpp.o
+.PHONY : src/interface/NWAnyAddress.cpp.o
+
+src/interface/NWAnyAddress.i: src/interface/NWAnyAddress.cpp.i
+.PHONY : src/interface/NWAnyAddress.i
+
+# target to preprocess a source file
+src/interface/NWAnyAddress.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWAnyAddress.cpp.i
+.PHONY : src/interface/NWAnyAddress.cpp.i
+
+src/interface/NWAnyAddress.s: src/interface/NWAnyAddress.cpp.s
+.PHONY : src/interface/NWAnyAddress.s
+
+# target to generate assembly for a file
+src/interface/NWAnyAddress.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWAnyAddress.cpp.s
+.PHONY : src/interface/NWAnyAddress.cpp.s
+
+src/interface/NWAnySigner.o: src/interface/NWAnySigner.cpp.o
+.PHONY : src/interface/NWAnySigner.o
+
+# target to build an object file
+src/interface/NWAnySigner.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWAnySigner.cpp.o
+.PHONY : src/interface/NWAnySigner.cpp.o
+
+src/interface/NWAnySigner.i: src/interface/NWAnySigner.cpp.i
+.PHONY : src/interface/NWAnySigner.i
+
+# target to preprocess a source file
+src/interface/NWAnySigner.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWAnySigner.cpp.i
+.PHONY : src/interface/NWAnySigner.cpp.i
+
+src/interface/NWAnySigner.s: src/interface/NWAnySigner.cpp.s
+.PHONY : src/interface/NWAnySigner.s
+
+# target to generate assembly for a file
+src/interface/NWAnySigner.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWAnySigner.cpp.s
+.PHONY : src/interface/NWAnySigner.cpp.s
+
+src/interface/NWBase32.o: src/interface/NWBase32.cpp.o
+.PHONY : src/interface/NWBase32.o
+
+# target to build an object file
+src/interface/NWBase32.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBase32.cpp.o
+.PHONY : src/interface/NWBase32.cpp.o
+
+src/interface/NWBase32.i: src/interface/NWBase32.cpp.i
+.PHONY : src/interface/NWBase32.i
+
+# target to preprocess a source file
+src/interface/NWBase32.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBase32.cpp.i
+.PHONY : src/interface/NWBase32.cpp.i
+
+src/interface/NWBase32.s: src/interface/NWBase32.cpp.s
+.PHONY : src/interface/NWBase32.s
+
+# target to generate assembly for a file
+src/interface/NWBase32.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBase32.cpp.s
+.PHONY : src/interface/NWBase32.cpp.s
+
+src/interface/NWBase58.o: src/interface/NWBase58.cpp.o
+.PHONY : src/interface/NWBase58.o
+
+# target to build an object file
+src/interface/NWBase58.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBase58.cpp.o
+.PHONY : src/interface/NWBase58.cpp.o
+
+src/interface/NWBase58.i: src/interface/NWBase58.cpp.i
+.PHONY : src/interface/NWBase58.i
+
+# target to preprocess a source file
+src/interface/NWBase58.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBase58.cpp.i
+.PHONY : src/interface/NWBase58.cpp.i
+
+src/interface/NWBase58.s: src/interface/NWBase58.cpp.s
+.PHONY : src/interface/NWBase58.s
+
+# target to generate assembly for a file
+src/interface/NWBase58.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBase58.cpp.s
+.PHONY : src/interface/NWBase58.cpp.s
+
+src/interface/NWBase64.o: src/interface/NWBase64.cpp.o
+.PHONY : src/interface/NWBase64.o
+
+# target to build an object file
+src/interface/NWBase64.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBase64.cpp.o
+.PHONY : src/interface/NWBase64.cpp.o
+
+src/interface/NWBase64.i: src/interface/NWBase64.cpp.i
+.PHONY : src/interface/NWBase64.i
+
+# target to preprocess a source file
+src/interface/NWBase64.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBase64.cpp.i
+.PHONY : src/interface/NWBase64.cpp.i
+
+src/interface/NWBase64.s: src/interface/NWBase64.cpp.s
+.PHONY : src/interface/NWBase64.s
+
+# target to generate assembly for a file
+src/interface/NWBase64.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBase64.cpp.s
+.PHONY : src/interface/NWBase64.cpp.s
+
+src/interface/NWBitcoin.o: src/interface/NWBitcoin.cpp.o
+.PHONY : src/interface/NWBitcoin.o
+
+# target to build an object file
+src/interface/NWBitcoin.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBitcoin.cpp.o
+.PHONY : src/interface/NWBitcoin.cpp.o
+
+src/interface/NWBitcoin.i: src/interface/NWBitcoin.cpp.i
+.PHONY : src/interface/NWBitcoin.i
+
+# target to preprocess a source file
+src/interface/NWBitcoin.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBitcoin.cpp.i
+.PHONY : src/interface/NWBitcoin.cpp.i
+
+src/interface/NWBitcoin.s: src/interface/NWBitcoin.cpp.s
+.PHONY : src/interface/NWBitcoin.s
+
+# target to generate assembly for a file
+src/interface/NWBitcoin.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBitcoin.cpp.s
+.PHONY : src/interface/NWBitcoin.cpp.s
+
+src/interface/NWBitcoinAddress.o: src/interface/NWBitcoinAddress.cpp.o
+.PHONY : src/interface/NWBitcoinAddress.o
+
+# target to build an object file
+src/interface/NWBitcoinAddress.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBitcoinAddress.cpp.o
+.PHONY : src/interface/NWBitcoinAddress.cpp.o
+
+src/interface/NWBitcoinAddress.i: src/interface/NWBitcoinAddress.cpp.i
+.PHONY : src/interface/NWBitcoinAddress.i
+
+# target to preprocess a source file
+src/interface/NWBitcoinAddress.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBitcoinAddress.cpp.i
+.PHONY : src/interface/NWBitcoinAddress.cpp.i
+
+src/interface/NWBitcoinAddress.s: src/interface/NWBitcoinAddress.cpp.s
+.PHONY : src/interface/NWBitcoinAddress.s
+
+# target to generate assembly for a file
+src/interface/NWBitcoinAddress.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBitcoinAddress.cpp.s
+.PHONY : src/interface/NWBitcoinAddress.cpp.s
+
+src/interface/NWBitcoinScript.o: src/interface/NWBitcoinScript.cpp.o
+.PHONY : src/interface/NWBitcoinScript.o
+
+# target to build an object file
+src/interface/NWBitcoinScript.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBitcoinScript.cpp.o
+.PHONY : src/interface/NWBitcoinScript.cpp.o
+
+src/interface/NWBitcoinScript.i: src/interface/NWBitcoinScript.cpp.i
+.PHONY : src/interface/NWBitcoinScript.i
+
+# target to preprocess a source file
+src/interface/NWBitcoinScript.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBitcoinScript.cpp.i
+.PHONY : src/interface/NWBitcoinScript.cpp.i
+
+src/interface/NWBitcoinScript.s: src/interface/NWBitcoinScript.cpp.s
+.PHONY : src/interface/NWBitcoinScript.s
+
+# target to generate assembly for a file
+src/interface/NWBitcoinScript.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWBitcoinScript.cpp.s
+.PHONY : src/interface/NWBitcoinScript.cpp.s
+
+src/interface/NWCoinType.o: src/interface/NWCoinType.cpp.o
+.PHONY : src/interface/NWCoinType.o
+
+# target to build an object file
+src/interface/NWCoinType.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWCoinType.cpp.o
+.PHONY : src/interface/NWCoinType.cpp.o
+
+src/interface/NWCoinType.i: src/interface/NWCoinType.cpp.i
+.PHONY : src/interface/NWCoinType.i
+
+# target to preprocess a source file
+src/interface/NWCoinType.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWCoinType.cpp.i
+.PHONY : src/interface/NWCoinType.cpp.i
+
+src/interface/NWCoinType.s: src/interface/NWCoinType.cpp.s
+.PHONY : src/interface/NWCoinType.s
+
+# target to generate assembly for a file
+src/interface/NWCoinType.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWCoinType.cpp.s
+.PHONY : src/interface/NWCoinType.cpp.s
+
+src/interface/NWData.o: src/interface/NWData.cpp.o
+.PHONY : src/interface/NWData.o
+
+# target to build an object file
+src/interface/NWData.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWData.cpp.o
+.PHONY : src/interface/NWData.cpp.o
+
+src/interface/NWData.i: src/interface/NWData.cpp.i
+.PHONY : src/interface/NWData.i
+
+# target to preprocess a source file
+src/interface/NWData.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWData.cpp.i
+.PHONY : src/interface/NWData.cpp.i
+
+src/interface/NWData.s: src/interface/NWData.cpp.s
+.PHONY : src/interface/NWData.s
+
+# target to generate assembly for a file
+src/interface/NWData.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWData.cpp.s
+.PHONY : src/interface/NWData.cpp.s
+
+src/interface/NWDataVector.o: src/interface/NWDataVector.cpp.o
+.PHONY : src/interface/NWDataVector.o
+
+# target to build an object file
+src/interface/NWDataVector.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWDataVector.cpp.o
+.PHONY : src/interface/NWDataVector.cpp.o
+
+src/interface/NWDataVector.i: src/interface/NWDataVector.cpp.i
+.PHONY : src/interface/NWDataVector.i
+
+# target to preprocess a source file
+src/interface/NWDataVector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWDataVector.cpp.i
+.PHONY : src/interface/NWDataVector.cpp.i
+
+src/interface/NWDataVector.s: src/interface/NWDataVector.cpp.s
+.PHONY : src/interface/NWDataVector.s
+
+# target to generate assembly for a file
+src/interface/NWDataVector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWDataVector.cpp.s
+.PHONY : src/interface/NWDataVector.cpp.s
+
+src/interface/NWEthereumAbi.o: src/interface/NWEthereumAbi.cpp.o
+.PHONY : src/interface/NWEthereumAbi.o
+
+# target to build an object file
+src/interface/NWEthereumAbi.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWEthereumAbi.cpp.o
+.PHONY : src/interface/NWEthereumAbi.cpp.o
+
+src/interface/NWEthereumAbi.i: src/interface/NWEthereumAbi.cpp.i
+.PHONY : src/interface/NWEthereumAbi.i
+
+# target to preprocess a source file
+src/interface/NWEthereumAbi.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWEthereumAbi.cpp.i
+.PHONY : src/interface/NWEthereumAbi.cpp.i
+
+src/interface/NWEthereumAbi.s: src/interface/NWEthereumAbi.cpp.s
+.PHONY : src/interface/NWEthereumAbi.s
+
+# target to generate assembly for a file
+src/interface/NWEthereumAbi.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWEthereumAbi.cpp.s
+.PHONY : src/interface/NWEthereumAbi.cpp.s
+
+src/interface/NWEthereumAbiFunction.o: src/interface/NWEthereumAbiFunction.cpp.o
+.PHONY : src/interface/NWEthereumAbiFunction.o
+
+# target to build an object file
+src/interface/NWEthereumAbiFunction.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWEthereumAbiFunction.cpp.o
+.PHONY : src/interface/NWEthereumAbiFunction.cpp.o
+
+src/interface/NWEthereumAbiFunction.i: src/interface/NWEthereumAbiFunction.cpp.i
+.PHONY : src/interface/NWEthereumAbiFunction.i
+
+# target to preprocess a source file
+src/interface/NWEthereumAbiFunction.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWEthereumAbiFunction.cpp.i
+.PHONY : src/interface/NWEthereumAbiFunction.cpp.i
+
+src/interface/NWEthereumAbiFunction.s: src/interface/NWEthereumAbiFunction.cpp.s
+.PHONY : src/interface/NWEthereumAbiFunction.s
+
+# target to generate assembly for a file
+src/interface/NWEthereumAbiFunction.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWEthereumAbiFunction.cpp.s
+.PHONY : src/interface/NWEthereumAbiFunction.cpp.s
+
+src/interface/NWEthereumAbiValue.o: src/interface/NWEthereumAbiValue.cpp.o
+.PHONY : src/interface/NWEthereumAbiValue.o
+
+# target to build an object file
+src/interface/NWEthereumAbiValue.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWEthereumAbiValue.cpp.o
+.PHONY : src/interface/NWEthereumAbiValue.cpp.o
+
+src/interface/NWEthereumAbiValue.i: src/interface/NWEthereumAbiValue.cpp.i
+.PHONY : src/interface/NWEthereumAbiValue.i
+
+# target to preprocess a source file
+src/interface/NWEthereumAbiValue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWEthereumAbiValue.cpp.i
+.PHONY : src/interface/NWEthereumAbiValue.cpp.i
+
+src/interface/NWEthereumAbiValue.s: src/interface/NWEthereumAbiValue.cpp.s
+.PHONY : src/interface/NWEthereumAbiValue.s
+
+# target to generate assembly for a file
+src/interface/NWEthereumAbiValue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWEthereumAbiValue.cpp.s
+.PHONY : src/interface/NWEthereumAbiValue.cpp.s
+
+src/interface/NWHDVersion.o: src/interface/NWHDVersion.cpp.o
+.PHONY : src/interface/NWHDVersion.o
+
+# target to build an object file
+src/interface/NWHDVersion.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWHDVersion.cpp.o
+.PHONY : src/interface/NWHDVersion.cpp.o
+
+src/interface/NWHDVersion.i: src/interface/NWHDVersion.cpp.i
+.PHONY : src/interface/NWHDVersion.i
+
+# target to preprocess a source file
+src/interface/NWHDVersion.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWHDVersion.cpp.i
+.PHONY : src/interface/NWHDVersion.cpp.i
+
+src/interface/NWHDVersion.s: src/interface/NWHDVersion.cpp.s
+.PHONY : src/interface/NWHDVersion.s
+
+# target to generate assembly for a file
+src/interface/NWHDVersion.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWHDVersion.cpp.s
+.PHONY : src/interface/NWHDVersion.cpp.s
+
+src/interface/NWHDWallet.o: src/interface/NWHDWallet.cpp.o
+.PHONY : src/interface/NWHDWallet.o
+
+# target to build an object file
+src/interface/NWHDWallet.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWHDWallet.cpp.o
+.PHONY : src/interface/NWHDWallet.cpp.o
+
+src/interface/NWHDWallet.i: src/interface/NWHDWallet.cpp.i
+.PHONY : src/interface/NWHDWallet.i
+
+# target to preprocess a source file
+src/interface/NWHDWallet.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWHDWallet.cpp.i
+.PHONY : src/interface/NWHDWallet.cpp.i
+
+src/interface/NWHDWallet.s: src/interface/NWHDWallet.cpp.s
+.PHONY : src/interface/NWHDWallet.s
+
+# target to generate assembly for a file
+src/interface/NWHDWallet.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWHDWallet.cpp.s
+.PHONY : src/interface/NWHDWallet.cpp.s
+
+src/interface/NWHash.o: src/interface/NWHash.cpp.o
+.PHONY : src/interface/NWHash.o
+
+# target to build an object file
+src/interface/NWHash.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWHash.cpp.o
+.PHONY : src/interface/NWHash.cpp.o
+
+src/interface/NWHash.i: src/interface/NWHash.cpp.i
+.PHONY : src/interface/NWHash.i
+
+# target to preprocess a source file
+src/interface/NWHash.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWHash.cpp.i
+.PHONY : src/interface/NWHash.cpp.i
+
+src/interface/NWHash.s: src/interface/NWHash.cpp.s
+.PHONY : src/interface/NWHash.s
+
+# target to generate assembly for a file
+src/interface/NWHash.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWHash.cpp.s
+.PHONY : src/interface/NWHash.cpp.s
+
+src/interface/NWMnemonic.o: src/interface/NWMnemonic.cpp.o
+.PHONY : src/interface/NWMnemonic.o
+
+# target to build an object file
+src/interface/NWMnemonic.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWMnemonic.cpp.o
+.PHONY : src/interface/NWMnemonic.cpp.o
+
+src/interface/NWMnemonic.i: src/interface/NWMnemonic.cpp.i
+.PHONY : src/interface/NWMnemonic.i
+
+# target to preprocess a source file
+src/interface/NWMnemonic.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWMnemonic.cpp.i
+.PHONY : src/interface/NWMnemonic.cpp.i
+
+src/interface/NWMnemonic.s: src/interface/NWMnemonic.cpp.s
+.PHONY : src/interface/NWMnemonic.s
+
+# target to generate assembly for a file
+src/interface/NWMnemonic.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWMnemonic.cpp.s
+.PHONY : src/interface/NWMnemonic.cpp.s
+
+src/interface/NWPBKDF2.o: src/interface/NWPBKDF2.cpp.o
+.PHONY : src/interface/NWPBKDF2.o
+
+# target to build an object file
+src/interface/NWPBKDF2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWPBKDF2.cpp.o
+.PHONY : src/interface/NWPBKDF2.cpp.o
+
+src/interface/NWPBKDF2.i: src/interface/NWPBKDF2.cpp.i
+.PHONY : src/interface/NWPBKDF2.i
+
+# target to preprocess a source file
+src/interface/NWPBKDF2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWPBKDF2.cpp.i
+.PHONY : src/interface/NWPBKDF2.cpp.i
+
+src/interface/NWPBKDF2.s: src/interface/NWPBKDF2.cpp.s
+.PHONY : src/interface/NWPBKDF2.s
+
+# target to generate assembly for a file
+src/interface/NWPBKDF2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWPBKDF2.cpp.s
+.PHONY : src/interface/NWPBKDF2.cpp.s
+
+src/interface/NWPrivateKey.o: src/interface/NWPrivateKey.cpp.o
+.PHONY : src/interface/NWPrivateKey.o
+
+# target to build an object file
+src/interface/NWPrivateKey.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWPrivateKey.cpp.o
+.PHONY : src/interface/NWPrivateKey.cpp.o
+
+src/interface/NWPrivateKey.i: src/interface/NWPrivateKey.cpp.i
+.PHONY : src/interface/NWPrivateKey.i
+
+# target to preprocess a source file
+src/interface/NWPrivateKey.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWPrivateKey.cpp.i
+.PHONY : src/interface/NWPrivateKey.cpp.i
+
+src/interface/NWPrivateKey.s: src/interface/NWPrivateKey.cpp.s
+.PHONY : src/interface/NWPrivateKey.s
+
+# target to generate assembly for a file
+src/interface/NWPrivateKey.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWPrivateKey.cpp.s
+.PHONY : src/interface/NWPrivateKey.cpp.s
+
+src/interface/NWPublicKey.o: src/interface/NWPublicKey.cpp.o
+.PHONY : src/interface/NWPublicKey.o
+
+# target to build an object file
+src/interface/NWPublicKey.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWPublicKey.cpp.o
+.PHONY : src/interface/NWPublicKey.cpp.o
+
+src/interface/NWPublicKey.i: src/interface/NWPublicKey.cpp.i
+.PHONY : src/interface/NWPublicKey.i
+
+# target to preprocess a source file
+src/interface/NWPublicKey.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWPublicKey.cpp.i
+.PHONY : src/interface/NWPublicKey.cpp.i
+
+src/interface/NWPublicKey.s: src/interface/NWPublicKey.cpp.s
+.PHONY : src/interface/NWPublicKey.s
+
+# target to generate assembly for a file
+src/interface/NWPublicKey.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWPublicKey.cpp.s
+.PHONY : src/interface/NWPublicKey.cpp.s
+
+src/interface/NWStoredKey.o: src/interface/NWStoredKey.cpp.o
+.PHONY : src/interface/NWStoredKey.o
+
+# target to build an object file
+src/interface/NWStoredKey.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWStoredKey.cpp.o
+.PHONY : src/interface/NWStoredKey.cpp.o
+
+src/interface/NWStoredKey.i: src/interface/NWStoredKey.cpp.i
+.PHONY : src/interface/NWStoredKey.i
+
+# target to preprocess a source file
+src/interface/NWStoredKey.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWStoredKey.cpp.i
+.PHONY : src/interface/NWStoredKey.cpp.i
+
+src/interface/NWStoredKey.s: src/interface/NWStoredKey.cpp.s
+.PHONY : src/interface/NWStoredKey.s
+
+# target to generate assembly for a file
+src/interface/NWStoredKey.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWStoredKey.cpp.s
+.PHONY : src/interface/NWStoredKey.cpp.s
+
+src/interface/NWString+Hex.o: src/interface/NWString+Hex.cpp.o
+.PHONY : src/interface/NWString+Hex.o
+
+# target to build an object file
+src/interface/NWString+Hex.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWString+Hex.cpp.o
+.PHONY : src/interface/NWString+Hex.cpp.o
+
+src/interface/NWString+Hex.i: src/interface/NWString+Hex.cpp.i
+.PHONY : src/interface/NWString+Hex.i
+
+# target to preprocess a source file
+src/interface/NWString+Hex.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWString+Hex.cpp.i
+.PHONY : src/interface/NWString+Hex.cpp.i
+
+src/interface/NWString+Hex.s: src/interface/NWString+Hex.cpp.s
+.PHONY : src/interface/NWString+Hex.s
+
+# target to generate assembly for a file
+src/interface/NWString+Hex.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWString+Hex.cpp.s
+.PHONY : src/interface/NWString+Hex.cpp.s
+
 src/interface/NWString.o: src/interface/NWString.cpp.o
 .PHONY : src/interface/NWString.o
 
@@ -2276,6 +4292,126 @@ src/interface/NWString.s: src/interface/NWString.cpp.s
 src/interface/NWString.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWString.cpp.s
 .PHONY : src/interface/NWString.cpp.s
+
+src/interface/NWTransactionCompiler.o: src/interface/NWTransactionCompiler.cpp.o
+.PHONY : src/interface/NWTransactionCompiler.o
+
+# target to build an object file
+src/interface/NWTransactionCompiler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWTransactionCompiler.cpp.o
+.PHONY : src/interface/NWTransactionCompiler.cpp.o
+
+src/interface/NWTransactionCompiler.i: src/interface/NWTransactionCompiler.cpp.i
+.PHONY : src/interface/NWTransactionCompiler.i
+
+# target to preprocess a source file
+src/interface/NWTransactionCompiler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWTransactionCompiler.cpp.i
+.PHONY : src/interface/NWTransactionCompiler.cpp.i
+
+src/interface/NWTransactionCompiler.s: src/interface/NWTransactionCompiler.cpp.s
+.PHONY : src/interface/NWTransactionCompiler.s
+
+# target to generate assembly for a file
+src/interface/NWTransactionCompiler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/interface/NWTransactionCompiler.cpp.s
+.PHONY : src/interface/NWTransactionCompiler.cpp.s
+
+src/proto/Bitcoin.pb.o: src/proto/Bitcoin.pb.cc.o
+.PHONY : src/proto/Bitcoin.pb.o
+
+# target to build an object file
+src/proto/Bitcoin.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/proto/Bitcoin.pb.cc.o
+.PHONY : src/proto/Bitcoin.pb.cc.o
+
+src/proto/Bitcoin.pb.i: src/proto/Bitcoin.pb.cc.i
+.PHONY : src/proto/Bitcoin.pb.i
+
+# target to preprocess a source file
+src/proto/Bitcoin.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/proto/Bitcoin.pb.cc.i
+.PHONY : src/proto/Bitcoin.pb.cc.i
+
+src/proto/Bitcoin.pb.s: src/proto/Bitcoin.pb.cc.s
+.PHONY : src/proto/Bitcoin.pb.s
+
+# target to generate assembly for a file
+src/proto/Bitcoin.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/proto/Bitcoin.pb.cc.s
+.PHONY : src/proto/Bitcoin.pb.cc.s
+
+src/proto/Common.pb.o: src/proto/Common.pb.cc.o
+.PHONY : src/proto/Common.pb.o
+
+# target to build an object file
+src/proto/Common.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/proto/Common.pb.cc.o
+.PHONY : src/proto/Common.pb.cc.o
+
+src/proto/Common.pb.i: src/proto/Common.pb.cc.i
+.PHONY : src/proto/Common.pb.i
+
+# target to preprocess a source file
+src/proto/Common.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/proto/Common.pb.cc.i
+.PHONY : src/proto/Common.pb.cc.i
+
+src/proto/Common.pb.s: src/proto/Common.pb.cc.s
+.PHONY : src/proto/Common.pb.s
+
+# target to generate assembly for a file
+src/proto/Common.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/proto/Common.pb.cc.s
+.PHONY : src/proto/Common.pb.cc.s
+
+src/proto/Ethereum.pb.o: src/proto/Ethereum.pb.cc.o
+.PHONY : src/proto/Ethereum.pb.o
+
+# target to build an object file
+src/proto/Ethereum.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/proto/Ethereum.pb.cc.o
+.PHONY : src/proto/Ethereum.pb.cc.o
+
+src/proto/Ethereum.pb.i: src/proto/Ethereum.pb.cc.i
+.PHONY : src/proto/Ethereum.pb.i
+
+# target to preprocess a source file
+src/proto/Ethereum.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/proto/Ethereum.pb.cc.i
+.PHONY : src/proto/Ethereum.pb.cc.i
+
+src/proto/Ethereum.pb.s: src/proto/Ethereum.pb.cc.s
+.PHONY : src/proto/Ethereum.pb.s
+
+# target to generate assembly for a file
+src/proto/Ethereum.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/proto/Ethereum.pb.cc.s
+.PHONY : src/proto/Ethereum.pb.cc.s
+
+src/proto/TransactionCompiler.pb.o: src/proto/TransactionCompiler.pb.cc.o
+.PHONY : src/proto/TransactionCompiler.pb.o
+
+# target to build an object file
+src/proto/TransactionCompiler.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/proto/TransactionCompiler.pb.cc.o
+.PHONY : src/proto/TransactionCompiler.pb.cc.o
+
+src/proto/TransactionCompiler.pb.i: src/proto/TransactionCompiler.pb.cc.i
+.PHONY : src/proto/TransactionCompiler.pb.i
+
+# target to preprocess a source file
+src/proto/TransactionCompiler.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/proto/TransactionCompiler.pb.cc.i
+.PHONY : src/proto/TransactionCompiler.pb.cc.i
+
+src/proto/TransactionCompiler.pb.s: src/proto/TransactionCompiler.pb.cc.s
+.PHONY : src/proto/TransactionCompiler.pb.s
+
+# target to generate assembly for a file
+src/proto/TransactionCompiler.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NiceWCore.dir/build.make CMakeFiles/NiceWCore.dir/src/proto/TransactionCompiler.pb.cc.s
+.PHONY : src/proto/TransactionCompiler.pb.cc.s
 
 # Help Target
 help:
@@ -2548,9 +4684,276 @@ help:
 	@echo "... local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wrappers.pb.o"
 	@echo "... local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wrappers.pb.i"
 	@echo "... local/src/protobuf/protobuf-3.19.2/src/google/protobuf/wrappers.pb.s"
+	@echo "... src/Base58.o"
+	@echo "... src/Base58.i"
+	@echo "... src/Base58.s"
+	@echo "... src/Base64.o"
+	@echo "... src/Base64.i"
+	@echo "... src/Base64.s"
+	@echo "... src/Bech32.o"
+	@echo "... src/Bech32.i"
+	@echo "... src/Bech32.s"
+	@echo "... src/Bech32Address.o"
+	@echo "... src/Bech32Address.i"
+	@echo "... src/Bech32Address.s"
+	@echo "... src/BinaryCoding.o"
+	@echo "... src/BinaryCoding.i"
+	@echo "... src/BinaryCoding.s"
+	@echo "... src/Bitcoin/Address.o"
+	@echo "... src/Bitcoin/Address.i"
+	@echo "... src/Bitcoin/Address.s"
+	@echo "... src/Bitcoin/Entry.o"
+	@echo "... src/Bitcoin/Entry.i"
+	@echo "... src/Bitcoin/Entry.s"
+	@echo "... src/Bitcoin/FeeCalculator.o"
+	@echo "... src/Bitcoin/FeeCalculator.i"
+	@echo "... src/Bitcoin/FeeCalculator.s"
+	@echo "... src/Bitcoin/InputSelector.o"
+	@echo "... src/Bitcoin/InputSelector.i"
+	@echo "... src/Bitcoin/InputSelector.s"
+	@echo "... src/Bitcoin/OutPoint.o"
+	@echo "... src/Bitcoin/OutPoint.i"
+	@echo "... src/Bitcoin/OutPoint.s"
+	@echo "... src/Bitcoin/Script.o"
+	@echo "... src/Bitcoin/Script.i"
+	@echo "... src/Bitcoin/Script.s"
+	@echo "... src/Bitcoin/SegwitAddress.o"
+	@echo "... src/Bitcoin/SegwitAddress.i"
+	@echo "... src/Bitcoin/SegwitAddress.s"
+	@echo "... src/Bitcoin/SignatureBuilder.o"
+	@echo "... src/Bitcoin/SignatureBuilder.i"
+	@echo "... src/Bitcoin/SignatureBuilder.s"
+	@echo "... src/Bitcoin/Signer.o"
+	@echo "... src/Bitcoin/Signer.i"
+	@echo "... src/Bitcoin/Signer.s"
+	@echo "... src/Bitcoin/SigningInput.o"
+	@echo "... src/Bitcoin/SigningInput.i"
+	@echo "... src/Bitcoin/SigningInput.s"
+	@echo "... src/Bitcoin/Transaction.o"
+	@echo "... src/Bitcoin/Transaction.i"
+	@echo "... src/Bitcoin/Transaction.s"
+	@echo "... src/Bitcoin/TransactionBuilder.o"
+	@echo "... src/Bitcoin/TransactionBuilder.i"
+	@echo "... src/Bitcoin/TransactionBuilder.s"
+	@echo "... src/Bitcoin/TransactionInput.o"
+	@echo "... src/Bitcoin/TransactionInput.i"
+	@echo "... src/Bitcoin/TransactionInput.s"
+	@echo "... src/Bitcoin/TransactionOutput.o"
+	@echo "... src/Bitcoin/TransactionOutput.i"
+	@echo "... src/Bitcoin/TransactionOutput.s"
+	@echo "... src/Bitcoin/TransactionSigner.o"
+	@echo "... src/Bitcoin/TransactionSigner.i"
+	@echo "... src/Bitcoin/TransactionSigner.s"
+	@echo "... src/Cbor.o"
+	@echo "... src/Cbor.i"
+	@echo "... src/Cbor.s"
+	@echo "... src/Coin.o"
+	@echo "... src/Coin.i"
+	@echo "... src/Coin.s"
+	@echo "... src/Crc.o"
+	@echo "... src/Crc.i"
+	@echo "... src/Crc.s"
+	@echo "... src/Data.o"
+	@echo "... src/Data.i"
+	@echo "... src/Data.s"
+	@echo "... src/DerivationPath.o"
+	@echo "... src/DerivationPath.i"
+	@echo "... src/DerivationPath.s"
+	@echo "... src/Encrypt.o"
+	@echo "... src/Encrypt.i"
+	@echo "... src/Encrypt.s"
+	@echo "... src/Ethereum/ABI/Array.o"
+	@echo "... src/Ethereum/ABI/Array.i"
+	@echo "... src/Ethereum/ABI/Array.s"
+	@echo "... src/Ethereum/ABI/Bytes.o"
+	@echo "... src/Ethereum/ABI/Bytes.i"
+	@echo "... src/Ethereum/ABI/Bytes.s"
+	@echo "... src/Ethereum/ABI/Function.o"
+	@echo "... src/Ethereum/ABI/Function.i"
+	@echo "... src/Ethereum/ABI/Function.s"
+	@echo "... src/Ethereum/ABI/ParamAddress.o"
+	@echo "... src/Ethereum/ABI/ParamAddress.i"
+	@echo "... src/Ethereum/ABI/ParamAddress.s"
+	@echo "... src/Ethereum/ABI/ParamBase.o"
+	@echo "... src/Ethereum/ABI/ParamBase.i"
+	@echo "... src/Ethereum/ABI/ParamBase.s"
+	@echo "... src/Ethereum/ABI/ParamFactory.o"
+	@echo "... src/Ethereum/ABI/ParamFactory.i"
+	@echo "... src/Ethereum/ABI/ParamFactory.s"
+	@echo "... src/Ethereum/ABI/ParamNumber.o"
+	@echo "... src/Ethereum/ABI/ParamNumber.i"
+	@echo "... src/Ethereum/ABI/ParamNumber.s"
+	@echo "... src/Ethereum/ABI/ParamStruct.o"
+	@echo "... src/Ethereum/ABI/ParamStruct.i"
+	@echo "... src/Ethereum/ABI/ParamStruct.s"
+	@echo "... src/Ethereum/ABI/Parameters.o"
+	@echo "... src/Ethereum/ABI/Parameters.i"
+	@echo "... src/Ethereum/ABI/Parameters.s"
+	@echo "... src/Ethereum/ABI/Tuple.o"
+	@echo "... src/Ethereum/ABI/Tuple.i"
+	@echo "... src/Ethereum/ABI/Tuple.s"
+	@echo "... src/Ethereum/ABI/ValueDecoder.o"
+	@echo "... src/Ethereum/ABI/ValueDecoder.i"
+	@echo "... src/Ethereum/ABI/ValueDecoder.s"
+	@echo "... src/Ethereum/ABI/ValueEncoder.o"
+	@echo "... src/Ethereum/ABI/ValueEncoder.i"
+	@echo "... src/Ethereum/ABI/ValueEncoder.s"
+	@echo "... src/Ethereum/Address.o"
+	@echo "... src/Ethereum/Address.i"
+	@echo "... src/Ethereum/Address.s"
+	@echo "... src/Ethereum/AddressChecksum.o"
+	@echo "... src/Ethereum/AddressChecksum.i"
+	@echo "... src/Ethereum/AddressChecksum.s"
+	@echo "... src/Ethereum/ContractCall.o"
+	@echo "... src/Ethereum/ContractCall.i"
+	@echo "... src/Ethereum/ContractCall.s"
+	@echo "... src/Ethereum/Entry.o"
+	@echo "... src/Ethereum/Entry.i"
+	@echo "... src/Ethereum/Entry.s"
+	@echo "... src/Ethereum/RLP.o"
+	@echo "... src/Ethereum/RLP.i"
+	@echo "... src/Ethereum/RLP.s"
+	@echo "... src/Ethereum/Signer.o"
+	@echo "... src/Ethereum/Signer.i"
+	@echo "... src/Ethereum/Signer.s"
+	@echo "... src/Ethereum/Transaction.o"
+	@echo "... src/Ethereum/Transaction.i"
+	@echo "... src/Ethereum/Transaction.s"
+	@echo "... src/Generated/CoinInfoData.o"
+	@echo "... src/Generated/CoinInfoData.i"
+	@echo "... src/Generated/CoinInfoData.s"
+	@echo "... src/Generated/NWHRP.o"
+	@echo "... src/Generated/NWHRP.i"
+	@echo "... src/Generated/NWHRP.s"
+	@echo "... src/HDWallet.o"
+	@echo "... src/HDWallet.i"
+	@echo "... src/HDWallet.s"
+	@echo "... src/Hash.o"
+	@echo "... src/Hash.i"
+	@echo "... src/Hash.s"
+	@echo "... src/Keystore/AESParameters.o"
+	@echo "... src/Keystore/AESParameters.i"
+	@echo "... src/Keystore/AESParameters.s"
+	@echo "... src/Keystore/Account.o"
+	@echo "... src/Keystore/Account.i"
+	@echo "... src/Keystore/Account.s"
+	@echo "... src/Keystore/EncryptionParameters.o"
+	@echo "... src/Keystore/EncryptionParameters.i"
+	@echo "... src/Keystore/EncryptionParameters.s"
+	@echo "... src/Keystore/PBKDF2Parameters.o"
+	@echo "... src/Keystore/PBKDF2Parameters.i"
+	@echo "... src/Keystore/PBKDF2Parameters.s"
+	@echo "... src/Keystore/ScryptParameters.o"
+	@echo "... src/Keystore/ScryptParameters.i"
+	@echo "... src/Keystore/ScryptParameters.s"
+	@echo "... src/Keystore/StoredKey.o"
+	@echo "... src/Keystore/StoredKey.i"
+	@echo "... src/Keystore/StoredKey.s"
+	@echo "... src/Mnemonic.o"
+	@echo "... src/Mnemonic.i"
+	@echo "... src/Mnemonic.s"
+	@echo "... src/PrivateKey.o"
+	@echo "... src/PrivateKey.i"
+	@echo "... src/PrivateKey.s"
+	@echo "... src/PublicKey.o"
+	@echo "... src/PublicKey.i"
+	@echo "... src/PublicKey.s"
+	@echo "... src/TransactionCompiler.o"
+	@echo "... src/TransactionCompiler.i"
+	@echo "... src/TransactionCompiler.s"
+	@echo "... src/interface/NWAES.o"
+	@echo "... src/interface/NWAES.i"
+	@echo "... src/interface/NWAES.s"
+	@echo "... src/interface/NWAccount.o"
+	@echo "... src/interface/NWAccount.i"
+	@echo "... src/interface/NWAccount.s"
+	@echo "... src/interface/NWAnyAddress.o"
+	@echo "... src/interface/NWAnyAddress.i"
+	@echo "... src/interface/NWAnyAddress.s"
+	@echo "... src/interface/NWAnySigner.o"
+	@echo "... src/interface/NWAnySigner.i"
+	@echo "... src/interface/NWAnySigner.s"
+	@echo "... src/interface/NWBase32.o"
+	@echo "... src/interface/NWBase32.i"
+	@echo "... src/interface/NWBase32.s"
+	@echo "... src/interface/NWBase58.o"
+	@echo "... src/interface/NWBase58.i"
+	@echo "... src/interface/NWBase58.s"
+	@echo "... src/interface/NWBase64.o"
+	@echo "... src/interface/NWBase64.i"
+	@echo "... src/interface/NWBase64.s"
+	@echo "... src/interface/NWBitcoin.o"
+	@echo "... src/interface/NWBitcoin.i"
+	@echo "... src/interface/NWBitcoin.s"
+	@echo "... src/interface/NWBitcoinAddress.o"
+	@echo "... src/interface/NWBitcoinAddress.i"
+	@echo "... src/interface/NWBitcoinAddress.s"
+	@echo "... src/interface/NWBitcoinScript.o"
+	@echo "... src/interface/NWBitcoinScript.i"
+	@echo "... src/interface/NWBitcoinScript.s"
+	@echo "... src/interface/NWCoinType.o"
+	@echo "... src/interface/NWCoinType.i"
+	@echo "... src/interface/NWCoinType.s"
+	@echo "... src/interface/NWData.o"
+	@echo "... src/interface/NWData.i"
+	@echo "... src/interface/NWData.s"
+	@echo "... src/interface/NWDataVector.o"
+	@echo "... src/interface/NWDataVector.i"
+	@echo "... src/interface/NWDataVector.s"
+	@echo "... src/interface/NWEthereumAbi.o"
+	@echo "... src/interface/NWEthereumAbi.i"
+	@echo "... src/interface/NWEthereumAbi.s"
+	@echo "... src/interface/NWEthereumAbiFunction.o"
+	@echo "... src/interface/NWEthereumAbiFunction.i"
+	@echo "... src/interface/NWEthereumAbiFunction.s"
+	@echo "... src/interface/NWEthereumAbiValue.o"
+	@echo "... src/interface/NWEthereumAbiValue.i"
+	@echo "... src/interface/NWEthereumAbiValue.s"
+	@echo "... src/interface/NWHDVersion.o"
+	@echo "... src/interface/NWHDVersion.i"
+	@echo "... src/interface/NWHDVersion.s"
+	@echo "... src/interface/NWHDWallet.o"
+	@echo "... src/interface/NWHDWallet.i"
+	@echo "... src/interface/NWHDWallet.s"
+	@echo "... src/interface/NWHash.o"
+	@echo "... src/interface/NWHash.i"
+	@echo "... src/interface/NWHash.s"
+	@echo "... src/interface/NWMnemonic.o"
+	@echo "... src/interface/NWMnemonic.i"
+	@echo "... src/interface/NWMnemonic.s"
+	@echo "... src/interface/NWPBKDF2.o"
+	@echo "... src/interface/NWPBKDF2.i"
+	@echo "... src/interface/NWPBKDF2.s"
+	@echo "... src/interface/NWPrivateKey.o"
+	@echo "... src/interface/NWPrivateKey.i"
+	@echo "... src/interface/NWPrivateKey.s"
+	@echo "... src/interface/NWPublicKey.o"
+	@echo "... src/interface/NWPublicKey.i"
+	@echo "... src/interface/NWPublicKey.s"
+	@echo "... src/interface/NWStoredKey.o"
+	@echo "... src/interface/NWStoredKey.i"
+	@echo "... src/interface/NWStoredKey.s"
+	@echo "... src/interface/NWString+Hex.o"
+	@echo "... src/interface/NWString+Hex.i"
+	@echo "... src/interface/NWString+Hex.s"
 	@echo "... src/interface/NWString.o"
 	@echo "... src/interface/NWString.i"
 	@echo "... src/interface/NWString.s"
+	@echo "... src/interface/NWTransactionCompiler.o"
+	@echo "... src/interface/NWTransactionCompiler.i"
+	@echo "... src/interface/NWTransactionCompiler.s"
+	@echo "... src/proto/Bitcoin.pb.o"
+	@echo "... src/proto/Bitcoin.pb.i"
+	@echo "... src/proto/Bitcoin.pb.s"
+	@echo "... src/proto/Common.pb.o"
+	@echo "... src/proto/Common.pb.i"
+	@echo "... src/proto/Common.pb.s"
+	@echo "... src/proto/Ethereum.pb.o"
+	@echo "... src/proto/Ethereum.pb.i"
+	@echo "... src/proto/Ethereum.pb.s"
+	@echo "... src/proto/TransactionCompiler.pb.o"
+	@echo "... src/proto/TransactionCompiler.pb.i"
+	@echo "... src/proto/TransactionCompiler.pb.s"
 .PHONY : help
 
 

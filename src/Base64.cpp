@@ -9,9 +9,9 @@
 #include <boost/archive/iterators/binary_from_base64.hpp>
 #include <boost/archive/iterators/transform_width.hpp>
 
-namespace NW:Base64 {
+namespace NW::Base64 {
 
-using namespace TW;
+using namespace NW;
 using namespace std;
 
 Data decode(const string& val) {

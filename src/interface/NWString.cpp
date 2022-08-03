@@ -25,17 +25,17 @@ char NWStringGet(NWString *_Nonnull string, size_t index) {
     return (*s)[index];
 }
 
-const char *_Nonnull NWStringUTF8Bytes(TWString *_Nonnull string) {
+const char *_Nonnull NWStringUTF8Bytes(NWString *_Nonnull string) {
     auto* s = reinterpret_cast<const std::string*>(string);
     return s->c_str();
 }
 
-void NWStringDelete(TWString *_Nonnull string) {
+void NWStringDelete(NWString *_Nonnull string) {
     auto* s = reinterpret_cast<const std::string*>(string);
     delete s;
 }
 
-bool NWStringEqual(TWString *_Nonnull lhs, TWString *_Nonnull rhs) {
+bool NWStringEqual(NWString *_Nonnull lhs, NWString *_Nonnull rhs) {
     auto* lv = reinterpret_cast<const std::string*>(lhs);
     auto* rv = reinterpret_cast<const std::string*>(rhs);
     return *lv == *rv;

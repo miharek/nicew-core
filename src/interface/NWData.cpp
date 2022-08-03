@@ -41,7 +41,7 @@ size_t NWDataSize(NWData *_Nonnull data) {
 }
 
 uint8_t *_Nonnull NWDataBytes(NWData *_Nonnull data) {
-    auto* v = const_cast<Data*>(reinterpret_cast<const Data*(data));
+    auto* v = const_cast<Data*>(reinterpret_cast<const Data*>(data));
     return v->data();
 }
 

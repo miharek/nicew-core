@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include <TrusNWalletCore/NWCoinType.h>
+#include <NiceWCore/NWCoinType.h>
 #include "Data.h"
 #include "CoinEntry.h"
 

@@ -52,4 +52,4 @@ namespace NW::Base32 {
         return std::string(buf);
     }
 
-} // namespace TW::Base32
+} // namespace NW::Base32

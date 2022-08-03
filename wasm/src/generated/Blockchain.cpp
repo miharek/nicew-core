@@ -10,20 +10,12 @@
 
 using namespace emscripten;
 
-#include <string>
-
 namespace NW::Wasm {
-
-auto describeBlockchain(NWBlockchain value) -> std::string {
-    switch (value) {
-        default: return "";
-    }
-}
 
 EMSCRIPTEN_BINDINGS(Wasm_NWBlockchain) {
     enum_<NWBlockchain>("Blockchain")
+        .value("bitcoin", NWBlockchain::NWBlockchainBitcoin)
     ;
-    function("describeBlockchain", describeBlockchain);
 }
 
 } // namespace NW::Wasm

@@ -156,10 +156,8 @@ export class Mnemonic {
 }
 export class Blockchain {
     value: number;
+    static bitcoin: Blockchain;
 }
-
-declare function describeBlockchain(value: Blockchain): string;
-
 export class BitcoinSigHashType {
     value: number;
     static all: BitcoinSigHashType;

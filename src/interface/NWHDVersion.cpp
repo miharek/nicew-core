@@ -12,10 +12,6 @@ bool NWHDVersionIsPublic(enum NWHDVersion version) {
         case NWHDVersionXPUB:
         case NWHDVersionYPUB:
         case NWHDVersionZPUB:
-        case NWHDVersionLTUB:
-        case NWHDVersionMTUB:
-        case NWHDVersionDPUB:
-        case NWHDVersionDGUB:
             return true;
 
         case NWHDVersionNone:
@@ -29,10 +25,6 @@ bool NWHDVersionIsPrivate(enum NWHDVersion version) {
         case NWHDVersionXPRV:
         case NWHDVersionYPRV:
         case NWHDVersionZPRV:
-        case NWHDVersionLTPV:
-        case NWHDVersionMTPV:
-        case NWHDVersionDPRV:
-        case NWHDVersionDGPV:
             return true;
 
         case NWHDVersionNone:
