@@ -31,10 +31,10 @@ jni/java/wallet/core/proto
 swift/Sources/Generated
 swift/wallet-core/
 src/Generated
-include/TrustWalletCore/TWHRP.h
-include/TrustWalletCore/TW*Proto.h
-include/TrustWalletCore/TWDerivation.h
-include/TrustWalletCore/TWEthereumChainID.h
+include/NiceWCore/NWHRP.h
+include/NiceWCore/NW*Proto.h
+include/NiceWCore/NWDerivation.h
+include/NiceWCore/NWEthereumChainID.h
 
 # Wasm
 emsdk/
