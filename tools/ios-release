@@ -48,7 +48,7 @@ Pod::Spec.new do |s|
   s.name         = '${podspec_name}'
   s.version      = '${version}'
   s.summary      = 'NiceW core data structures and algorithms.'
-  s.homepage     = 'https://github.com/mihaelrek/nicew-core'
+  s.homepage     = 'https://github.com/miharek/nicew-core'
   s.license      = 'MIT'
   s.authors      = { 'Mihael Rek' => 'rek.mihael@gmail.com' }
   s.module_name  = 'WalletCore'
@@ -56,7 +56,7 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.14'
   s.swift_version = '5.1'
   s.source = {
-    http: '${download_url}'
+    git: 'https://github.com/miharek/nicew-core.git'
   }
   s.default_subspec = 'Core'
   s.subspec 'Types' do |ss|
