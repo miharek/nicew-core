@@ -21,7 +21,6 @@ echo "release_url url is $release_url"
 
 pushd ${built_dir}
 # archive headers, swift code and xcframework
-
 rm -rf release && mkdir -p release
 
 cp -R WalletCoreCommon.xcframework release
@@ -34,6 +33,7 @@ filename="NiceWCore-${version}.tar.xz"
 pushd release
 tar -cJvf ../${filename} .
 popd
+
 
 # upload to release
 download_url=$(wc_upload_asset ${release_url} ${filename})

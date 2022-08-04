@@ -10,7 +10,8 @@ wc_read_version() {
 
 wc_release_url() {
     tag="$1"
-    id=$(curl -H "Accept: application/vnd.github+json" "https://api.github.com/repos/miharek/nicew-core/releases/tags/${tag}" | jq ".id")
+
+    id=$(curl -H "Accept: application/vnd.github+json" -H "Authorization: token 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" "https://api.github.com/repos/miharek/nicew-core/releases/tags/${tag}" | jq ".id")
     if [[ $id == "null" ]]; then
         echo "Failed to get release id for tag ${tag}"
         exit -1
@@ -24,6 +25,6 @@ wc_upload_asset() {
     filename="$2"
 
     upload_url="${release_url}/assets?name=${filename}"
-    download_url=$(curl -u "miharek:" -X POST -H "Content-Type: application/octet-stream" --data-binary @${filename} ${upload_url} | jq ".browser_download_url")
+    download_url=$(curl -H "Authorization: token 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" -H "Content-Type: $(file -b --mime-type ${filename})" --data-binary @${filename} ${upload_url} | jq ".browser_download_url")
     echo ${download_url}
 }
